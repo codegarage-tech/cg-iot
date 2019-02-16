@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorShadeRed"
+            android:orientation="vertical">
+
+            <ernestoyaquello.com.verticalstepperform.VerticalStepperFormView
+                android:id="@+id/stepper_form"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:form_cancel_button_background_color="@android:color/transparent"
+                app:form_cancel_button_pressed_background_color="@android:color/transparent"
+                app:form_cancel_button_pressed_text_color="@color/colorPrimaryDark"
+                app:form_cancel_button_text_color="@color/colorPrimaryDark"
+                app:form_circle_background_color="@color/colorPrimaryDark"
+                app:form_display_cancel_button_in_last_step="true"
+                app:form_last_button_text="@string/txt_enjoy_controlling"
+                app:form_bottom_navigation_background_color = "@android:color/transparent"
+                app:form_next_button_background_color="@color/colorPrimaryDark"
+                app:form_next_button_pressed_background_color="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/layout_slide_up_view"
+            tools:visibility="gone" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

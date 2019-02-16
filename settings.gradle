@@ -1,0 +1,8 @@
+include ':app',
+        ':library:ribblemenu',
+        ':library:statusbarutil',
+        ':library:niftydialogeffects',
+        ':library:verticalstepperform',
+        ':library:slideupandroid',
+        ':library:esptouch',
+        ':library:easyrecyclerview'

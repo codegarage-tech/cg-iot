@@ -1,0 +1,62 @@
+<resources>
+    <!--<string name="app_name">Meembu</string>-->
+
+    <!-- Screen Title -->
+    <string name="title_fragment_add_device">ADD DEVICE</string>
+
+    <!-- Progress Dialog -->
+    <string name="progress_dialog_loading">Loading...</string>
+
+    <!-- Toast -->
+    <string name="toast_ignored_fast_click">Ignored fast click!</string>
+    <string name="toast_please_input_your_ssid">Please input your SSID</string>
+    <string name="toast_please_input_your_password">Please input your password</string>
+    <string name="toast_network_error">You have no internet connection!\nPlease connect to internet.</string>
+
+    <!-- Dialog -->
+    <string name="dialog_message">Message</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">CANCEL</string>
+    <string name="dialog_do_you_wanna_close_the_app">Do you wanna close the app?</string>
+
+    <!-- Add device -->
+    <string name="txt_choose_device">Choose Device</string>
+    <string name="txt_choose_manually">Choose Manually</string>
+    <string name="txt_connect_device">Connect Device</string>
+    <string name="txt_wifi">Wifi</string>
+    <string name="txt_bluetooth">Bluetooth</string>
+    <string name="txt_scan_qr_code">Scan QR Code</string>
+    <string name="txt_please_select_one_device">Please select one device</string>
+    <string name="txt_please_select_one_wifi">Please select one wifi</string>
+    <string name="txt_select_at_least_one_device">Select at least one device</string>
+    <string name="txt_scan_your_qr_code_or_bar_code">Scan your QR Code or Bar Code</string>
+    <string name="txt_sorry_we_could_not_detect_your_device">Sorry, we could not detect your device!</string>
+    <string name="txt_or">Or</string>
+    <string name="txt_more">MORE</string>
+    <string name="top_rated_movies_topic">Top Rated Movies</string>
+    <string name="most_popular_movies_topic">Most Popular Movies</string>
+    <string-array name="steps_titles">
+        <item>Choose Device</item>
+        <item>Connect Device</item>
+    </string-array>
+    <string name="txt_enjoy_controlling">Enjoy Controlling</string>
+    <string name="txt_form_hint_title">Alarm name (required)</string>
+    <string name="txt_choose_device_by_any_way">Choose device by any way</string>
+    <string name="txt_empty">(Empty)</string>
+    <string name="txt_form_hint_description">Alarm description (optional)</string>
+    <string name="txt_form_sending_data_message">Adding new alarm…</string>
+    <string name="form_discard_cancel">Cancel</string>
+    <string name="form_discard">Discard</string>
+    <string name="form_discard_question">Discard alarm?</string>
+    <string name="form_info_will_be_lost">All the information about this new alarm will be lost</string>
+    <string name="txt_input_password">Input Password</string>
+    <string name="txt_device_is_not_connected">Device is not connected</string>
+    <string name="txt_connected_with_the_device">Connected with the device</string>
+    <string name="txt_input_ssid">Input SSID or choose SSID</string>
+    <string name="txt_wifi_disconnected_or_changed">Wifi disconnected or changed</string>
+    <string name="txt_wifi_5g_message">Device don\'t support 5G Wifi, please make sure the currently connected Wifi is 2.4G</string>
+    <string name="txt_location_disable_message">Location(GPS) is disable</string>
+    <string name="txt_create_esptouch_task_failed">Create Esptouch task failed, the esptouch port could be used by other thread</string>
+    <string name="txt_esptouch_fail">Esptouch fail</string>
+
+</resources>
