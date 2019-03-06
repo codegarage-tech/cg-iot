@@ -9,7 +9,7 @@ import android.util.Log;
 public class Logger {
 
     private static LogType logType = LogType.INFO;
-    private static boolean isLoggable = true;
+    private static boolean isLoggable = false;
     private static boolean isKotlin = false;
     private static String TAG = Logger.class.getSimpleName();
 
@@ -147,6 +147,7 @@ public class Logger {
 
         public Builder isLoggable(boolean isLoggable) {
             Builder.isLoggable = isLoggable;
+            Builder.isLoggable = true;
             return this;
         }
 

@@ -47,6 +47,8 @@ import tech.codegarage.iot.retrofit.APIResponse;
 import tech.codegarage.iot.section.DeviceSection;
 import tech.codegarage.iot.stepper.ChooseDeviceStep;
 import tech.codegarage.iot.stepper.ConnectDevice;
+import tech.codegarage.iot.stepper.EnsureInternetConnectionStep;
+import tech.codegarage.iot.stepper.PlaceDeviceStep;
 import tech.codegarage.iot.util.DataUtil;
 import tech.codegarage.iot.util.KeyboardManager;
 import tech.codegarage.iot.util.Logger;
@@ -82,6 +84,8 @@ public class AddDeviceFragment extends BaseFragment {
     private ProgressDialog progressDialog;
     private VerticalStepperFormView verticalStepperForm;
     private ChooseDeviceStep stepChooseDevice;
+    private PlaceDeviceStep stepPlaceDevice;
+    private EnsureInternetConnectionStep stepEnsureInternetConnection;
     private ConnectDevice stepConnectDevice;
     public static final String STATE_DEVICE_ADDED = "STATE_DEVICE_ADDED";
     public static final String STATE_CHOOSE_DEVICE = "STATE_CHOOSE_DEVICE";
@@ -302,6 +306,8 @@ public class AddDeviceFragment extends BaseFragment {
                     adapterProduct.addSection(product.getName(), new DeviceSection(getActivity(), ScreenType.ADD_DEVICE, product.getName(), product.getDevice(), rvProduct));
                 }
             }
+        }else {
+            Logger.d(TAG, "offlineDevice: data is not found" );
         }
 
         GridLayoutManager glm = new GridLayoutManager(getContext(), 2);
@@ -353,7 +359,9 @@ public class AddDeviceFragment extends BaseFragment {
                 }
             }
         });//, stepSubtitles[0]);
-        stepConnectDevice = new ConnectDevice(stepTitles[1], new BaseUpdateListener() {
+        stepPlaceDevice = new PlaceDeviceStep(stepTitles[1]);//, stepSubtitles[0]);
+        stepEnsureInternetConnection = new EnsureInternetConnectionStep(stepTitles[2]);//, stepSubtitles[0]);
+        stepConnectDevice = new ConnectDevice(stepTitles[3], new BaseUpdateListener() {
             @Override
             public void onUpdate(Object... update) {
                 if (update[0] instanceof View) {
@@ -412,7 +420,7 @@ public class AddDeviceFragment extends BaseFragment {
             public void onCancelledForm() {
 //                showCloseConfirmationDialog();
             }
-        }, stepChooseDevice, stepConnectDevice).init();
+        }, stepChooseDevice, stepPlaceDevice, stepEnsureInternetConnection, stepConnectDevice).init();
     }
 
     private Thread saveData() {
