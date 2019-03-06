@@ -33,6 +33,7 @@ import ernestoyaquello.com.verticalstepperform.VerticalStepperFormView;
 import ernestoyaquello.com.verticalstepperform.listener.StepperFormListener;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 import tech.codegarage.iot.R;
+import tech.codegarage.iot.activity.BarCodeScannerActivity;
 import tech.codegarage.iot.activity.HomeActivity;
 import tech.codegarage.iot.adapter.WifiAdapter;
 import tech.codegarage.iot.base.BaseFragment;
@@ -178,7 +179,21 @@ public class AddDeviceFragment extends BaseFragment {
 
     @Override
     public void initFragmentOnResult(int requestCode, int resultCode, Intent data) {
-
+        Logger.d(TAG, "onActivityResult found in Add device fragment");
+        switch (requestCode) {
+            case REQUEST_CODE:
+                IntentResult result = IntentIntegrator.parseActivityResult(resultCode, data);
+                Logger.d(TAG, "Scanned: " + result.getContents());
+                if (result.getContents() != null) {
+                    Device device = DataUtil.getSpecificDeviceById("69");
+                    if (device != null) {
+                        stepChooseDevice.setChoseDevice(device);
+                    } else {
+                        Toast.makeText(getActivity(), getString(R.string.txt_sorry_we_could_not_detect_your_device), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+        }
     }
 
     @Override
@@ -208,26 +223,6 @@ public class AddDeviceFragment extends BaseFragment {
         super.onResume();
         ((HomeActivity) getActivity()).setRightMenu(false, null);
         ((HomeActivity) getActivity()).setLockMode(true);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case REQUEST_CODE:
-                IntentResult result = IntentIntegrator.parseActivityResult(resultCode, data);
-                Logger.d(TAG, "Scanned: " + result.getContents());
-                if (result.getContents() != null) {
-                    Device device = DataUtil.getSpecificDeviceById("69");
-                    if (device != null) {
-                        stepChooseDevice.setChoseDevice(device);
-                    } else {
-                        Toast.makeText(getActivity(), getString(R.string.txt_sorry_we_could_not_detect_your_device), Toast.LENGTH_SHORT).show();
-                    }
-                }
-                break;
-            default:
-                super.onActivityResult(requestCode, resultCode, data);
-        }
     }
 
     /*****************
@@ -349,7 +344,11 @@ public class AddDeviceFragment extends BaseFragment {
                         showSlideUpView(SlideUpType.CHOOSE_DEVICE);
                         break;
                     case R.id.btn_scan_qr_code:
-                        IntentIntegrator.forSupportFragment(AddDeviceFragment.this).setPrompt(getString(R.string.txt_scan_your_qr_code_or_bar_code)).initiateScan();
+                        new IntentIntegrator(getActivity())
+                                .setPrompt(getString(R.string.txt_scan_your_qr_code_or_bar_code))
+                                .setOrientationLocked(true)
+                                .setCaptureActivity(BarCodeScannerActivity.class)
+                                .setRequestCode(REQUEST_CODE).initiateScan();
                         break;
                 }
             }

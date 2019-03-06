@@ -40,6 +40,13 @@
         <activity
             android:name="tech.codegarage.iot.activity.HomeActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name="tech.codegarage.iot.activity.BarCodeScannerActivity"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>
