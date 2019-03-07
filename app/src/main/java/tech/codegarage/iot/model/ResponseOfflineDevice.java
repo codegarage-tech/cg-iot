@@ -1,4 +1,4 @@
-package tech.codegarage.iot.util;
+package tech.codegarage.iot.model;
 
 import java.util.ArrayList;
 import java.util.List;

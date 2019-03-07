@@ -80,7 +80,7 @@ public class ChooseDeviceStep extends Step<String> {
         mChosenDevice = device;
         llChoseDevice.setVisibility(View.VISIBLE);
         tvChoseDevice.setText(device.getName());
-        AppUtil.doMarqueeTextView(tvChoseDevice);
+        AppUtil.applyMarqueeOnTextView(tvChoseDevice);
         SessionUtil.setChosenDevice(getContext(), APIResponse.getResponseString(device));
 
         markAsCompletedOrUncompleted(true);

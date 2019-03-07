@@ -2,9 +2,6 @@ package tech.codegarage.iot.util;
 
 import android.content.Context;
 
-import com.reversecoder.library.storage.SessionManager;
-import com.reversecoder.library.util.AllSettingsManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +10,7 @@ import io.armcha.ribble.presentation.navigationview.NavigationItem;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.model.Device;
 import tech.codegarage.iot.model.Product;
-import tech.codegarage.iot.model.User;
+import tech.codegarage.iot.model.ResponseOfflineDevice;
 import tech.codegarage.iot.retrofit.APIResponse;
 
 /**

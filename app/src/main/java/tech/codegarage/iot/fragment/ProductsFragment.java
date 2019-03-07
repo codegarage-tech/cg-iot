@@ -16,7 +16,7 @@ import tech.codegarage.iot.retrofit.APIResponse;
 import tech.codegarage.iot.section.DeviceSection;
 import tech.codegarage.iot.util.DataUtil;
 import tech.codegarage.iot.util.Logger;
-import tech.codegarage.iot.util.ResponseOfflineDevice;
+import tech.codegarage.iot.model.ResponseOfflineDevice;
 
 /**
  * @author Md. Rashadul Alam

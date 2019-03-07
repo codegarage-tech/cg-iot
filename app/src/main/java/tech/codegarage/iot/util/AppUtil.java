@@ -234,7 +234,7 @@ public class AppUtil {
         return (int) (value * density);
     }
 
-    public static void doMarqueeTextView(TextView textView) {
+    public static void applyMarqueeOnTextView(TextView textView) {
         textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         textView.setSingleLine(true);
         textView.setMarqueeRepeatLimit(-1);

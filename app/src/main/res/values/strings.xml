@@ -37,7 +37,7 @@
     <string name="most_popular_movies_topic">Most Popular Movies</string>
     <string-array name="steps_titles">
         <item>Choose Device</item>
-        <item>Place Device</item>
+        <item>Plug Device</item>
         <item>Ensure Internet Connection</item>
         <item>Connect Device</item>
     </string-array>
@@ -45,7 +45,8 @@
     <string name="txt_form_hint_title">Alarm name (required)</string>
     <string name="txt_choose_device_by_any_way">Choose device by any way</string>
     <string name="txt_empty">(Empty)</string>
-    <string name="txt_placed">Placed</string>
+    <string name="txt_plugged">Plugged</string>
+    <string name="txt_unplugged">Unplugged</string>
     <string name="txt_connected">Connected</string>
     <string name="txt_form_hint_description">Alarm description (optional)</string>
     <string name="txt_form_sending_data_message">Adding new alarm…</string>
@@ -62,5 +63,6 @@
     <string name="txt_location_disable_message">Location(GPS) is disable</string>
     <string name="txt_create_esptouch_task_failed">Create Esptouch task failed, the esptouch port could be used by other thread</string>
     <string name="txt_esptouch_fail">Esptouch fail</string>
+    <string name="txt_plug_your_iot_device_with_ac_current">Plug your IoT device with AC current</string>
 
 </resources>

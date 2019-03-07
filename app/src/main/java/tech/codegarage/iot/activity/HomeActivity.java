@@ -397,7 +397,7 @@ public class HomeActivity extends BaseLocationActivity {
         toolbarTitle.setAnimatedText(title, 0L);
 
         //For marquee address
-        AppUtil.doMarqueeTextView(toolbarTitle);
+        AppUtil.applyMarqueeOnTextView(toolbarTitle);
     }
 
     public void setLockMode(boolean isLocked) {
