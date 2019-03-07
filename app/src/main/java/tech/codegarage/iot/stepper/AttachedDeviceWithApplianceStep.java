@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.zagum.switchicon.SwitchIconView;
@@ -20,6 +21,7 @@ import tech.codegarage.iot.util.AppUtil;
 public class AttachedDeviceWithApplianceStep extends Step<String> {
 
     private SwitchIconView switchAttachDevice;
+    private LinearLayout llTick;
     private ImageView ivAttachDevice;
     private TextView tvAttachDevice;
     private Device mChosenDevice;
@@ -42,26 +44,28 @@ public class AttachedDeviceWithApplianceStep extends Step<String> {
     @Override
     protected View createStepContentLayout() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View plugDeviceStepContent = inflater.inflate(R.layout.layout_step_attached_device_with_appliance, null, false);
+        View attachDeviceStepContent = inflater.inflate(R.layout.layout_step_attached_device_with_appliance, null, false);
 
-        switchAttachDevice = (SwitchIconView) plugDeviceStepContent.findViewById(R.id.switch_attach_device);
+        ivAttachDevice = (ImageView) attachDeviceStepContent.findViewById(R.id.iv_attach_device);
+        AppUtil.loadImage(getContext(), ivAttachDevice, R.drawable.plug_device, true, false, false);
+        llTick = (LinearLayout) attachDeviceStepContent.findViewById(R.id.ll_tick);
+        tvAttachDevice = (TextView) attachDeviceStepContent.findViewById(R.id.tv_attach_device);
+        AppUtil.applyMarqueeOnTextView(tvAttachDevice);
+        switchAttachDevice = (SwitchIconView) attachDeviceStepContent.findViewById(R.id.switch_attach_device);
         switchAttachDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switchAttachDevice.setIconEnabled(!switchAttachDevice.isIconEnabled());
-                setPlaceDevice(switchAttachDevice.isIconEnabled());
+                setSwitchAttachDevice(switchAttachDevice.isIconEnabled());
             }
         });
-        ivAttachDevice = (ImageView) plugDeviceStepContent.findViewById(R.id.iv_attach_device);
-        AppUtil.loadImage(getContext(), ivAttachDevice, R.drawable.plug_device, true, false, false);
-        tvAttachDevice = (TextView) plugDeviceStepContent.findViewById(R.id.tv_attach_device);
-        AppUtil.applyMarqueeOnTextView(tvAttachDevice);
 
-        return plugDeviceStepContent;
+        return attachDeviceStepContent;
     }
 
-    public void setPlaceDevice(boolean isPlaced) {
+    public void setSwitchAttachDevice(boolean isPlaced) {
         mIsAttached = isPlaced;
+        llTick.setVisibility(mIsAttached ? View.VISIBLE : View.GONE);
         markAsCompletedOrUncompleted(mIsAttached);
     }
 
@@ -110,7 +114,7 @@ public class AttachedDeviceWithApplianceStep extends Step<String> {
 //            alarmNameEditText.setText(data);
 //        }
 
-        setPlaceDevice(getContext().getString(R.string.txt_attached).equalsIgnoreCase(data));
+        setSwitchAttachDevice(getContext().getString(R.string.txt_attached).equalsIgnoreCase(data));
     }
 
     @Override
