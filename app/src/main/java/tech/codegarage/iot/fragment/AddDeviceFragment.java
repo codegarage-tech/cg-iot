@@ -344,10 +344,10 @@ public class AddDeviceFragment extends BaseFragment {
             public void onUpdate(Object... update) {
                 View view = (View) update[0];
                 switch (view.getId()) {
-                    case R.id.btn_choose_manually:
+                    case R.id.ll_choose_manually:
                         showSlideUpView(SlideUpType.CHOOSE_DEVICE);
                         break;
-                    case R.id.btn_scan_qr_code:
+                    case R.id.ll_scan_qr_code:
                         new IntentIntegrator(getActivity())
                                 .setPrompt(getString(R.string.txt_scan_your_qr_code_or_bar_code))
                                 .setOrientationLocked(true)

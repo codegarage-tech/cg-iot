@@ -3,7 +3,6 @@ package tech.codegarage.iot.stepper;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,8 +23,7 @@ import tech.codegarage.iot.util.SessionUtil;
  */
 public class ChooseDeviceStep extends Step<String> {
 
-    private LinearLayout llChoseDevice;
-    private Button btnScanQrCode, btnChoseManually;
+    private LinearLayout llChoseDevice, llScanQrCode, llChoseManually;
     private TextView tvChoseDevice;
     private BaseUpdateListener mBaseUpdateListener;
     private Device mChosenDevice = null;
@@ -49,13 +47,13 @@ public class ChooseDeviceStep extends Step<String> {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View chooseDeviceStepContent = inflater.inflate(R.layout.layout_step_choose_device, null, false);
 
-        btnScanQrCode = chooseDeviceStepContent.findViewById(R.id.btn_scan_qr_code);
-        btnChoseManually = chooseDeviceStepContent.findViewById(R.id.btn_choose_manually);
+        llScanQrCode = chooseDeviceStepContent.findViewById(R.id.ll_scan_qr_code);
+        llChoseManually = chooseDeviceStepContent.findViewById(R.id.ll_choose_manually);
         llChoseDevice = chooseDeviceStepContent.findViewById(R.id.ll_chose_device);
         llChoseDevice.setVisibility(View.GONE);
         tvChoseDevice = chooseDeviceStepContent.findViewById(R.id.tv_chose_device);
 
-        btnScanQrCode.setOnClickListener(new OnSingleClickListener() {
+        llScanQrCode.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
                 if (mBaseUpdateListener != null) {
@@ -64,7 +62,7 @@ public class ChooseDeviceStep extends Step<String> {
             }
         });
 
-        btnChoseManually.setOnClickListener(new OnSingleClickListener() {
+        llChoseManually.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
                 if (mBaseUpdateListener != null) {
