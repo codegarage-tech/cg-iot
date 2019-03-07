@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginBottom="@dimen/dp_15"
-        android:background="@drawable/shape_rectangle_border_primary_bg_transparent"
+        android:background="@drawable/shape_rectangle_border_primary_bg_blue_shade"
         android:orientation="horizontal"
         android:padding="@dimen/dp_10">
 
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginBottom="@dimen/dp_15"
-        android:background="@drawable/shape_rectangle_border_primary_bg_transparent"
+        android:background="@drawable/shape_rectangle_border_primary_bg_blue_shade"
         android:orientation="horizontal"
         android:padding="@dimen/dp_10">
 

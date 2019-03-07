@@ -40,7 +40,7 @@
         android:id="@+id/ll_chose_device"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        android:background="@drawable/shape_rectangle_border_primary_bg_transparent"
+        android:background="@drawable/shape_rectangle_border_primary_bg_blue_shade"
         android:orientation="horizontal"
         android:padding="@dimen/dp_10"
         android:visibility="gone">

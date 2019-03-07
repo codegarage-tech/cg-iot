@@ -17,24 +17,24 @@ import tech.codegarage.iot.util.AppUtil;
  * @author Md. Rashadul Alam
  * Email: rashed.droid@gmail.com
  */
-public class PlugDeviceStep extends Step<String> {
+public class EnsureConnectivityStep extends Step<String> {
 
-    private SwitchIconView switchPlugDevice;
-    private ImageView ivPlugDevice;
-    private TextView tvPlugDevice;
+    private SwitchIconView switchEnsureWifi;
+    private ImageView ivEnsureWifi;
+    private TextView tvEnsureWifi;
     private Device mChosenDevice;
-    private boolean mIsPlugged = false;
+    private boolean mIsWifiConnected = false;
 
-    public PlugDeviceStep(String title) {
+    public EnsureConnectivityStep(String title) {
         this(title, "");
     }
 
-    public PlugDeviceStep(String title, Device device) {
+    public EnsureConnectivityStep(String title, Device device) {
         this(title, "");
         this.mChosenDevice = device;
     }
 
-    public PlugDeviceStep(String title, String subtitle) {
+    public EnsureConnectivityStep(String title, String subtitle) {
         super(title, subtitle);
     }
 
@@ -42,27 +42,27 @@ public class PlugDeviceStep extends Step<String> {
     @Override
     protected View createStepContentLayout() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View plugDeviceStepContent = inflater.inflate(R.layout.layout_step_plug_device, null, false);
+        View plugDeviceStepContent = inflater.inflate(R.layout.layout_step_ensure_connectivity, null, false);
 
-        switchPlugDevice = (SwitchIconView) plugDeviceStepContent.findViewById(R.id.switch_plug_device);
-        switchPlugDevice.setOnClickListener(new View.OnClickListener() {
+        switchEnsureWifi = (SwitchIconView) plugDeviceStepContent.findViewById(R.id.switch_ensure_wifi);
+        switchEnsureWifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchPlugDevice.setIconEnabled(!switchPlugDevice.isIconEnabled());
-                setPlaceDevice(switchPlugDevice.isIconEnabled());
+                switchEnsureWifi.setIconEnabled(!switchEnsureWifi.isIconEnabled());
+                setEnsureWifi(switchEnsureWifi.isIconEnabled());
             }
         });
-        ivPlugDevice = (ImageView) plugDeviceStepContent.findViewById(R.id.iv_plug_device);
-        AppUtil.loadImage(getContext(), ivPlugDevice, R.drawable.plug_device, true, false, false);
-        tvPlugDevice = (TextView) plugDeviceStepContent.findViewById(R.id.tv_plug_device);
-        AppUtil.applyMarqueeOnTextView(tvPlugDevice);
+        ivEnsureWifi = (ImageView) plugDeviceStepContent.findViewById(R.id.iv_ensure_wifi);
+        AppUtil.loadImage(getContext(), ivEnsureWifi, R.drawable.ensure_wifi, true, false, false);
+        tvEnsureWifi = (TextView) plugDeviceStepContent.findViewById(R.id.tv_ensure_wifi);
+        AppUtil.applyMarqueeOnTextView(tvEnsureWifi);
 
         return plugDeviceStepContent;
     }
 
-    public void setPlaceDevice(boolean isPlaced) {
-        mIsPlugged = isPlaced;
-        markAsCompletedOrUncompleted(mIsPlugged);
+    public void setEnsureWifi(boolean isWifiConnected) {
+        mIsWifiConnected = isWifiConnected;
+        markAsCompletedOrUncompleted(mIsWifiConnected);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class PlugDeviceStep extends Step<String> {
 //            return text.toString();
 //        }
 
-        return mIsPlugged ? getContext().getString(R.string.txt_plugged) : getContext().getString(R.string.txt_unplugged);
+        return mIsWifiConnected ? getContext().getString(R.string.txt_connected) : getContext().getString(R.string.txt_disconnected);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class PlugDeviceStep extends Step<String> {
 //        return name == null || name.isEmpty()
 //                ? getContext().getString(R.string.txt_form_empty_field)
 //                : name;
-        return mIsPlugged ? getContext().getString(R.string.txt_plugged) : getContext().getString(R.string.txt_unplugged);
+        return mIsWifiConnected ? getContext().getString(R.string.txt_connected) : getContext().getString(R.string.txt_disconnected);
     }
 
     @Override
@@ -110,11 +110,11 @@ public class PlugDeviceStep extends Step<String> {
 //            alarmNameEditText.setText(data);
 //        }
 
-        setPlaceDevice(getContext().getString(R.string.txt_plugged).equalsIgnoreCase(data));
+        setEnsureWifi(getContext().getString(R.string.txt_connected).equalsIgnoreCase(data));
     }
 
     @Override
     protected IsDataValid isStepDataValid(String stepData) {
-        return new IsDataValid(mIsPlugged);
+        return new IsDataValid(mIsWifiConnected);
     }
 }
