@@ -138,7 +138,8 @@ public class ChooseDeviceStep extends Step<String> {
         if (mChosenDevice != null) {
             return new IsDataValid(true);
         } else {
-            return new IsDataValid(false, getContext().getString(R.string.txt_select_at_least_one_device));
+//            return new IsDataValid(false, getContext().getString(R.string.txt_select_at_least_one_device));
+            return new IsDataValid(false);
         }
     }
 }

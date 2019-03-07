@@ -103,7 +103,6 @@
             android:visibility="gone">
 
             <ImageView
-                android:id="@+id/iv_attach_device_tick"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/vector_accepted" />

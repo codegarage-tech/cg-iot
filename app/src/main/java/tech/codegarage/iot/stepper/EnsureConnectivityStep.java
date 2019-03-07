@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.zagum.switchicon.SwitchIconView;
@@ -20,6 +21,7 @@ import tech.codegarage.iot.util.AppUtil;
 public class EnsureConnectivityStep extends Step<String> {
 
     private SwitchIconView switchEnsureWifi;
+    private LinearLayout llTick;
     private ImageView ivEnsureWifi;
     private TextView tvEnsureWifi;
     private Device mChosenDevice;
@@ -42,9 +44,14 @@ public class EnsureConnectivityStep extends Step<String> {
     @Override
     protected View createStepContentLayout() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View plugDeviceStepContent = inflater.inflate(R.layout.layout_step_ensure_connectivity, null, false);
+        View ensureWifiStepContent = inflater.inflate(R.layout.layout_step_ensure_connectivity, null, false);
 
-        switchEnsureWifi = (SwitchIconView) plugDeviceStepContent.findViewById(R.id.switch_ensure_wifi);
+        ivEnsureWifi = (ImageView) ensureWifiStepContent.findViewById(R.id.iv_ensure_wifi);
+        AppUtil.loadImage(getContext(), ivEnsureWifi, R.drawable.ensure_wifi, true, false, false);
+        llTick = (LinearLayout) ensureWifiStepContent.findViewById(R.id.ll_tick);
+        tvEnsureWifi = (TextView) ensureWifiStepContent.findViewById(R.id.tv_ensure_wifi);
+        AppUtil.applyMarqueeOnTextView(tvEnsureWifi);
+        switchEnsureWifi = (SwitchIconView) ensureWifiStepContent.findViewById(R.id.switch_ensure_wifi);
         switchEnsureWifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,16 +59,13 @@ public class EnsureConnectivityStep extends Step<String> {
                 setEnsureWifi(switchEnsureWifi.isIconEnabled());
             }
         });
-        ivEnsureWifi = (ImageView) plugDeviceStepContent.findViewById(R.id.iv_ensure_wifi);
-        AppUtil.loadImage(getContext(), ivEnsureWifi, R.drawable.ensure_wifi, true, false, false);
-        tvEnsureWifi = (TextView) plugDeviceStepContent.findViewById(R.id.tv_ensure_wifi);
-        AppUtil.applyMarqueeOnTextView(tvEnsureWifi);
 
-        return plugDeviceStepContent;
+        return ensureWifiStepContent;
     }
 
     public void setEnsureWifi(boolean isWifiConnected) {
         mIsWifiConnected = isWifiConnected;
+        llTick.setVisibility(mIsWifiConnected ? View.VISIBLE : View.GONE);
         markAsCompletedOrUncompleted(mIsWifiConnected);
     }
 
