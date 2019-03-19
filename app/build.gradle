@@ -202,6 +202,9 @@ dependencies {
     // Util
     implementation "com.reversecoder.library:rc-library:$libraryVersion"
 
+    // Blur view
+    implementation 'jp.wasabeef:blurry:3.0.0'
+
     // Library projects
     implementation project(":library:ribblemenu")
     implementation project(":library:statusbarutil")
