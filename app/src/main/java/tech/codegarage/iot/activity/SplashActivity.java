@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.jaeger.library.StatusBarUtil;
 import com.reversecoder.library.util.AllSettingsManager;
 
+import me.wangyuwei.particleview.ParticleView;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.base.BaseUpdateListener;
 import tech.codegarage.iot.util.AppUtil;
@@ -21,6 +22,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private TextView tvAppVersion;
     private ImageView ivAppLogo;
+    private ParticleView particleView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,22 +42,38 @@ public class SplashActivity extends AppCompatActivity {
     public void initActivityViews() {
         tvAppVersion = (TextView) findViewById(R.id.tv_app_version);
         ivAppLogo = (ImageView) findViewById(R.id.iv_app_logo_short);
+        particleView = (ParticleView) findViewById(R.id.pv_title);
     }
 
     public void initActivityViewsData() {
-        //Set app version
+        // Start particle animation
+        particleView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                particleView.startAnim();
+            }
+        }, 200);
+        particleView.setOnParticleAnimListener(new ParticleView.ParticleAnimListener() {
+            @Override
+            public void onAnimationEnd() {
+                //Navigate to the next screen
+                navigateNextScreen();
+            }
+        });
+
+        // Set app version
         String appVersion = AppUtil.getAppVersion(SplashActivity.this);
         if (!AllSettingsManager.isNullOrEmpty(appVersion)) {
             tvAppVersion.setText("Version: " + appVersion);
         }
 
-        //Rotate app logo
+        // Rotate app logo
         AppUtil.makeRotateAnimation(ivAppLogo, 3, new BaseUpdateListener() {
             @Override
             public void onUpdate(Object... update) {
                 if ((boolean) update[0]) {
                     //Navigate to the next screen
-                    navigateNextScreen();
+//                    navigateNextScreen();
                 }
             }
         });

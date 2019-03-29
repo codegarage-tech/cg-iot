@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pv="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/screen_bg"
     android:padding="@dimen/dp_10">
 
-    <ImageView
-        android:id="@+id/iv_app_logo_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/iv_app_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/dp_30" />
+    <!--    <ImageView
+            android:id="@+id/iv_app_logo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/iv_app_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/dp_30" />-->
 
-    <ImageView
-        android:id="@+id/iv_app_logo"
-        android:layout_width="@dimen/dp_200"
+    <me.wangyuwei.particleview.ParticleView
+        android:id="@+id/pv_title"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"
-        android:background="@drawable/vector_logo"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        pv:pv_host_text="Smart"
+        pv:pv_host_text_anim_time="2000"
+        pv:pv_particle_text="Home"
+        pv:pv_spread_anim_time="1000"
+        pv:pv_text_anim_time="3000" />
+
+    <!--    <ImageView
+            android:id="@+id/iv_app_logo"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_200"
+            android:background="@drawable/vector_logo"
+            android:layout_centerInParent="true"/>-->
 
     <ImageView
         android:id="@+id/iv_app_logo_short"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_50"
-        android:layout_below="@+id/iv_app_logo"
+        android:layout_below="@+id/pv_title"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/dp_30"
         android:background="@drawable/vector_bulb" />
