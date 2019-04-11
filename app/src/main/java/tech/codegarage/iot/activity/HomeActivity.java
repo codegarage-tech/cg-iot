@@ -328,6 +328,9 @@ public class HomeActivity extends BaseLocationActivity {
                         case PRODUCTS:
                             changeNavigationFragment(item, new ProductsFragment());
                             break;
+                        case ADD_DEVICE:
+                            startActivity(new Intent(getActivity(), AddDeviceActivity.class));
+                            break;
                         case OWN_DEVICES:
                             changeNavigationFragment(item, new OwnDevicesFragment());
                             break;

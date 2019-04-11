@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_base" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorShadeBlue"
+        android:orientation="vertical">
+
+        <tech.codegarage.iot.view.LockableViewPager
+            android:id="@+id/vp_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/dp_60"/>
+
+        <FrameLayout
+            android:id="@+id/fl_footer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/dp_10">
+
+            <ImageView
+                android:id="@+id/btn_skip"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/selector_arrow_circle_left" />
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_oval_border_white_bg_transparent"
+                android:text="@string/txt_submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btn_next"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/selector_arrow_circle_right" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

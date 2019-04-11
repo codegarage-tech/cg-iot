@@ -66,10 +66,12 @@ public class DataUtil {
         if (SessionUtil.getUser(context) != null) {
             navigationItems.add(new NavigationItem(NavigationId.OWN_DEVICES, R.drawable.ic_menu_device, false, R.color.bg_white));
             navigationItems.add(new NavigationItem(NavigationId.PRODUCTS, R.drawable.ic_menu_order, false, R.color.bg_white));
+            navigationItems.add(new NavigationItem(NavigationId.ADD_DEVICE, R.drawable.ic_menu_about, false, R.color.bg_white));
             navigationItems.add(new NavigationItem(NavigationId.SETTINGS, R.drawable.ic_menu_settings, false, R.color.bg_white));
             navigationItems.add(new NavigationItem(NavigationId.LOGOUT, R.drawable.ic_menu_logout, false, R.color.bg_white));
         } else {
             navigationItems.add(new NavigationItem(NavigationId.PRODUCTS, R.drawable.ic_menu_order, false, R.color.bg_white));
+            navigationItems.add(new NavigationItem(NavigationId.ADD_DEVICE, R.drawable.ic_menu_about, false, R.color.bg_white));
             navigationItems.add(new NavigationItem(NavigationId.LOGIN, R.drawable.ic_menu_login, false, R.color.bg_white));
         }
         return navigationItems;

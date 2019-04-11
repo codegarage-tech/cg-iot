@@ -6,7 +6,8 @@ public enum NavigationId {
     PRODUCTS("PRODUCTS"),
     LOGIN("LOGIN"),
     SETTINGS("SETTINGS"),
-    LOGOUT("LOGOUT");
+    LOGOUT("LOGOUT"),
+    ADD_DEVICE("ADD DEVICE");
 
     private String value = "";
 

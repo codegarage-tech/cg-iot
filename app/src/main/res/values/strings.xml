@@ -66,5 +66,5 @@
     <string name="txt_esptouch_fail">Esptouch fail</string>
     <string name="txt_attach_your_iot_device_with_home_appliance">Attach your IoT device with home appliance</string>
     <string name="txt_ensure_your_active_wifi_connection">Ensure your active wifi connection</string>
-
+    <string name="txt_submit">Submit</string>
 </resources>
