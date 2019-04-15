@@ -2,6 +2,7 @@ package tech.codegarage.iot.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,7 +58,12 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd() {
                 //Navigate to the next screen
-                navigateNextScreen();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        navigateNextScreen();
+                    }
+                }, 1000);
             }
         });
 

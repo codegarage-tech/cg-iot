@@ -3,7 +3,7 @@
     xmlns:pv="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg"
+    android:background="@color/colorPrimaryDark"
     android:padding="@dimen/dp_10">
 
     <!--    <ImageView
@@ -20,10 +20,12 @@
         android:layout_height="@dimen/dp_200"
         android:layout_centerInParent="true"
         pv:pv_host_text="Smart"
-        pv:pv_host_text_anim_time="2000"
+        pv:pv_background_color="@color/colorPrimaryDark"
+        pv:pv_text_color="@color/white"
+        pv:pv_host_text_anim_time="1000"
         pv:pv_particle_text="Home"
-        pv:pv_spread_anim_time="1000"
-        pv:pv_text_anim_time="3000" />
+        pv:pv_spread_anim_time="500"
+        pv:pv_text_anim_time="1000" />
 
     <!--    <ImageView
             android:id="@+id/iv_app_logo"

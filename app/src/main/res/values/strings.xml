@@ -3,6 +3,7 @@
 
     <!-- Screen Title -->
     <string name="title_fragment_add_device">ADD DEVICE</string>
+    <string name="title_activity_add_device">ADD DEVICE</string>
 
     <!-- Progress Dialog -->
     <string name="progress_dialog_loading">Loading...</string>

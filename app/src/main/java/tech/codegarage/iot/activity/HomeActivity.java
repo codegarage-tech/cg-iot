@@ -139,7 +139,7 @@ public class HomeActivity extends BaseLocationActivity {
     @Override
     public void initActivityViews() {
         //toolbar view
-        toolbarTitle = (AnimatedTextView) findViewById(R.id.toolbarTitle);
+        toolbarTitle = (AnimatedTextView) findViewById(R.id.toolbar_title);
         leftMenu = (AnimatedImageView) findViewById(R.id.left_menu);
         rightMenu = (ImageView) findViewById(R.id.right_menu);
 
