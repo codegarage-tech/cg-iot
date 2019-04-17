@@ -18,7 +18,7 @@ import io.armcha.ribble.presentation.widget.AnimatedTextView;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.adapter.AddDeviceViewPagerAdapter;
 import tech.codegarage.iot.base.BaseLocationActivity;
-import tech.codegarage.iot.fragment.AddRoomFragment;
+import tech.codegarage.iot.fragment.SelectRoomFragment;
 import tech.codegarage.iot.geocoding.ReverseGeocoderTask;
 import tech.codegarage.iot.geocoding.UserLocationAddress;
 import tech.codegarage.iot.util.AppUtil;
@@ -162,8 +162,8 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 btnSubmit.setVisibility(position == lastPagePosition ? View.VISIBLE : View.GONE);
 
                 switch (addDeviceViewPagerAdapter.getScreenType(position)) {
-                    case ADD_ROOM:
-                        setTitle(getString(R.string.title_fragment_add_room));
+                    case SELECT_ROOM:
+                        setTitle(getString(R.string.title_fragment_select_room));
                         setRightMenu(true, R.drawable.vector_plus_circular_bg_white, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -269,10 +269,10 @@ public class AddDeviceActivity extends BaseLocationActivity {
     private boolean isScreenVerified(int position) {
         Logger.d(TAG, TAG + ">>" + "position is " + position);
         switch (addDeviceViewPagerAdapter.getScreenType(position)) {
-            case ADD_ROOM:
-                AddRoomFragment addRoomFragment = (AddRoomFragment) addDeviceViewPagerAdapter.getRegisteredFragment(position);
-                if (addRoomFragment != null) {
-                    if (addRoomFragment.isAllFieldsVerified()) {
+            case SELECT_ROOM:
+                SelectRoomFragment selectRoomFragment = (SelectRoomFragment) addDeviceViewPagerAdapter.getRegisteredFragment(position);
+                if (selectRoomFragment != null) {
+                    if (selectRoomFragment.isAllFieldsVerified()) {
                         Logger.d(TAG, TAG + ">>" + "food items are verified.");
 
                         return true;

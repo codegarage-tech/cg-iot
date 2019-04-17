@@ -3,7 +3,7 @@
 
     <!-- Screen Title -->
     <string name="title_fragment_add_device">ADD DEVICE</string>
-    <string name="title_fragment_add_room">ADD ROOM</string>
+    <string name="title_fragment_select_room">SELECT ROOM</string>
     <string name="title_fragment_choose_device">CHOOSE DEVICE</string>
     <string name="title_fragment_attach_appliance">ATTACH APPLIANCE</string>
     <string name="title_fragment_ensure_connectivity">ENSURE CONNECTIVITY</string>

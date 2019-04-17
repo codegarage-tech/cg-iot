@@ -19,7 +19,7 @@ public class DataManager {
     public static void addOrUpdateRoom(Activity activity, Room room) {
         RealmManager mRealmManager = RealmManager.with(activity);
         mRealmManager.insertOrUpdate(room);
-        Logger.d(TAG, TAG + ">>> addOrUpdateRoom: " + ((Room) mRealmManager.getData(Room.class, TABLE_ROOM_KEY_ID, room.getId())).toString());
+        Logger.d(TAG, TAG + ">>> addOrUpdateRoom: " + ((Room) mRealmManager.getData(Room.class, TABLE_ROOM_KEY_ID, room.getId()+"")).toString());
     }
 
     public static boolean hasRoomAdded(Activity activity) {

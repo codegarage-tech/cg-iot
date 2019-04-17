@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import tech.codegarage.iot.enumeration.AddDeviceScreenType;
-import tech.codegarage.iot.fragment.AddRoomFragment;
+import tech.codegarage.iot.fragment.SelectRoomFragment;
 import tech.codegarage.iot.fragment.AttachApplianceFragment;
 import tech.codegarage.iot.fragment.ChooseDeviceFragment;
 import tech.codegarage.iot.fragment.ConnectDeviceFragment;
@@ -32,8 +32,8 @@ public class AddDeviceViewPagerAdapter extends SmartFragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (mFragmentsPages.get(position)) {
-            case ADD_ROOM:
-                return AddRoomFragment.newInstance();
+            case SELECT_ROOM:
+                return SelectRoomFragment.newInstance();
             case CHOOSE_DEVICE:
                 return ChooseDeviceFragment.newInstance();
             case ATTACH_APPLIANCE:
@@ -45,7 +45,7 @@ public class AddDeviceViewPagerAdapter extends SmartFragmentStatePagerAdapter {
             case PREVIEW_SCREEN:
                 return PreviewScreenFragment.newInstance();
             default:
-                return AddRoomFragment.newInstance();
+                return SelectRoomFragment.newInstance();
         }
     }
 
