@@ -3,6 +3,12 @@
 
     <!-- Screen Title -->
     <string name="title_fragment_add_device">ADD DEVICE</string>
+    <string name="title_fragment_add_room">ADD ROOM</string>
+    <string name="title_fragment_choose_device">CHOOSE DEVICE</string>
+    <string name="title_fragment_attach_appliance">ATTACH APPLIANCE</string>
+    <string name="title_fragment_ensure_connectivity">ENSURE CONNECTIVITY</string>
+    <string name="title_fragment_connect_device">CONNECT DEVICE</string>
+    <string name="title_fragment_preview">PREVIEW</string>
     <string name="title_activity_add_device">ADD DEVICE</string>
 
     <!-- Progress Dialog -->

@@ -163,15 +163,34 @@ public class AddDeviceActivity extends BaseLocationActivity {
 
                 switch (addDeviceViewPagerAdapter.getScreenType(position)) {
                     case ADD_ROOM:
-                        ivRightMenu.setVisibility(View.VISIBLE);
-                        ivRightMenu.setBackgroundResource(R.drawable.vector_plus_circular_bg_white);
-                        ivRightMenu.setOnClickListener(new View.OnClickListener() {
+                        setTitle(getString(R.string.title_fragment_add_room));
+                        setRightMenu(true, R.drawable.vector_plus_circular_bg_white, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
                             }
                         });
                         flFooter.setBackgroundColor(getResources().getColor((R.color.colorShadeBlue)));
+                        break;
+                    case CHOOSE_DEVICE:
+                        setTitle(getString(R.string.title_fragment_choose_device));
+                        setRightMenu(false, 0, null);
+                        break;
+                    case ATTACH_APPLIANCE:
+                        setTitle(getString(R.string.title_fragment_attach_appliance));
+                        setRightMenu(false, 0, null);
+                        break;
+                    case ENSURE_CONNECTIVITY:
+                        setTitle(getString(R.string.title_fragment_ensure_connectivity));
+                        setRightMenu(false, 0, null);
+                        break;
+                    case CONNECT_DEVICE:
+                        setTitle(getString(R.string.title_fragment_connect_device));
+                        setRightMenu(false, 0, null);
+                        break;
+                    case PREVIEW_SCREEN:
+                        setTitle(getString(R.string.title_fragment_preview));
+                        setRightMenu(false, 0, null);
                         break;
                 }
 
@@ -187,9 +206,9 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 Logger.d(TAG, "onPageScrollStateChanged: " + "state: " + state);
             }
         });
-        btnNext.setOnClickListener(new OnBaseClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void OnPermissionValidation(View view) {
+            public void onClick(View v) {
                 boolean isInLastPage = vpAddDevice.getCurrentItem() == addDeviceViewPagerAdapter.getCount() - 1;
                 if (!isInLastPage) {
                     if (isScreenVerified(vpAddDevice.getCurrentItem())) {
@@ -198,9 +217,9 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 }
             }
         });
-        btnPrevious.setOnClickListener(new OnBaseClickListener() {
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void OnPermissionValidation(View view) {
+            public void onClick(View v) {
                 boolean isFirstPage = vpAddDevice.getCurrentItem() == 0;
                 if (!isFirstPage) {
                     vpAddDevice.setCurrentItem(vpAddDevice.getCurrentItem() - 1);
@@ -276,5 +295,15 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 return false;
         }
         return false;
+    }
+
+    private void setRightMenu(boolean visible, int resDrawableId, View.OnClickListener onClickListener){
+        ivRightMenu.setVisibility(visible?View.VISIBLE:View.INVISIBLE);
+        ivRightMenu.setBackgroundResource(resDrawableId);
+        ivRightMenu.setOnClickListener(onClickListener);
+    }
+
+    private void setTitle(String title){
+        toolbarTitle.setAnimatedText(title,0L);
     }
 }

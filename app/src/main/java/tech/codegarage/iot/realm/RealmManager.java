@@ -18,7 +18,7 @@ import io.realm.RealmResults;
  */
 public class RealmManager {
 
-    private static final String REALM_NAME = "tidetwist.realm";
+    private static final String REALM_NAME = "smarthome.realm";
     private static final long REALM_SCHEMA_VERSION = 1;
 
     private static RealmManager mInstance;
