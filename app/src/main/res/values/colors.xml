@@ -6,6 +6,7 @@
 
     <color name="colorShadeRed">#1FE63158</color>
     <color name="colorShadeBlue">#EDF9FD</color>
+    <color name="colorShadeBlueDark">#BAE2F0</color>
     <color name="image_placeholder_background_color">#C7C7CC</color>
     <color name="dark_grey">#484547</color>
 

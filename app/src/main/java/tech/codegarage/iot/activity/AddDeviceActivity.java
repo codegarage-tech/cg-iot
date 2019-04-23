@@ -1,15 +1,19 @@
 package tech.codegarage.iot.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import com.reversecoder.library.event.OnSingleClickListener;
@@ -38,8 +42,8 @@ public class AddDeviceActivity extends BaseLocationActivity {
 
     private LockableViewPager vpAddDevice;
     private AddDeviceViewPagerAdapter addDeviceViewPagerAdapter;
-    private FrameLayout flFooter;
-    private Button btnSubmit;
+    private LinearLayout llFooter, llTask;
+    private Button btnTask;
     private ImageView btnPrevious, btnNext;
 
     //Background task
@@ -115,9 +119,10 @@ public class AddDeviceActivity extends BaseLocationActivity {
         toolbarTitle = (AnimatedTextView) findViewById(R.id.toolbar_title);
 
         vpAddDevice = (LockableViewPager) findViewById(R.id.vp_add_device);
-        flFooter = (FrameLayout) findViewById(R.id.fl_footer);
+        llFooter = (LinearLayout) findViewById(R.id.ll_footer);
         btnPrevious = (ImageView) findViewById(R.id.btn_previous);
-        btnSubmit = (Button) findViewById(R.id.btn_finish);
+        llTask = (LinearLayout) findViewById(R.id.ll_task);
+        btnTask = (Button) findViewById(R.id.btn_task);
         btnNext = (ImageView) findViewById(R.id.btn_next);
     }
 
@@ -157,47 +162,59 @@ public class AddDeviceActivity extends BaseLocationActivity {
             public void onPageSelected(int position) {
                 Logger.d(TAG, "onPageSelected: " + "position: " + position);
                 int lastPagePosition = addDeviceViewPagerAdapter.getCount() - 1;
-                btnNext.setVisibility(position == lastPagePosition ? View.GONE : View.VISIBLE);
-                btnPrevious.setVisibility((position == 0) ? View.GONE : View.VISIBLE);
-                btnSubmit.setVisibility(position == lastPagePosition ? View.VISIBLE : View.GONE);
+                int firstPagePosition = 0;
+                if (position == firstPagePosition) {
+                    btnTask.setBackgroundResource(R.drawable.selector_plus_circle);
+                    llTask.setVisibility(View.VISIBLE);
+                    btnPrevious.setVisibility(View.GONE);
+                    btnNext.setVisibility(View.VISIBLE);
+                } else if (position == lastPagePosition) {
+                    btnTask.setBackgroundResource(R.drawable.selector_tick_circle);
+                    llTask.setVisibility(View.VISIBLE);
+                    btnNext.setVisibility(View.GONE);
+                } else {
+                    llTask.setVisibility(View.GONE);
+                    btnPrevious.setVisibility(View.VISIBLE);
+                    btnNext.setVisibility(View.VISIBLE);
+                }
 
                 switch (addDeviceViewPagerAdapter.getScreenType(position)) {
                     case SELECT_ROOM:
                         setTitle(getString(R.string.title_fragment_select_room));
-                        setRightMenu(true, R.drawable.vector_plus_circular_bg_white, new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                            }
-                        });
-                        flFooter.setBackgroundColor(getResources().getColor((R.color.colorShadeBlue)));
+//                        setRightMenu(true, R.drawable.vector_plus_circular_bg_white, new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                showInputRoomDialog();
+//                            }
+//                        });
+//                        llFooter.setBackgroundColor(getResources().getColor((R.color.colorShadeBlue)));
                         break;
                     case CHOOSE_DEVICE:
                         setTitle(getString(R.string.title_fragment_choose_device));
-                        setRightMenu(false, 0, null);
+//                        setRightMenu(false, 0, null);
                         break;
                     case ATTACH_APPLIANCE:
                         setTitle(getString(R.string.title_fragment_attach_appliance));
-                        setRightMenu(false, 0, null);
+//                        setRightMenu(false, 0, null);
                         break;
                     case ENSURE_CONNECTIVITY:
                         setTitle(getString(R.string.title_fragment_ensure_connectivity));
-                        setRightMenu(false, 0, null);
+//                        setRightMenu(false, 0, null);
                         break;
                     case CONNECT_DEVICE:
                         setTitle(getString(R.string.title_fragment_connect_device));
-                        setRightMenu(false, 0, null);
+//                        setRightMenu(false, 0, null);
                         break;
                     case PREVIEW_SCREEN:
                         setTitle(getString(R.string.title_fragment_preview));
-                        setRightMenu(false, 0, null);
+//                        setRightMenu(false, 0, null);
                         break;
                 }
 
 //                if (position == lastPagePosition) {
-//                    flFooter.setBackgroundColor(getResources().getColor((R.color.colorPrimaryDark)));
+//                    llFooter.setBackgroundColor(getResources().getColor((R.color.colorPrimaryDark)));
 //                } else {
-//                    flFooter.setBackgroundColor(getResources().getColor((android.R.color.transparent)));
+//                    llFooter.setBackgroundColor(getResources().getColor((android.R.color.transparent)));
 //                }
             }
 
@@ -223,6 +240,18 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 boolean isFirstPage = vpAddDevice.getCurrentItem() == 0;
                 if (!isFirstPage) {
                     vpAddDevice.setCurrentItem(vpAddDevice.getCurrentItem() - 1);
+                }
+            }
+        });
+        btnTask.setOnClickListener(new OnSingleClickListener() {
+            @Override
+            public void onSingleClick(View view) {
+                boolean isFirstPage = vpAddDevice.getCurrentItem() == 0;
+                boolean isInLastPage = vpAddDevice.getCurrentItem() == addDeviceViewPagerAdapter.getCount() - 1;
+                if (isFirstPage) {
+                    showInputRoomDialog();
+                } else if (isInLastPage) {
+
                 }
             }
         });
@@ -297,13 +326,46 @@ public class AddDeviceActivity extends BaseLocationActivity {
         return false;
     }
 
-    private void setRightMenu(boolean visible, int resDrawableId, View.OnClickListener onClickListener){
-        ivRightMenu.setVisibility(visible?View.VISIBLE:View.INVISIBLE);
+    public void setRightMenu(boolean visible, int resDrawableId, View.OnClickListener onClickListener) {
+        ivRightMenu.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
         ivRightMenu.setBackgroundResource(resDrawableId);
         ivRightMenu.setOnClickListener(onClickListener);
     }
 
-    private void setTitle(String title){
-        toolbarTitle.setAnimatedText(title,0L);
+    public void setTitle(String title) {
+        toolbarTitle.setAnimatedText(title, 0L);
+    }
+
+    private void showInputRoomDialog() {
+        final View view = getLayoutInflater().inflate(R.layout.dialog_input_room, null, false);
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                .setView(view)
+                .setCancelable(false)
+                .setTitle("")
+                .setMessage(R.string.txt_please_input_desired_room_name)
+                .setPositiveButton(R.string.dialog_ok, null)
+                .setNegativeButton(R.string.dialog_cancel, null)
+                .show();
+
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String roomName = ((EditText) view.findViewById(R.id.edt_room_name)).getText().toString();
+                if (TextUtils.isEmpty(roomName)) {
+                    Toast.makeText(getActivity(), getActivity().getString(R.string.txt_please_input_desired_room_name), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                dialog.dismiss();
+            }
+        });
+        Button negativeButton = dialog.getButton(Dialog.BUTTON_NEGATIVE);
+        negativeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 }

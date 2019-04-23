@@ -5,4 +5,5 @@ include ':app',
         ':library:verticalstepperform',
         ':library:slideupandroid',
         ':library:esptouch',
-        ':library:easyrecyclerview'
+        ':library:easyrecyclerview',
+        ':library:flowlayout'

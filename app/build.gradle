@@ -215,4 +215,5 @@ dependencies {
     implementation project(":library:slideupandroid")
     implementation project(":library:esptouch")
     implementation project(":library:easyrecyclerview")
+    implementation project(":library:flowlayout")
 }

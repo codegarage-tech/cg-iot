@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorShadeBlue"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_room"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="@string/txt_please_select_the_room_where_you_want_to_use_your_iot_device"
+        android:textSize="@dimen/sp_16" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="@dimen/dp_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rectangle_border_primary_bg_red_shade"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.nex3z.flowlayout.FlowLayout
+                    android:id="@+id/fl_room_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    app:flChildSpacing="auto"
+                    app:flRowSpacing="8dp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
 
 </LinearLayout>

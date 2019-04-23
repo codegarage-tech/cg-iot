@@ -19,41 +19,60 @@
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/dp_60" />
 
-        <FrameLayout
-            android:id="@+id/fl_footer"
+        <LinearLayout
+            android:id="@+id/ll_footer"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_60"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
-            android:padding="@dimen/dp_10">
+            android:background="@color/colorShadeBlueDark"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/btn_previous"
-                android:layout_width="@dimen/dp_35"
-                android:layout_height="@dimen/dp_35"
-                android:layout_gravity="left|center_vertical"
-                android:background="@drawable/selector_arrow_circle_left" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp_10">
+
+                <ImageView
+                    android:id="@+id/btn_previous"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/selector_arrow_circle_left" />
+
+                <ImageView
+                    android:id="@+id/btn_next"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/selector_arrow_circle_right" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_task"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_25"
+            android:background="@drawable/selector_oval_border_primary_dark_bg_primary"
+            android:padding="@dimen/dp_2">
 
             <Button
-                android:id="@+id/btn_finish"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/selector_oval_border_primary_dark_bg_transparent"
-                android:text="@string/txt_submit"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/sp_18"
-                android:textStyle="bold" />
+                android:id="@+id/btn_task"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-            <ImageView
-                android:id="@+id/btn_next"
-                android:layout_width="@dimen/dp_35"
-                android:layout_height="@dimen/dp_35"
-                android:layout_gravity="right|center_vertical"
-                android:background="@drawable/selector_arrow_circle_right" />
-
-        </FrameLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 

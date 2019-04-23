@@ -74,4 +74,10 @@
     <string name="txt_attach_your_iot_device_with_home_appliance">Attach your IoT device with home appliance</string>
     <string name="txt_ensure_your_active_wifi_connection">Ensure your active wifi connection</string>
     <string name="txt_submit">Submit</string>
+
+    <!-- Select Room -->
+    <string name="txt_please_select_the_room_where_you_want_to_use_your_iot_device">Please select the room where you want to use your IoT device from the suggested list below. Or you can also add and select your desired room.</string>
+    <string name="txt_please_input_desired_room_name">Please input desired room name</string>
+    <string name="txt_room_name">Room name</string>
+
 </resources>
