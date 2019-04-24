@@ -90,7 +90,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/txt_select_room_from_suggested_item_below"
+                        android:text="@string/txt_select_room_from_suggested_rooms_below"
                         android:textSize="@dimen/sp_16"
                         android:textStyle="bold" />
 

@@ -76,7 +76,7 @@
     <string name="txt_submit">Submit</string>
 
     <!-- Select Room -->
-    <string name="txt_select_room_from_suggested_item_below">Select room from suggested items below where you want use your IoT device. Or you can also add more rooms.</string>
+    <string name="txt_select_room_from_suggested_rooms_below">Select room from suggested rooms below where you want use your IoT device. Or you can also select room adding more rooms.</string>
     <string name="txt_please_input_desired_room_name">Please input desired room name</string>
     <string name="txt_room_name">Room name</string>
     <string name="txt_select_your_room">SELECT YOUR ROOM</string>
