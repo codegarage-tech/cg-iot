@@ -72,30 +72,6 @@
 
         </LinearLayout>
 
-        <!--<Button
-            android:id="@+id/btn_scan_qr_code"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/dp_20"
-            android:background="@drawable/selector_rectangle_border_primary_dark_bg_transparent"
-            android:paddingLeft="@dimen/dp_10"
-            android:paddingRight="@dimen/dp_10"
-            android:text="@string/txt_scan_qr_code"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/sp_14" />
-
-        <Button
-            android:id="@+id/btn_choose_manually"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/selector_rectangle_border_primary_dark_bg_transparent"
-            android:paddingLeft="@dimen/dp_10"
-            android:paddingRight="@dimen/dp_10"
-            android:text="@string/txt_choose_manually"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/sp_14" />
--->
     </LinearLayout>
 
     <LinearLayout

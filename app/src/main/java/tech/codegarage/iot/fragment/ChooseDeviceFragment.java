@@ -4,13 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.labo.kaji.fragmentanimations.PushPullAnimation;
+import com.reversecoder.library.event.OnSingleClickListener;
 
 import tech.codegarage.iot.R;
-import tech.codegarage.iot.activity.AddDeviceActivity;
+import tech.codegarage.iot.activity.BarCodeScannerActivity;
 import tech.codegarage.iot.base.BaseFragment;
+import tech.codegarage.iot.model.Device;
+import tech.codegarage.iot.retrofit.APIResponse;
+import tech.codegarage.iot.util.AppUtil;
+import tech.codegarage.iot.util.DataUtil;
+import tech.codegarage.iot.util.Logger;
+import tech.codegarage.iot.util.SessionUtil;
 
+import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
 import static tech.codegarage.iot.util.AllConstants.FRAGMENT_TRANSITION_DURATION;
 
 /**
@@ -18,6 +31,9 @@ import static tech.codegarage.iot.util.AllConstants.FRAGMENT_TRANSITION_DURATION
  * Email: rashed.droid@gmail.com
  */
 public class ChooseDeviceFragment extends BaseFragment {
+
+    private LinearLayout llChoseDevice, llQrCode, llManually;
+    private TextView tvChoseDevice;
 
     public static ChooseDeviceFragment newInstance() {
         ChooseDeviceFragment fragment = new ChooseDeviceFragment();
@@ -36,11 +52,24 @@ public class ChooseDeviceFragment extends BaseFragment {
 
     @Override
     public void initFragmentViews(View parentView) {
-//        rvCheckoutFood = (RecyclerView) parentView.findViewById(R.id.rv_checkout_food);
+        llQrCode = (LinearLayout) parentView.findViewById(R.id.ll_qr_code);
+        llManually = (LinearLayout) parentView.findViewById(R.id.ll_manually);
+        llChoseDevice = (LinearLayout) parentView.findViewById(R.id.ll_chose_device);
+        tvChoseDevice = (TextView) parentView.findViewById(R.id.tv_chose_device);
     }
 
     @Override
     public void initFragmentViewsData() {
+        llQrCode.setOnClickListener(new OnSingleClickListener() {
+            @Override
+            public void onSingleClick(View view) {
+                new IntentIntegrator(getActivity())
+                        .setPrompt(getString(R.string.txt_scan_your_qr_code_or_bar_code))
+                        .setOrientationLocked(true)
+                        .setCaptureActivity(BarCodeScannerActivity.class)
+                        .setRequestCode(REQUEST_CODE).initiateScan();
+            }
+        });
     }
 
     @Override
@@ -55,7 +84,24 @@ public class ChooseDeviceFragment extends BaseFragment {
 
     @Override
     public void initFragmentOnResult(int requestCode, int resultCode, Intent data) {
-
+        Logger.d(TAG, "onActivityResult found in Add device fragment");
+        switch (requestCode) {
+            case REQUEST_CODE:
+                IntentResult result = IntentIntegrator.parseActivityResult(resultCode, data);
+                Logger.d(TAG, "Scanned: " + result.getContents());
+                if (result.getContents() != null) {
+                    Device device = DataUtil.getSpecificDeviceById("69");
+                    if (device != null) {
+                        llChoseDevice.setVisibility(View.VISIBLE);
+                        tvChoseDevice.setText(device.getName());
+                        AppUtil.applyMarqueeOnTextView(tvChoseDevice);
+                        SessionUtil.setChosenDevice(getContext(), APIResponse.getResponseString(device));
+                    } else {
+                        Toast.makeText(getActivity(), getString(R.string.txt_sorry_we_could_not_detect_your_device), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+        }
     }
 
     @Override
