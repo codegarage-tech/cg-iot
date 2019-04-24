@@ -104,6 +104,20 @@ public class FlowLayoutManager {
         return this;
     }
 
+    public void addFlowItem(int position, String flowItem) {
+        keys.add(position, flowItem);
+        TextView textView = buildLabel(flowItem);
+        flowLayout.addView(textView, position);
+        flowViews.add(position, textView);
+    }
+
+    public void addFlowItem(String flowItem) {
+        keys.add(flowItem);
+        TextView textView = buildLabel(flowItem);
+        flowLayout.addView(textView);
+        flowViews.add(textView);
+    }
+
     private float dpToPx(float dp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }

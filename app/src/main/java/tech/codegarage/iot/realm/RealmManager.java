@@ -150,6 +150,24 @@ public class RealmManager {
         return null;
     }
 
+    public <E extends RealmObject> List<E> getAllSpecificData(Class<E> modelClass, String fieldName, String value) {
+        try {
+            return mRealm.where(modelClass).equalTo(fieldName, value).findAll();
+        } catch (Exception e) {
+            Log.d(TAG, "Failed to getData: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public <E extends RealmObject> List<E> getAllSpecificData(Class<E> modelClass, String fieldName, boolean value) {
+        try {
+            return mRealm.where(modelClass).equalTo(fieldName, value).findAll();
+        } catch (Exception e) {
+            Log.d(TAG, "Failed to getData: " + e.getMessage());
+        }
+        return null;
+    }
+
     public <E extends RealmObject> void deleteData(Class<E> modelClass, String fieldName, String value) {
         try {
             if (!mRealm.isInTransaction())

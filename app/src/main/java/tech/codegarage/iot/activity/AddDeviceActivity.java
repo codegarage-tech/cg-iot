@@ -351,11 +351,22 @@ public class AddDeviceActivity extends BaseLocationActivity {
         positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Check the room name
                 String roomName = ((EditText) view.findViewById(R.id.edt_room_name)).getText().toString();
                 if (TextUtils.isEmpty(roomName)) {
                     Toast.makeText(getActivity(), getActivity().getString(R.string.txt_please_input_desired_room_name), Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                // Add the room name into the flow layout
+                SelectRoomFragment selectRoomFragment = (SelectRoomFragment) addDeviceViewPagerAdapter.getRegisteredFragment(0);
+                if (selectRoomFragment != null) {
+                    Logger.d(TAG, TAG + ">>" + "Select room fragment is found.");
+                    selectRoomFragment.addFlowItem(roomName);
+                } else {
+                    Logger.d(TAG, TAG + ">>" + "Select room fragment is not found.");
+                }
+
                 dialog.dismiss();
             }
         });

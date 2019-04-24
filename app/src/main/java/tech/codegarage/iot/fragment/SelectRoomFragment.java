@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.labo.kaji.fragmentanimations.PushPullAnimation;
 import com.nex3z.flowlayout.FlowLayout;
 import com.nex3z.flowlayout.FlowLayoutManager;
+import com.reversecoder.library.util.AllSettingsManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,9 @@ import java.util.List;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.base.BaseFragment;
 import tech.codegarage.iot.model.Room;
+import tech.codegarage.iot.realm.DataBaseManager;
+import tech.codegarage.iot.util.Logger;
+import tech.codegarage.iot.util.SessionUtil;
 
 import static tech.codegarage.iot.util.AllConstants.FRAGMENT_TRANSITION_DURATION;
 
@@ -25,9 +29,7 @@ import static tech.codegarage.iot.util.AllConstants.FRAGMENT_TRANSITION_DURATION
  */
 public class SelectRoomFragment extends BaseFragment {
 
-//    private RecyclerView rvRoom;
-//    private RoomAdapter roomAdapter;
-
+    private String TAG = "SelectRoomFragment";
     private FlowLayout flowLayoutRoomName;
     private FlowLayoutManager flowLayoutManagerRoomName;
 
@@ -48,27 +50,19 @@ public class SelectRoomFragment extends BaseFragment {
 
     @Override
     public void initFragmentViews(View parentView) {
-//        rvRoom = (RecyclerView) parentView.findViewById(R.id.rv_room);
         flowLayoutRoomName = (FlowLayout) parentView.findViewById(R.id.fl_room_name);
     }
 
     @Override
     public void initFragmentViewsData() {
-//        initRoomRecyclerView();
-
-        List<Room> mSuggestedRoom = new ArrayList<Room>() {{
-            add(new Room(1, "Bed Room", ""));
-            add(new Room(2, "Leaving Room", ""));
-            add(new Room(3, "Drawing Room", ""));
-            add(new Room(4, "Store Room", ""));
-            add(new Room(5, "Wash Room", ""));
-            add(new Room(1, "Bed Room", ""));
-            add(new Room(2, "Leaving Room", ""));
-            add(new Room(3, "Drawing Room", ""));
-            add(new Room(4, "Store Room", ""));
-            add(new Room(5, "Wash Room", ""));
-        }};
-        initSuggestedRoom(mSuggestedRoom);
+        // Initialize suggested room data
+        if (!DataBaseManager.hasRoomInitialized(getActivity())) {
+            Logger.d(TAG, TAG + ">> Room data are not initialized");
+            DataBaseManager.initSuggestedRooms(getActivity());
+        } else {
+            Logger.d(TAG, TAG + ">> Room data has already initialized");
+        }
+        initSuggestedRoom(DataBaseManager.getAllRooms(getActivity()));
     }
 
     @Override
@@ -100,19 +94,6 @@ public class SelectRoomFragment extends BaseFragment {
         }
     }
 
-    private void initRoomRecyclerView() {
-//        roomAdapter = new RoomAdapter(getActivity());
-//        rvRoom.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        rvRoom.setAdapter(roomAdapter);
-//        roomAdapter.addAll(new ArrayList<Room>() {{
-//            add(new Room(1, "Bed Room", ""));
-//            add(new Room(2, "Leaving Room", ""));
-//            add(new Room(3, "Drawing Room", ""));
-//            add(new Room(4, "Store Room", ""));
-//            add(new Room(5, "Wash Room", ""));
-//        }});
-    }
-
     public boolean isAllFieldsVerified() {
 //        if (checkoutFoodAdapter.getCount() > 0) {
 //            return true;
@@ -126,12 +107,19 @@ public class SelectRoomFragment extends BaseFragment {
     /***************************
      * Methods for flow layout *
      ***************************/
-    private void initSuggestedRoom(List<Room> roomList) {
-        if (roomList != null && roomList.size() > 0) {
+    public void addFlowItem(String flowItem) {
+        if (DataBaseManager.addOrUpdateRoom(getActivity(), new Room(flowItem, "")) != null) {
+            flowLayoutManagerRoomName.addFlowItem(flowItem);
+            flowLayoutManagerRoomName.clickFlowView(flowItem);
+        }
+    }
+
+    public void initSuggestedRoom(List<Room> suggestedRoom) {
+        if (suggestedRoom != null && suggestedRoom.size() > 0) {
             //Arrange suggested room's key
             List<String> mSuggestedRoomKeys = new ArrayList<>();
-            for (Room room : roomList) {
-                mSuggestedRoomKeys.add(room.getName());
+            for (Room mRoom : suggestedRoom) {
+                mSuggestedRoomKeys.add(mRoom.getName());
             }
 
             //Set flow layout with suggested room key
@@ -139,37 +127,21 @@ public class SelectRoomFragment extends BaseFragment {
                 @Override
                 public void flowViewClick(TextView updatedTextView) {
                     List<TextView> selectedVoiceSearchKeys = flowLayoutManagerRoomName.getSelectedFlowViews();
-                    String mSelectedVoiceSearchKey = (selectedVoiceSearchKeys.size() > 0) ? selectedVoiceSearchKeys.get(0).getText().toString() : "";
+                    String tempSelectedRoom = (selectedVoiceSearchKeys.size() > 0) ? selectedVoiceSearchKeys.get(0).getText().toString() : "";
+                    Logger.d(TAG, "tempSelectedRoom: " + tempSelectedRoom);
 
-//                    //Select selected voice search key
-//                    if (AllSettingsManager.isNullOrEmpty(mSelectedVoiceSearchKey)) {
-//                        tvVoiceSearchCategory.setText(getString(R.string.view_voice_search_category));
-//                        mVoiceSearchCategory = KitchenType.NONE;
-//                    } else {
-//                        tvVoiceSearchCategory.setText(mSelectedVoiceSearchKey);
-//                        mVoiceSearchCategory = KitchenType.getKitchenType(mSelectedVoiceSearchKey);
-//
-//                        //Close the flow layout
-//                        expansionLayout.toggle(true);
-//                    }
-//                    //Save selected voice search key
-//                    SessionManager.setStringSetting(getActivity(), SESSION_KEY_SELECTED_VOICE_SEARCH, mVoiceSearchCategory.toString());
-//
-//                    //Set translated default text
-//                    tvTranslatedText.setText(getString(R.string.view_tap_mic_icon_from_below_and_say_whatever_you_want_to_search));
+                    //Save temp selected room
+                    SessionUtil.setTempSelectedRoom(getActivity(), tempSelectedRoom);
                 }
             })
                     .setSingleChoice(true)
                     .build();
 
-            //Set last selected voice search key
-//            String mLastSelectedVoiceSearchKey = SessionManager.getStringSetting(getActivity(), SESSION_KEY_SELECTED_VOICE_SEARCH);
-//            if (!AllSettingsManager.isNullOrEmpty(mLastSelectedVoiceSearchKey)) {
-//                flowLayoutManagerVoiceSearchCategory.clickFlowView(mLastSelectedVoiceSearchKey);
-//            } else {
-//                mVoiceSearchCategory = KitchenType.NONE;
-//                tvVoiceSearchCategory.setText(getString(R.string.view_voice_search_category));
-//            }
+            //Set last temp selected room key
+            String lastTempSelectedRoom = SessionUtil.getTempSelectedRoom(getActivity());
+            if (!AllSettingsManager.isNullOrEmpty(lastTempSelectedRoom)) {
+                flowLayoutManagerRoomName.clickFlowView(lastTempSelectedRoom);
+            }
         }
     }
 }

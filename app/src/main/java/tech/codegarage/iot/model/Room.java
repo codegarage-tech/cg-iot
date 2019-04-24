@@ -10,7 +10,6 @@ import io.realm.annotations.PrimaryKey;
 public class Room extends RealmObject {
 
     @PrimaryKey
-    private int id = -1;
     private String name = "";
     private String image = "";
     private boolean isSelected = false;
@@ -18,18 +17,9 @@ public class Room extends RealmObject {
     public Room() {
     }
 
-    public Room(int id, String name, String image) {
-        this.id = id;
+    public Room(String name, String image) {
         this.name = name;
         this.image = image;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -59,7 +49,6 @@ public class Room extends RealmObject {
     @Override
     public String toString() {
         return "{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
                 ", isSelected=" + isSelected +

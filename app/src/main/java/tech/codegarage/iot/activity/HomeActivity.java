@@ -1,5 +1,6 @@
 package tech.codegarage.iot.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
@@ -17,8 +18,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
-import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 import com.jaeger.library.StatusBarUtil;
 
 import io.armcha.ribble.presentation.navigationview.NavigationId;
@@ -30,6 +29,7 @@ import io.armcha.ribble.presentation.widget.AnimatedImageView;
 import io.armcha.ribble.presentation.widget.AnimatedTextView;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.base.BaseLocationActivity;
+import tech.codegarage.iot.dialog.CloseAppDialog;
 import tech.codegarage.iot.fragment.LoginFragment;
 import tech.codegarage.iot.fragment.OwnDevicesFragment;
 import tech.codegarage.iot.fragment.ProductsFragment;
@@ -177,31 +177,48 @@ public class HomeActivity extends BaseLocationActivity {
             if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
                 getSupportFragmentManager().popBackStack();
             } else {
-                final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(getActivity());
-                dialogBuilder
-                        .withTitle(getString(R.string.dialog_message))
-                        .withMessage(getString(R.string.dialog_do_you_wanna_close_the_app))
-                        .withEffect(Effectstype.Newspager)
-                        .withDuration(700)
-                        .withButton1Text(getString(R.string.dialog_cancel))
-                        .withButton2Text(getString(R.string.dialog_ok))
-                        .isCancelableOnTouchOutside(true)
-                        .setButton1Click(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //Dismiss dialog
-                                dialogBuilder.dismiss();
-                            }
-                        })
-                        .setButton2Click(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //Dismiss dialog
-                                dialogBuilder.dismiss();
+//                final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(getActivity());
+//                dialogBuilder
+//                        .withTitle(getString(R.string.dialog_message))
+//                        .withMessage(getString(R.string.dialog_do_you_wanna_close_the_app))
+//                        .withEffect(Effectstype.Newspager)
+//                        .withDuration(700)
+//                        .withButton1Text(getString(R.string.dialog_cancel))
+//                        .withButton2Text(getString(R.string.dialog_ok))
+//                        .isCancelableOnTouchOutside(true)
+//                        .setButton1Click(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                //Dismiss dialog
+//                                dialogBuilder.dismiss();
+//                            }
+//                        })
+//                        .setButton2Click(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                //Dismiss dialog
+//                                dialogBuilder.dismiss();
+//                                finish();
+//                            }
+//                        })
+//                        .show();
+
+                //Close app dialog
+                CloseAppDialog closeAppDialog = new CloseAppDialog(getActivity(), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case DialogInterface.BUTTON_POSITIVE:
                                 finish();
-                            }
-                        })
-                        .show();
+                                break;
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                break;
+                            case DialogInterface.BUTTON_NEUTRAL:
+                                break;
+                        }
+                    }
+                });
+                closeAppDialog.initView().show();
             }
         }
     }

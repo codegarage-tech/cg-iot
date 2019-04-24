@@ -21,6 +21,7 @@ public class SessionUtil {
     private static final String SESSION_KEY_LAST_SELECTED_DEVICE_SECTION_NAME = "SESSION_KEY_LAST_SELECTED_DEVICE_SECTION_NAME";
     private static final String SESSION_KEY_LAST_SELECTED_DEVICE = "SESSION_KEY_LAST_SELECTED_DEVICE";
     private static final String SESSION_KEY_CHOSEN_DEVICE = "SESSION_KEY_CHOSEN_DEVICE";
+    private static final String SESSION_KEY_TEMP_SELECTED_ROOM = "SESSION_KEY_TEMP_SELECTED_ROOM";
 
     public static User getUser(Context context) {
         User mUser = null;
@@ -75,5 +76,13 @@ public class SessionUtil {
 
     public static void setChosenDevice(Context context, String deviceObjectString){
         SessionManager.setStringSetting(context, SESSION_KEY_CHOSEN_DEVICE, deviceObjectString);
+    }
+
+    public static void setTempSelectedRoom(Context context, String roomName){
+        SessionManager.setStringSetting(context, SESSION_KEY_TEMP_SELECTED_ROOM, roomName);
+    }
+
+    public static String getTempSelectedRoom(Context context){
+        return SessionManager.getStringSetting(context, SESSION_KEY_TEMP_SELECTED_ROOM, "");
     }
 }
