@@ -1,14 +1,22 @@
 package tech.codegarage.iot.fragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.labo.kaji.fragmentanimations.PushPullAnimation;
 import com.nex3z.flowlayout.FlowLayout;
 import com.nex3z.flowlayout.FlowLayoutManager;
+import com.reversecoder.library.event.OnSingleClickListener;
 import com.reversecoder.library.util.AllSettingsManager;
 
 import java.util.ArrayList;
@@ -32,6 +40,7 @@ public class SelectRoomFragment extends BaseFragment {
     private String TAG = "SelectRoomFragment";
     private FlowLayout flowLayoutRoomName;
     private FlowLayoutManager flowLayoutManagerRoomName;
+    private LinearLayout llAddRoom;
 
     public static SelectRoomFragment newInstance() {
         SelectRoomFragment fragment = new SelectRoomFragment();
@@ -51,6 +60,7 @@ public class SelectRoomFragment extends BaseFragment {
     @Override
     public void initFragmentViews(View parentView) {
         flowLayoutRoomName = (FlowLayout) parentView.findViewById(R.id.fl_room_name);
+        llAddRoom = (LinearLayout) parentView.findViewById(R.id.ll_add_room);
     }
 
     @Override
@@ -67,7 +77,12 @@ public class SelectRoomFragment extends BaseFragment {
 
     @Override
     public void initFragmentActions() {
-
+        llAddRoom.setOnClickListener(new OnSingleClickListener() {
+            @Override
+            public void onSingleClick(View view) {
+                showInputRoomDialog();
+            }
+        });
     }
 
     @Override
@@ -143,5 +158,43 @@ public class SelectRoomFragment extends BaseFragment {
                 flowLayoutManagerRoomName.clickFlowView(lastTempSelectedRoom);
             }
         }
+    }
+
+    private void showInputRoomDialog() {
+        final View view = getLayoutInflater().inflate(R.layout.dialog_input_room, null, false);
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                .setView(view)
+                .setCancelable(false)
+                .setTitle("")
+                .setMessage(R.string.txt_please_input_desired_room_name)
+                .setPositiveButton(R.string.dialog_ok, null)
+                .setNegativeButton(R.string.dialog_cancel, null)
+                .show();
+
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check the room name
+                String roomName = ((EditText) view.findViewById(R.id.edt_room_name)).getText().toString();
+                if (TextUtils.isEmpty(roomName)) {
+                    Toast.makeText(getActivity(), getActivity().getString(R.string.txt_please_input_desired_room_name), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Add the room name into the flow layout
+                addFlowItem(roomName);
+
+                dialog.dismiss();
+            }
+        });
+        Button negativeButton = dialog.getButton(Dialog.BUTTON_NEGATIVE);
+        negativeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 }

@@ -20,7 +20,7 @@ public class SessionUtil {
     private static final String SESSION_KEY_LAST_SELECTED_DEVICE_POSITION = "SESSION_KEY_LAST_SELECTED_DEVICE_POSITION";
     private static final String SESSION_KEY_LAST_SELECTED_DEVICE_SECTION_NAME = "SESSION_KEY_LAST_SELECTED_DEVICE_SECTION_NAME";
     private static final String SESSION_KEY_LAST_SELECTED_DEVICE = "SESSION_KEY_LAST_SELECTED_DEVICE";
-    private static final String SESSION_KEY_CHOSEN_DEVICE = "SESSION_KEY_CHOSEN_DEVICE";
+    private static final String SESSION_KEY_TEMP_CHOSEN_DEVICE = "SESSION_KEY_TEMP_CHOSEN_DEVICE";
     private static final String SESSION_KEY_TEMP_SELECTED_ROOM = "SESSION_KEY_TEMP_SELECTED_ROOM";
 
     public static User getUser(Context context) {
@@ -65,17 +65,17 @@ public class SessionUtil {
         SessionManager.setStringSetting(context, SESSION_KEY_LAST_SELECTED_DEVICE, deviceObjectString);
     }
 
-    public static Device getChosenDevice(Context context){
+    public static Device getTempChosenDevice(Context context){
         Device mDevice = null;
-        String device = SessionManager.getStringSetting(context, SESSION_KEY_CHOSEN_DEVICE, "");
+        String device = SessionManager.getStringSetting(context, SESSION_KEY_TEMP_CHOSEN_DEVICE, "");
         if (!AllSettingsManager.isNullOrEmpty(device)) {
             mDevice = APIResponse.getResponseObject(device, Device.class);
         }
         return mDevice;
     }
 
-    public static void setChosenDevice(Context context, String deviceObjectString){
-        SessionManager.setStringSetting(context, SESSION_KEY_CHOSEN_DEVICE, deviceObjectString);
+    public static void setTempChosenDevice(Context context, String deviceObjectString){
+        SessionManager.setStringSetting(context, SESSION_KEY_TEMP_CHOSEN_DEVICE, deviceObjectString);
     }
 
     public static void setTempSelectedRoom(Context context, String roomName){

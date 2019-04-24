@@ -79,7 +79,7 @@ public class ChooseDeviceStep extends Step<String> {
         llChoseDevice.setVisibility(View.VISIBLE);
         tvChoseDevice.setText(device.getName());
         AppUtil.applyMarqueeOnTextView(tvChoseDevice);
-        SessionUtil.setChosenDevice(getContext(), APIResponse.getResponseString(device));
+        SessionUtil.setTempChosenDevice(getContext(), APIResponse.getResponseString(device));
 
         markAsCompletedOrUncompleted(true);
     }

@@ -2,6 +2,7 @@ package tech.codegarage.iot.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
@@ -32,8 +33,9 @@ import static tech.codegarage.iot.util.AllConstants.FRAGMENT_TRANSITION_DURATION
  */
 public class ChooseDeviceFragment extends BaseFragment {
 
-    private LinearLayout llChoseDevice, llQrCode, llManually;
+    private LinearLayout llQrCode, llManually;
     private TextView tvChoseDevice;
+    private CardView cvChoseDevice;
 
     public static ChooseDeviceFragment newInstance() {
         ChooseDeviceFragment fragment = new ChooseDeviceFragment();
@@ -54,12 +56,23 @@ public class ChooseDeviceFragment extends BaseFragment {
     public void initFragmentViews(View parentView) {
         llQrCode = (LinearLayout) parentView.findViewById(R.id.ll_qr_code);
         llManually = (LinearLayout) parentView.findViewById(R.id.ll_manually);
-        llChoseDevice = (LinearLayout) parentView.findViewById(R.id.ll_chose_device);
+        cvChoseDevice = (CardView) parentView.findViewById(R.id.cv_chose_device);
         tvChoseDevice = (TextView) parentView.findViewById(R.id.tv_chose_device);
     }
 
     @Override
     public void initFragmentViewsData() {
+        //Set last selected device
+        Device lastTempChosenDevice = SessionUtil.getTempChosenDevice(getActivity());
+        if (lastTempChosenDevice != null) {
+            cvChoseDevice.setVisibility(View.VISIBLE);
+            tvChoseDevice.setText(lastTempChosenDevice.getName());
+            AppUtil.applyMarqueeOnTextView(tvChoseDevice);
+        }
+    }
+
+    @Override
+    public void initFragmentActions() {
         llQrCode.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
@@ -70,11 +83,6 @@ public class ChooseDeviceFragment extends BaseFragment {
                         .setRequestCode(REQUEST_CODE).initiateScan();
             }
         });
-    }
-
-    @Override
-    public void initFragmentActions() {
-
     }
 
     @Override
@@ -92,10 +100,10 @@ public class ChooseDeviceFragment extends BaseFragment {
                 if (result.getContents() != null) {
                     Device device = DataUtil.getSpecificDeviceById("69");
                     if (device != null) {
-                        llChoseDevice.setVisibility(View.VISIBLE);
+                        cvChoseDevice.setVisibility(View.VISIBLE);
                         tvChoseDevice.setText(device.getName());
                         AppUtil.applyMarqueeOnTextView(tvChoseDevice);
-                        SessionUtil.setChosenDevice(getContext(), APIResponse.getResponseString(device));
+                        SessionUtil.setTempChosenDevice(getContext(), APIResponse.getResponseString(device));
                     } else {
                         Toast.makeText(getActivity(), getString(R.string.txt_sorry_we_could_not_detect_your_device), Toast.LENGTH_SHORT).show();
                     }

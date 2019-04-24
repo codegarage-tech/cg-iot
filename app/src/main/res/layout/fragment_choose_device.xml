@@ -20,33 +20,50 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="250dp"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="-38dp"
-                    android:layout_marginTop="-25dp"
-                    android:layout_marginBottom="@dimen/dp_30"
-                    android:background="@drawable/shape_round_bottom_left"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:rotation="-80">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="@dimen/dp_100"
-                        android:layout_height="@dimen/dp_100"
-                        android:background="@drawable/ic_menu_device"
-                        android:rotation="80" />
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="-38dp"
+                        android:layout_marginTop="-25dp"
+                        android:layout_marginBottom="@dimen/dp_30"
+                        android:background="@drawable/shape_round_bottom_left"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:rotation="-80">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_100"
+                            android:layout_height="@dimen/dp_100"
+                            android:background="@drawable/ic_menu_device"
+                            android:rotation="80" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:padding="@dimen/dp_10"
-                    android:text="CHOOSE YOUR DEVICE."
-                    android:textSize="@dimen/sp_30"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:text="@string/txt_choose_your_iot_device"
+                        android:textSize="@dimen/sp_30"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -65,14 +82,14 @@
 
                     <View
                         android:layout_width="3dp"
-                        android:layout_height="@dimen/dp_60"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="@dimen/dp_10"
                         android:background="@color/red" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Select device using QR code or manually."
+                        android:text="@string/txt_select_device_using_qr_code_or_manually"
                         android:textSize="@dimen/sp_16"
                         android:textStyle="bold" />
 
@@ -111,7 +128,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="QR Code"
+                            android:text="@string/txt_qr_code"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="@dimen/sp_16" />
 
@@ -142,7 +159,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Manually"
+                            android:text="@string/txt_manually"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="@dimen/sp_16" />
 
@@ -152,53 +169,62 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_chose_device"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cv_chose_device"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_60"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_10"
-                android:background="@drawable/shape_rectangle_border_primary_bg_blue_shade"
-                android:orientation="horizontal"
                 android:padding="@dimen/dp_10"
-                android:visibility="gone">
+                android:visibility="gone"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="@dimen/dp_5">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".8"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@drawable/shape_rectangle_border_primary_bg_blue_shade"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10">
 
-                    <TextView
-                        android:id="@+id/tv_chose_device"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="marquee"
-                        android:singleLine="true"
-                        android:text=""
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="@dimen/sp_16" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_chose_device"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:gravity="right|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/vector_accepted" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".2"
-                    android:gravity="right|center_vertical"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/vector_accepted" />
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 

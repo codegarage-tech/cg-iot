@@ -1,19 +1,14 @@
 package tech.codegarage.iot.activity;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import com.reversecoder.library.event.OnSingleClickListener;
@@ -165,7 +160,7 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 int firstPagePosition = 0;
                 if (position == firstPagePosition) {
                     btnTask.setBackgroundResource(R.drawable.selector_plus_circle);
-                    llTask.setVisibility(View.VISIBLE);
+                    llTask.setVisibility(View.GONE);
                     btnPrevious.setVisibility(View.GONE);
                     btnNext.setVisibility(View.VISIBLE);
                 } else if (position == lastPagePosition) {
@@ -249,7 +244,6 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 boolean isFirstPage = vpAddDevice.getCurrentItem() == 0;
                 boolean isInLastPage = vpAddDevice.getCurrentItem() == addDeviceViewPagerAdapter.getCount() - 1;
                 if (isFirstPage) {
-                    showInputRoomDialog();
                 } else if (isInLastPage) {
 
                 }
@@ -334,49 +328,5 @@ public class AddDeviceActivity extends BaseLocationActivity {
 
     public void setTitle(String title) {
         toolbarTitle.setAnimatedText(title, 0L);
-    }
-
-    private void showInputRoomDialog() {
-        final View view = getLayoutInflater().inflate(R.layout.dialog_input_room, null, false);
-        final AlertDialog dialog = new AlertDialog.Builder(getActivity())
-                .setView(view)
-                .setCancelable(false)
-                .setTitle("")
-                .setMessage(R.string.txt_please_input_desired_room_name)
-                .setPositiveButton(R.string.dialog_ok, null)
-                .setNegativeButton(R.string.dialog_cancel, null)
-                .show();
-
-        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-        positiveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check the room name
-                String roomName = ((EditText) view.findViewById(R.id.edt_room_name)).getText().toString();
-                if (TextUtils.isEmpty(roomName)) {
-                    Toast.makeText(getActivity(), getActivity().getString(R.string.txt_please_input_desired_room_name), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // Add the room name into the flow layout
-                SelectRoomFragment selectRoomFragment = (SelectRoomFragment) addDeviceViewPagerAdapter.getRegisteredFragment(0);
-                if (selectRoomFragment != null) {
-                    Logger.d(TAG, TAG + ">>" + "Select room fragment is found.");
-                    selectRoomFragment.addFlowItem(roomName);
-                } else {
-                    Logger.d(TAG, TAG + ">>" + "Select room fragment is not found.");
-                }
-
-                dialog.dismiss();
-            }
-        });
-        Button negativeButton = dialog.getButton(Dialog.BUTTON_NEGATIVE);
-        negativeButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
     }
 }
