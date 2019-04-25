@@ -81,11 +81,14 @@
     <string name="txt_room_name">Room name</string>
     <string name="txt_select_your_room">SELECT YOUR ROOM</string>
     <string name="txt_add_room">Add Room</string>
+    <string name="txt_please_select_one_room">Please select one room</string>
 
     <!-- Choose Device -->
     <string name="txt_choose_your_iot_device">CHOOSE YOUR IOT DEVICE.</string>
     <string name="txt_select_device_using_qr_code_or_manually">Select device using QR code or manually.</string>
     <string name="txt_qr_code">QR Code</string>
     <string name="txt_manually">Manually</string>
+    <string name="txt_select_your_device">Select your device</string>
+    <string name="txt_please_choose_one_device">Please choose one device</string>
 
 </resources>

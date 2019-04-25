@@ -62,13 +62,13 @@ public class DeviceSection extends StatelessSection {
         final ItemViewHolder itemHolder = (ItemViewHolder) holder;
 
         final Device device = mListItem.get(position);
-        AppUtil.loadImage(mContext, itemHolder.ivItemImage, device.getImage(), false, false, true);
+        AppUtil.loadImage(mContext, itemHolder.ivItemImage, device.getImage(), false, true, true);
         itemHolder.tvItemName.setText(device.getName());
-        itemHolder.tvSubItemName.setText("");
+//        itemHolder.tvSubItemName.setText("");
         if (device.isSelected()) {
-            itemHolder.ivItemTick.setVisibility(View.VISIBLE);
+            itemHolder.llItemTick.setVisibility(View.VISIBLE);
         } else {
-            itemHolder.ivItemTick.setVisibility(View.GONE);
+            itemHolder.llItemTick.setVisibility(View.GONE);
         }
 
         itemHolder.rootView.setOnClickListener(new View.OnClickListener() {

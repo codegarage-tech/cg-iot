@@ -110,13 +110,14 @@ public class SelectRoomFragment extends BaseFragment {
     }
 
     public boolean isAllFieldsVerified() {
-//        if (checkoutFoodAdapter.getCount() > 0) {
-//            return true;
-//        } else {
-//            Toast.makeText(getActivity(), getString(R.string.toast_please_add_to_cart_first), Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-        return true;
+        String lastTempSelectedRoom = SessionUtil.getTempSelectedRoom(getActivity());
+        if (!AllSettingsManager.isNullOrEmpty(lastTempSelectedRoom)) {
+            return true;
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.txt_please_select_one_room), Toast.LENGTH_SHORT).show();
+        }
+
+        return false;
     }
 
     /***************************

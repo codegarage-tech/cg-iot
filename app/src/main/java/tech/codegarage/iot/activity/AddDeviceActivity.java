@@ -17,6 +17,7 @@ import io.armcha.ribble.presentation.widget.AnimatedTextView;
 import tech.codegarage.iot.R;
 import tech.codegarage.iot.adapter.AddDeviceViewPagerAdapter;
 import tech.codegarage.iot.base.BaseLocationActivity;
+import tech.codegarage.iot.fragment.ChooseDeviceFragment;
 import tech.codegarage.iot.fragment.SelectRoomFragment;
 import tech.codegarage.iot.geocoding.ReverseGeocoderTask;
 import tech.codegarage.iot.geocoding.UserLocationAddress;
@@ -296,18 +297,28 @@ public class AddDeviceActivity extends BaseLocationActivity {
                 SelectRoomFragment selectRoomFragment = (SelectRoomFragment) addDeviceViewPagerAdapter.getRegisteredFragment(position);
                 if (selectRoomFragment != null) {
                     if (selectRoomFragment.isAllFieldsVerified()) {
-                        Logger.d(TAG, TAG + ">>" + "food items are verified.");
-
+                        Logger.d(TAG, TAG + ">>" + "room selection is verified.");
                         return true;
                     } else {
-                        Logger.d(TAG, TAG + ">>" + "food items are not verified.");
+                        Logger.d(TAG, TAG + ">>" + "room selection is not verified.");
                     }
                 } else {
-                    Logger.d(TAG, TAG + ">>" + "food fragment is null.");
+                    Logger.d(TAG, TAG + ">>" + "room fragment is null.");
                 }
                 return false;
             case CHOOSE_DEVICE:
-                return true;
+                ChooseDeviceFragment chooseDeviceFragment = (ChooseDeviceFragment) addDeviceViewPagerAdapter.getRegisteredFragment(position);
+                if (chooseDeviceFragment != null) {
+                    if (chooseDeviceFragment.isAllFieldsVerified()) {
+                        Logger.d(TAG, TAG + ">>" + "picking device is verified.");
+                        return true;
+                    } else {
+                        Logger.d(TAG, TAG + ">>" + "picking device is not verified.");
+                    }
+                } else {
+                    Logger.d(TAG, TAG + ">>" + "choose device fragment is null.");
+                }
+                return false;
             case ATTACH_APPLIANCE:
                 return true;
             case ENSURE_CONNECTIVITY:

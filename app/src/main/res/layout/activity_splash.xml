@@ -19,13 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"
         android:layout_centerInParent="true"
-        pv:pv_host_text="Smart"
         pv:pv_background_color="@color/colorPrimaryDark"
-        pv:pv_text_color="@color/white"
+        pv:pv_host_text="Smart"
         pv:pv_host_text_anim_time="1000"
+        pv:pv_host_text_size="50sp"
         pv:pv_particle_text="Home"
+        pv:pv_particle_text_size="50sp"
         pv:pv_spread_anim_time="500"
-        pv:pv_text_anim_time="1000" />
+        pv:pv_text_anim_time="1000"
+        pv:pv_text_color="@color/white" />
 
     <!--    <ImageView
             android:id="@+id/iv_app_logo"
