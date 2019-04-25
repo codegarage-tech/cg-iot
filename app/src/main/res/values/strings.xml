@@ -91,4 +91,11 @@
     <string name="txt_select_your_device">Select your device</string>
     <string name="txt_please_choose_one_device">Please choose one device</string>
 
+    <!-- Connect Device -->
+    <string name="txt_connect_to_internet">CONNECT TO INTERNET.</string>
+    <string name="txt_connect_your_iot_device_to_wifi">Connect your IoT device to wifi. The wif strength should not be more than 2.4G HZ. You can also choose your desired wifi.</string>
+    <string name="txt_choose_wifi">Choose Wifi</string>
+    <string name="txt_searching">Searching...</string>
+    <string name="txt_password">Password</string>
+
 </resources>

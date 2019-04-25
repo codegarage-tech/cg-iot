@@ -18,6 +18,7 @@ import tech.codegarage.iot.R;
 import tech.codegarage.iot.adapter.AddDeviceViewPagerAdapter;
 import tech.codegarage.iot.base.BaseLocationActivity;
 import tech.codegarage.iot.fragment.ChooseDeviceFragment;
+import tech.codegarage.iot.fragment.ConnectDeviceFragment;
 import tech.codegarage.iot.fragment.SelectRoomFragment;
 import tech.codegarage.iot.geocoding.ReverseGeocoderTask;
 import tech.codegarage.iot.geocoding.UserLocationAddress;
@@ -199,7 +200,10 @@ public class AddDeviceActivity extends BaseLocationActivity {
                         break;
                     case CONNECT_DEVICE:
                         setTitle(getString(R.string.title_fragment_connect_device));
-//                        setRightMenu(false, 0, null);
+                        ConnectDeviceFragment connectDeviceFragment = (ConnectDeviceFragment) addDeviceViewPagerAdapter.getRegisteredFragment(position);
+                        if (connectDeviceFragment != null) {
+                            connectDeviceFragment.startWifiScanTask();
+                        }
                         break;
                     case PREVIEW_SCREEN:
                         setTitle(getString(R.string.title_fragment_preview));
