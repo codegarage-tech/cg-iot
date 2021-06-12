@@ -1,0 +1,628 @@
+{
+  "status": 1,
+  "message": "Response successful",
+  "data": [
+    {
+      "category_id": "3",
+      "category_name": "Gang Board",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": [
+        {
+          "product_id": "50",
+          "product_qr_code": "5430",
+          "product_name": "5 Gang Board",
+          "product_type": {
+            "product_type_id": "3",
+            "product_type_name": "wifi_gang_board_five"
+          },
+          "product_images": [
+            {
+              "id": "1",
+              "url": "https://i.ebayimg.com/images/g/IPEAAOSwIsdcJfeq/s-l300.jpg",
+              "title": "Dummy Image title",
+              "description": "Works with Amazon Alexa.<bullet>No wiring changes required. Fits inside swich board Works with existing electrical switchs and appliances.<bullet>Add intelligence with acessories.<bullet>Everything is perfectly orgainized for future.<bullet>Controls FAN speed."
+            },
+            {
+              "id": "1",
+              "url": "https://content.jdmagicbox.com/quickquotes/images_main/havells_oro_20a_motor_starter_switch_12588521_1.jpg",
+              "title": "Dummy Image title",
+              "description": "Contacts made of Silver cadmium oxide(Agcdo) which has a good performance against electric arc and melt weld. Metal parts are made of high conductive Copper alloys."
+            }
+          ],
+          "product_price": 500,
+          "product_description": "Its a 5 Gang Board",
+          "product_discount_percentage": 10,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        }
+      ]
+    },
+    {
+      "category_id": "2",
+      "category_name": "Motor",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": [
+        {
+          "product_id": "60",
+          "product_qr_code": "5430",
+          "product_name": "Single Motor(wifi based)",
+          "product_type": {
+            "product_type_id": "1",
+            "product_type_name": "wifi_motor_one"
+          },
+          "product_images": [
+            {
+              "id": "2",
+              "url": "https://content.jdmagicbox.com/quickquotes/images_main/havells_oro_20a_motor_starter_switch_12588521_1.jpg",
+              "title": "Dummy Image title",
+              "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+            }
+          ],
+          "product_price": 85,
+          "product_description": "Its a Single Motor(wifi based)",
+          "product_discount_percentage": 6,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        },
+        {
+          "product_id": "61",
+          "product_qr_code": "5430",
+          "product_name": "Double Motor(wifi based)",
+          "product_type": {
+            "product_type_id": "2",
+            "product_type_name": "wifi_motor_two"
+          },
+          "product_images": [
+            {
+              "id": "3",
+              "url": "https://5.imimg.com/data5/YV/EY/MY-31236291/submersible-pump-control-panels-500x500.jpg",
+              "title": "Dummy Image title",
+              "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+            }
+          ],
+          "product_price": 100,
+          "product_description": "Its a  double motor",
+          "product_discount_percentage": 12,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        }
+      ]
+    },
+    {
+      "category_id": "1",
+      "category_name": "Socket",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": [
+        {
+          "product_id": "69",
+          "product_qr_code": "5430",
+          "product_name": "Single 2 Pin Socket",
+          "product_type": {
+            "product_type_id": "4",
+            "product_type_name": "wifi_2_pin_socket_one"
+          },
+          "product_images": [
+            {
+              "id": "4",
+              "url": "https://i.ebayimg.com/images/g/IPEAAOSwIsdcJfeq/s-l300.jpg",
+              "title": "Dummy Image title",
+              "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+            }
+          ],
+          "product_price": 100,
+          "product_description": "Its a single 2 pin socket",
+          "product_discount_percentage": 12,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        }
+      ]
+    },
+    {
+      "category_id": "5",
+      "category_name": "Holder",
+      "category_thumbnail": "https://media.screwfix.com/is/image//ae235?src=ae235/93835_P&$prodImageMedium$",
+      "products": [
+        {
+          "product_id": "75",
+          "product_qr_code": "5430",
+          "product_name": "Pin Holder",
+          "product_type": {
+            "product_type_id": "5",
+            "product_type_name": "wifi_holder_pin"
+          },
+          "product_images": [
+            {
+              "id": "4",
+              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0M8kTPLP5oJ4y2A0KhSrdGMoJ-iAtkhZtCsHrnsv26lhKQ8T",
+              "title": "Dummy Image title",
+              "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+            }
+          ],
+          "product_price": 100,
+          "product_description": "Its a pin holder",
+          "product_discount_percentage": 10,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        },
+        {
+          "product_id": "76",
+          "product_name": "Patch Holder",
+          "product_type": {
+            "product_type_id": "6",
+            "product_type_name": "wifi_holder_patch"
+          },
+          "product_qr_code": "5430",
+          "product_images": [
+            {
+              "id": "5",
+              "url": "https://img.dxcdn.com/productimages/sku_245535_1.jpg",
+              "title": "Dummy Image title",
+              "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+            }
+          ],
+          "product_price": 110,
+          "product_description": "Its a patch holder",
+          "product_discount_percentage": 8,
+          "product_colors": [
+            {
+              "color_id": "1",
+              "color_name": "White"
+            },
+            {
+              "color_id": "2",
+              "color_name": "Blue"
+            },
+            {
+              "color_id": "3",
+              "color_name": "Pink"
+            }
+          ],
+          "product_sizes": [
+            {
+              "size_id": "1",
+              "size_name": "Small"
+            },
+            {
+              "size_id": "2",
+              "size_name": "Medium"
+            },
+            {
+              "size_id": "3",
+              "size_name": "Large"
+            }
+          ],
+          "product_connections": [
+            {
+              "connection_id": "1",
+              "connection_name": "Wifi",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "2",
+              "connection_name": "Bluetooth",
+              "connection_thumbnail": ""
+            },
+            {
+              "connection_id": "3",
+              "connection_name": "Mobile Data",
+              "connection_thumbnail": ""
+            }
+          ],
+          "product_subscriptions": [
+            {
+              "subscription_id": "1",
+              "subscription_name": "Basic",
+              "subscription_price": 0,
+              "subscription_description": "Free"
+            },
+            {
+              "subscription_id": "2",
+              "subscription_name": "Normal",
+              "subscription_price": 20,
+              "subscription_description": "Per Week"
+            },
+            {
+              "subscription_id": "3",
+              "subscription_name": "Silver",
+              "subscription_price": 100,
+              "subscription_description": "Per Month"
+            },
+            {
+              "subscription_id": "4",
+              "subscription_name": "Gold",
+              "subscription_price": 500,
+              "subscription_description": "Half Yearly"
+            },
+            {
+              "subscription_id": "5",
+              "subscription_name": "Diamond",
+              "subscription_price": 1000,
+              "subscription_description": "Yearly"
+            }
+          ],
+          "is_favorite": 0
+        }
+      ]
+    }
+  ]
+}

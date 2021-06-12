@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorShadeBlue"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_base" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="left"
+                android:text="@string/txt_set_timer_task_title"
+                android:textColor="@color/colorGrey"
+                android:textSize="35sp" />
+
+           <include
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/dp_10"
+               android:layout_marginRight="@dimen/dp_10"
+               android:layout_marginTop="@dimen/dp_15"
+               android:layout_marginBottom="@dimen/dp_20"
+               layout="@layout/layout_expandable_new_timer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dip"
+                android:background="@drawable/custom_header_curve_shape"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_5">
+
+                        <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:padding="16dp"
+                            app:borderColor="@color/colorPrimaryDark"
+                            app:borderWidth="2dp"
+                            app:cornerRadius="8dp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:background="@drawable/selector_shipping_edt_bg"
+                                android:completionThreshold="3"
+                                android:drawableRight="@drawable/vector_ic_calendar_24dp"
+                                android:drawablePadding="@dimen/dp_2"
+                                android:drawableTint="@color/colorPrimary"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingRight="@dimen/dp_4"
+                                android:hint="@string/txt_set_timer_start_date"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorWhiteOff" />
+                        </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_10">
+
+                        <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:padding="16dp"
+                            app:borderColor="@color/colorPrimaryDark"
+                            app:borderWidth="2dp"
+                            app:cornerRadius="8dp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:background="@drawable/selector_shipping_edt_bg"
+                                android:completionThreshold="3"
+                                android:drawableRight="@drawable/vector_ic_calendar_24dp"
+                                android:drawableTint="@color/colorPrimary"
+                                android:drawablePadding="@dimen/dp_2"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingRight="@dimen/dp_4"
+                                android:hint="@string/txt_set_timer_end_date"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorWhiteOff" />
+                        </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_5">
+
+                        <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:padding="16dp"
+                            app:borderColor="@color/colorPrimaryDark"
+                            app:borderWidth="2dp"
+                            app:cornerRadius="8dp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:background="@drawable/selector_shipping_edt_bg"
+                                android:completionThreshold="3"
+                                android:drawableRight="@drawable/vector_ic_time_24dp"
+                                android:drawablePadding="@dimen/dp_2"
+                                android:drawableTint="@color/colorPrimary"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingRight="@dimen/dp_4"
+                                android:hint="@string/txt_set_timer_start_time"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorWhiteOff" />
+
+                        </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_10">
+
+                        <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:padding="16dp"
+                            app:borderColor="@color/colorPrimaryDark"
+                            app:borderWidth="2dp"
+                            app:cornerRadius="8dp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:background="@drawable/selector_shipping_edt_bg"
+                                android:completionThreshold="3"
+                                android:drawableRight="@drawable/vector_ic_time_24dp"
+                                android:drawablePadding="@dimen/dp_2"
+                                android:drawableTint="@color/colorPrimary"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingRight="@dimen/dp_4"
+                                android:hint="@string/txt_set_timer_end_time"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorWhiteOff" />
+
+                        </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_15">
+
+                    <LinearLayout
+                        android:id="@+id/lin_lay_time_view"
+                        android:layout_width="40dip"
+                        android:layout_height="35dip"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/dp_10"
+                        android:background="@drawable/shape_rounded_timer_remind_transparent_blue">
+
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_5"
+                            app:srcCompat="@drawable/vector_notification_empty"
+                            android:tint="@color/colorAirBlue"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/lin_lay_time_view"
+                            android:layout_toLeftOf="@+id/switch_remind_me"                            android:layout_gravity="center_vertical"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/txt_set_timer_remind_me"
+                            android:textColor="@color/color_grey_800"
+                            android:textSize="@dimen/sp_16" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_remind_me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textOff="@string/txt_set_timer_switch_no"
+                        android:textOn="@string/txt_set_timer_switch_yes"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:showText="true"
+                        app:track="@drawable/switch_custom_truck" />
+
+                   <!-- <ImageView
+                        android:id="@+id/row_image_view_option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_8"
+                        android:paddingEnd="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_8"
+                        app:srcCompat="@drawable/three_horizontal_dots" />-->
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

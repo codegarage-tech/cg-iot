@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_channel_id" translatable="false">messages</string>
+    <string name="notification_channel_name">FCM messages</string>
+    <item name="notification_id_app" type="id" />
+    <item name="notification_id_link" type="id" />
+    <item name="notification_id_ping" type="id" />
+    <item name="notification_id_raw" type="id" />
+    <item name="notification_id_text" type="id" />
+</resources>

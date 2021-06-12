@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_view"
+    android:layout_width="130dip"
+    android:layout_height="240dip"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dp_4"
+    android:layout_marginRight="@dimen/dp_4"
+    android:background="@drawable/drop_shadow_transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".6"
+            android:orientation="vertical"
+            android:background="@drawable/shape_round_primary_top_curve">
+
+
+            <RelativeLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_item_image"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/dp_5"
+                    android:background="@drawable/circle_shadow_bg" />
+
+                <ImageView
+                    android:layout_width="22dip"
+                    android:layout_height="22dip"
+                    app:srcCompat="@drawable/vector_favourite_empty_white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/dp_5" />
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".4"
+            android:background="@drawable/shape_round_rectangular_bottom_curve">
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text=""
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold"
+                android:textColor="@color/dark_grey"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

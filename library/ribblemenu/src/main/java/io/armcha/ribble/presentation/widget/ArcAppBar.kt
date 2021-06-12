@@ -5,11 +5,12 @@ import android.graphics.Canvas
 import android.graphics.Outline
 import android.graphics.Path
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.design.widget.AppBarLayout
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
+import androidx.annotation.RequiresApi
+import androidx.core.view.ViewCompat.setLayerType
+import com.google.android.material.appbar.AppBarLayout
 
 /**
  * Created by Chatikyan on 20.09.2017.
@@ -31,7 +32,7 @@ class ArcAppBar : AppBarLayout {
     override fun dispatchDraw(canvas: Canvas) {
         if (clipPath != null) {
             canvas.save()
-            canvas.clipPath(clipPath)
+            canvas.clipPath(clipPath!!)
         }
         super.dispatchDraw(canvas)
         canvas.restore()
@@ -60,7 +61,7 @@ class ArcAppBar : AppBarLayout {
             outlineProvider = object : ViewOutlineProvider() {
                 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 override fun getOutline(view: View, outline: Outline) {
-                    outline.setConvexPath(clipPath)
+                    outline.setConvexPath(clipPath!!)
                 }
             }
         }

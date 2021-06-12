@@ -1,9 +1,10 @@
 package io.armcha.ribble.presentation.navigationview.viewholder;
 
-import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import io.armcha.ribble.R;
 import io.armcha.ribble.presentation.navigationview.NavigationItem;
@@ -28,7 +29,7 @@ public class NavigationViewHolder extends BaseViewHolder<NavigationItem> {
     @Override
     public void setData(final NavigationItem data) {
 
-        itemText.setText(data.getNavigationId().getValue());
+        itemText.setText(data.getNavigationId().getLabel(getContext()));
         itemIcon.setImageResource(data.getIcon());
 
         if (data.isSelected()) {

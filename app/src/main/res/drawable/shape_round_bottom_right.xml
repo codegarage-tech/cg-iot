@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <corners
-        android:bottomRightRadius="100dp"/>
+        android:bottomRightRadius="100dp"
+        />
 
     <gradient
         android:type="sweep"

@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "subscription_id": "1",
+      "subscription_name": "Basic",
+      "subscription_price": 0,
+      "subscription_description": "Free"
+    },
+    {
+      "subscription_id": "2",
+      "subscription_name": "Normal",
+      "subscription_price": 20,
+      "subscription_description": "Per Week"
+    },
+    {
+      "subscription_id": "3",
+      "subscription_name": "Silver",
+      "subscription_price": 100,
+      "subscription_description": "Per Month"
+    },
+    {
+      "subscription_id": "4",
+      "subscription_name": "Gold",
+      "subscription_price": 500,
+      "subscription_description": "Half Yearly"
+    },
+    {
+      "subscription_id": "5",
+      "subscription_name": "Diamond",
+      "subscription_price": 1000,
+      "subscription_description": "Yearly"
+    }
+  ],
+  "message": "Response successful",
+  "status": 1
+}

@@ -3,13 +3,13 @@ package io.armcha.ribble.presentation.utils.extensions
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
-import android.support.annotation.Px
-import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.Px
+import androidx.core.content.ContextCompat
 
 /**
  * Created by Chatikyan on 14.09.2017.

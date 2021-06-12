@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "connection_id": "1",
+      "connection_name": "Wifi",
+      "connection_thumbnail": ""
+    },
+    {
+      "connection_id": "2",
+      "connection_name": "Bluetooth",
+      "connection_thumbnail": ""
+    },
+    {
+      "connection_id": "3",
+      "connection_name": "Mobile Data",
+      "connection_thumbnail": ""
+    }
+  ],
+  "message": "Response successful",
+  "status": 1
+}

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_base" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="@color/colorShadeBlue">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                app:borderColor="@color/colorPrimaryDark"
+                app:borderWidth="2dp"
+                app:cornerRadius="8dp"
+                android:padding="16dp">
+
+                <com.meembusoft.iot.view.ClearableEditText
+                    android:id="@+id/et_shipping_address_contact_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:hint="@string/txt_shipping_address_contact_name_hint"
+                    android:textColorHint="@color/colorWhiteOff"
+                    android:singleLine="true"
+                    android:drawableRight="@drawable/ic_cancel_black_24dp"
+                    android:background="@drawable/selector_shipping_edt_bg"
+                    android:completionThreshold="3"/>
+
+            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+
+            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                app:borderColor="@color/colorPrimaryDark"
+                app:borderWidth="2dp"
+                app:cornerRadius="8dp"
+                android:padding="16dp">
+
+                <com.meembusoft.iot.view.ClearableEditText
+                    android:id="@+id/et_shipping_address_street_assress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/txt_shipping_address_street_address_hint"
+                    android:textColorHint="@color/colorWhiteOff"
+                    android:singleLine="true"
+                    android:drawableRight="@drawable/ic_cancel_black_24dp"
+
+                    android:background="@drawable/selector_shipping_edt_bg"
+                    android:completionThreshold="3"/>
+
+            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                app:borderColor="@color/colorPrimaryDark"
+                app:borderWidth="2dp"
+                app:cornerRadius="8dp"
+                android:padding="16dp">
+                <com.meembusoft.iot.view.ClearableEditText
+                    android:id="@+id/et_shipping_address_ci"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/txt_shipping_address_city_hint"
+                    android:textColorHint="@color/colorWhiteOff"
+                    android:singleLine="true"
+                    android:drawableRight="@drawable/ic_cancel_black_24dp"
+                    android:background="@drawable/selector_shipping_edt_bg"
+                    android:completionThreshold="3"/>
+
+            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                app:borderColor="@color/colorPrimaryDark"
+                app:borderWidth="2dp"
+                app:cornerRadius="8dp"
+                android:padding="16dp">
+
+                <com.meembusoft.iot.view.ClearableEditText
+                    android:id="@+id/et_shipping_address_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/txt_shipping_address_area_hint"
+                    android:textColorHint="@color/colorWhiteOff"
+                    android:singleLine="true"
+                    android:drawableRight="@drawable/ic_cancel_black_24dp"
+                    android:background="@drawable/selector_shipping_edt_bg"
+                    android:completionThreshold="3"/>
+
+            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+            <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                app:borderColor="@color/colorPrimaryDark"
+                app:borderWidth="2dp"
+                app:cornerRadius="8dp"
+                android:padding="16dp">
+                <com.meembusoft.iot.view.ClearableEditText
+                    android:id="@+id/et_shipping_address_zip_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="@string/txt_shipping_address_city_zip_hint"
+                    android:textColorHint="@color/colorWhiteOff"
+                    android:singleLine="true"
+                    android:drawableRight="@drawable/ic_cancel_black_24dp"
+
+                    android:background="@drawable/selector_shipping_edt_bg"
+                    android:completionThreshold="3"/>
+
+            </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_default_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_shipping_address_set_default_address_title"
+                    android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sc_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_address_add"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="48dp"
+                android:text="@string/txt_save"
+                android:gravity="center"
+                style="@style/MainButtonAccent"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

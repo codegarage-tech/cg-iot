@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="payload_app">App</string>
+    <string name="payload_app_store">Play Store</string>
+    <string name="payload_app_uninstall">Uninstall</string>
+    <string name="payload_link">Link</string>
+    <string name="payload_link_open">Open</string>
+    <string name="payload_ping">Ping</string>
+    <string name="payload_raw">Raw</string>
+    <string name="payload_text">Text</string>
+    <string name="payload_text_copy">Copy</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+
+    <string name="title_activity_app_notifications">APP NOTIFICATIONS</string>
+    <string name="snackbar_item_deleted" tools:ignore="PluralsCandidate">%d deleted</string>
+    <string name="snackbar_item_undo">Undo</string>
+</resources>

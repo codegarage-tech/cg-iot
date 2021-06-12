@@ -2,11 +2,11 @@ package io.armcha.ribble.presentation.widget
 
 import android.content.Context
 import android.graphics.Color
-import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.graphics.drawable.DrawableCompat
 import io.armcha.ribble.presentation.utils.extensions.takeColor
 
 /**

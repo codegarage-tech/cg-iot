@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_base" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorShadeBlue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_5">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toStartOf="@+id/lin_order_favourite"
+                android:layout_toLeftOf="@+id/lin_order_favourite"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Selected Timer Zone"
+                android:textColor="@color/color_grey_800"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"/>
+
+                <include
+                    layout="@layout/row_timer_view"/>
+                <include
+                    layout="@layout/row_timer_view2"/>
+                <include
+                    layout="@layout/row_timer_view3"/>
+                <include
+                    layout="@layout/row_timer_view"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

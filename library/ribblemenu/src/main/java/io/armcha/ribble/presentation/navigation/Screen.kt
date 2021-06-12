@@ -1,6 +1,6 @@
 package io.armcha.ribble.presentation.navigation
 
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 
 /**
  * Created by Chatikyan on 21.09.2017.

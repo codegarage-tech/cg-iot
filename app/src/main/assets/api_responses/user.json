@@ -1,0 +1,17 @@
+{
+  "data": {
+    "user_id": "1",
+    "user_facebook_id": "1",
+    "user_name": "Md. Rashadul Alam",
+    "user_phone": "01794620787",
+    "user_email": "rashed.droid@gmail.com",
+    "user_address": "Ka-13, South Kuril, Dhaka-1229",
+    "user_password": "123456",
+    "user_image": {
+      "id": "3",
+      "url": ""
+    }
+  },
+  "message": "Response successful",
+  "status": 1
+}

@@ -1,0 +1,22 @@
+{
+  "type": "announcement",
+  "title": "Drivemode: Handsfree Messages And Call For Driving",
+  "message": "Drivemode simplifies how you manage calls and messages while driving. With a streamlined interface to safely answer calls or send and hear messages, Drivemode’s voice-enabled commands and large buttons let you to focus on driving.",
+  "data": {
+    "announcement_title": "",
+    "announcement_slider_detail": [
+      {
+        "feature_title": "",
+        "feature_image": "",
+        "feature_description": ""
+      }
+    ],
+    "announcement_scroll_detail": [
+      {
+        "feature_title": "",
+        "feature_image": "",
+        "feature_description": ""
+      }
+    ]
+  }
+}

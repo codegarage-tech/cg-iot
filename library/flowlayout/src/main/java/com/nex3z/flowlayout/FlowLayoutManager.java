@@ -1,10 +1,11 @@
 package com.nex3z.flowlayout;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;

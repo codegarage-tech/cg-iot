@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_base" />
+
+        <RelativeLayout
+            android:id="@+id/rl_device_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/sliderview_device"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderCircularHandlerEnabled="true"
+                app:sliderScrollTimeInSec="5"
+                app:sliderStartAutoCycle="true" />
+
+            <com.scwang.wave.MultiWaveHeader
+                android:id="@+id/multiwaveheader_tank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleY="-1"
+                android:visibility="visible"
+                app:mwhCloseColor="@color/colorPrimary"
+                app:mwhEnableFullScreen="true"
+                app:mwhProgress="0.45"
+                app:mwhShape="Rect"
+                app:mwhStartColor="@color/colorPrimaryDark"
+                app:mwhVelocity="0.30"
+                app:mwhWaveHeight="100dp"
+                app:mwhWaves="-2" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedscrollview_product_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAlphaShadeBlue">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_device_detail_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_150"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/shape_device_detail_header">
+
+                        <ImageView
+                            android:id="@+id/iv_device_detail_favorite"
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp_5"
+                            app:srcCompat="@drawable/vector_favourite_fill_primary" />
+
+                        <ImageView
+                            android:id="@+id/iv_connected_connection"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_10"/>
+
+                        <TextView
+                            android:id="@+id/tv_connected_connection_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_connected_connection"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/txt_disconnected"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="@dimen/sp_12"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/tv_connected_connection_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_connected_connection_status"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_14" />
+
+                        <include
+                            layout="@layout/layout_device_detail_temperature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_connected_connection_name"
+                            android:layout_centerHorizontal="true" />
+
+                    </RelativeLayout>
+
+                    <include
+                        layout="@layout/layout_device_detail_wifi_gang_board_five"
+                        android:visibility="visible" />
+
+                    <include
+                        layout="@layout/layout_device_detail_wifi_motor_one"
+                        android:visibility="gone" />
+
+                    <include
+                        layout="@layout/layout_device_detail_wifi_motor_two"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

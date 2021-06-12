@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+        }
+    }
+}
+
+android {
+
+    compileSdkVersion appCompileSdkVersion
+    buildToolsVersion appBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion appMinSdkVersion
+        targetSdkVersion appTargetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+
+    // MQTT
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:$eclipsePahoClientMQTTv3Version"
+    implementation "org.eclipse.paho:org.eclipse.paho.android.service:$eclipsePahoAndroidServiceVersion"
+    implementation "org.greenrobot:eventbus:$eventBusVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+}

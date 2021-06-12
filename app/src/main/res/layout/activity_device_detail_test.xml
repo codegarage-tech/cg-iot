@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_base" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorShadeBlue"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/unselect_room_item"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    app:srcCompat="@drawable/vector_wifi_selected" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Wifi"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/unselect_room_item"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_5"
+                    app:srcCompat="@drawable/vector_mobile_data" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Mobile Data"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/unselect_room_item"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:background="@drawable/vector_bluetooth" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Bluetooth"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/shape_line_vertical_fading_edge_primary" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorShadeBlue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20"
+                android:paddingLeft="@dimen/dp_7"
+                android:paddingRight="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_7"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/shape_round_right_toptbotttom_border_radius"
+                android:backgroundTint="@color/white">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_25"
+                            app:srcCompat="@drawable/vector_temperature" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Temperature"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_4"
+                    android:background="@drawable/shape_line_vertical_fading_edge_primary" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            app:srcCompat="@drawable/vector_humidity" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Humanity"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_4"
+                    android:background="@drawable/shape_line_vertical_fading_edge_primary" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            app:srcCompat="@drawable/vector_light_green"
+                            android:tint="@color/colorPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80%"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:gravity="center"
+                        android:text="Lighting"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drop_shadow_transparent"
+                        android:backgroundTint="@color/colorAlphaShadeBlue"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_20">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:background="@drawable/vector_temperature" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="100"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drop_shadow_transparent"
+                        android:backgroundTint="@color/colorAlphaShadeBlue"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_20">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:background="@drawable/vector_humidity" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="100"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/custom_shape_semi_curve_left_rectangle"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_15">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.sdsmdg.harjot.crollerTest.Croller
+                        android:id="@+id/croller_light1"
+                        android:layout_width="@dimen/dp_120"
+                        android:layout_height="@dimen/dp_120"
+                        app:back_circle_color="#EDEDED"
+                        app:enabled="true"
+                        app:indicator_color="#0B3C49"
+                        app:indicator_width="10"
+                        app:is_continuous="false"
+                        app:label=""
+                        app:label_color="#000000"
+                        app:label_disabled_color="#8DFAA091"
+                        app:label_font="fonts/Pattaya-Regular.ttf"
+                        app:label_size="0dp"
+                        app:label_style="italic"
+                        app:main_circle_color="#FFFFFF"
+                        app:max="11"
+                        app:progress_primary_circle_size="10"
+                        app:progress_primary_color="#0B3C49"
+                        app:progress_secondary_circle_size="8"
+                        app:progress_secondary_color="#EDEDED"
+                        app:start_offset="0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Light 1 regulator"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                    android:backgroundTint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:background="@drawable/circle_shadow_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_8">
+
+                        <net.colindodd.toggleimagebutton.ToggleImageButton
+                            android:id="@+id/btn_light1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            app:tib_drawable_off="@drawable/vector_light_grey"
+                            app:tib_drawable_on="@drawable/vector_light_green" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:text="Light 1"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-42dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/custom_shape_semi_curve_left"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_15">
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.sdsmdg.harjot.crollerTest.Croller
+                        android:id="@+id/croller_fan"
+                        android:layout_width="@dimen/dp_120"
+                        android:layout_height="@dimen/dp_120"
+                        app:back_circle_color="#EDEDED"
+                        app:enabled="true"
+                        app:indicator_color="#0B3C49"
+                        app:indicator_width="10"
+                        app:is_continuous="false"
+                        app:label=""
+                        app:label_color="#000000"
+                        app:label_disabled_color="#8DFAA091"
+                        app:label_font="fonts/Pattaya-Regular.ttf"
+                        app:label_size="0dp"
+                        app:label_style="italic"
+                        app:main_circle_color="#FFFFFF"
+                        app:max="11"
+                        app:progress_primary_circle_size="10"
+                        app:progress_primary_color="#0B3C49"
+                        app:progress_secondary_circle_size="8"
+                        app:progress_secondary_color="#EDEDED"
+                        app:start_offset="0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Fan regulator"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                    android:backgroundTint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:background="@drawable/circle_shadow_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_15">
+
+                        <net.colindodd.toggleimagebutton.ToggleImageButton xmlns:tib="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/btn_fan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tib:tib_drawable_off="@drawable/vector_fan_grey"
+                            tib:tib_drawable_on="@drawable/vector_fan_green" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:text="Fan"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-39dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/custom_shape_semi_curve_left"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_15">
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shadow_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_8">
+
+                        <net.colindodd.toggleimagebutton.ToggleImageButton
+                            android:id="@+id/btn_light2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:tib_drawable_off="@drawable/vector_light_grey"
+                            app:tib_drawable_on="@drawable/vector_light_green" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="Light 2"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@drawable/shape_line_vertical_fading_edge_primary"
+                    android:backgroundTint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shadow_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_15">
+
+                        <net.colindodd.toggleimagebutton.ToggleImageButton xmlns:tib="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/btn_socket"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tib:tib_drawable_off="@drawable/vector_socket_grey"
+                            tib:tib_drawable_on="@drawable/vector_socket_green" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="Socket"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

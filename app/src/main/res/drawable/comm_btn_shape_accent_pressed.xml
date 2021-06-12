@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:insetLeft="@dimen/comm_button_inset_horizontal_material" android:insetRight="@dimen/comm_button_inset_horizontal_material" android:insetTop="@dimen/comm_button_inset_vertical_material" android:insetBottom="@dimen/comm_button_inset_vertical_material">
+    <shape android:shape="rectangle">
+        <corners android:radius="@dimen/comm_control_corner_material"/>
+        <solid android:color="#d44e43"/>
+        <padding android:left="@dimen/comm_button_padding_horizontal_material"
+            android:top="@dimen/comm_button_padding_vertical_material"
+            android:right="@dimen/comm_button_padding_horizontal_material"
+            android:bottom="@dimen/comm_button_padding_vertical_material"/>
+    </shape>
+</inset>

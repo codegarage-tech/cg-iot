@@ -2,8 +2,8 @@ package io.armcha.ribble.presentation.widget
 
 import android.content.Context
 import android.graphics.Typeface
-import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatTextView
 
 /**
  * Created by Chatikyan on 16.02.2017.

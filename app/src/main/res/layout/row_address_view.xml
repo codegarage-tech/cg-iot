@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/rl_driver_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="@dimen/dp_5">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_3"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/rounded_bg_curve_default"
+                    android:text="Default"
+                    android:textColor="@color/color_address_red"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/ll_order_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_default"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="left|center"
+                    android:padding="@dimen/dp_10">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/goods_list_item_cb_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:checked="true"
+                        android:textAllCaps="false"
+                        app:buttonTint="@color/colorPrimaryDark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10">
+
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toStartOf="@+id/lin_order_favourite"
+                            android:layout_toLeftOf="@+id/lin_order_favourite"
+                            android:text="Md. Rashadul Alam, +8801794620787"
+                            android:textColor="@color/color_grey_800"
+                            android:textSize="@dimen/sp_16"
+                            android:paddingLeft="@dimen/dp_2"
+                            android:paddingRight="@dimen/dp_2"/>
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_2"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toStartOf="@+id/lin_order_favourite"
+                        android:layout_toLeftOf="@+id/lin_order_favourite"
+                        android:text="House 7, Road 2/c, Block J, Baridhara, Baridhara,Dhaka,BD-1212"
+                        android:textColor="@color/color_grey_800"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/tv_shipping_address_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_12"
+                        android:paddingRight="@dimen/dp_12"
+                        android:paddingTop="@dimen/dp_3"
+                        android:paddingBottom="@dimen/dp_3"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/rounded_button_edit_blue"
+                        android:text="Edit"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"/>
+
+                        <TextView
+                            android:id="@+id/tv_set_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:padding="@dimen/dp_3"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toStartOf="@+id/lin_order_favourite"
+                            android:layout_toLeftOf="@+id/lin_order_favourite"
+                            android:text="Set as Default"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_18"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>

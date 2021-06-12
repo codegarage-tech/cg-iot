@@ -4,13 +4,55 @@
     <color name="colorPrimaryDark">#44B0D1</color>
     <color name="colorAccent">#EB8EAE</color>
 
+    <color name="switcher_on_color">#48ea8b</color>
+    <color name="switcher_off_color">#ff4651</color>
+    <color name="switcher_icon_color">@android:color/white</color>
+
     <color name="colorShadeRed">#1FE63158</color>
+    <color name="colorShadeTransparent">#55000000</color>
+    <color name="colorShadeTransparentBlue">#809CD8EB</color>
+    <color name="colorShadeTransparentLight">#22000000</color>
     <color name="colorShadeBlue">#EDF9FD</color>
     <color name="colorShadeBlueDark">#BAE2F0</color>
     <color name="image_placeholder_background_color">#C7C7CC</color>
     <color name="dark_grey">#484547</color>
+    <color name="colorGrey">#434a54</color>
+    <color name="colorGreen">#388E3C</color>
+    <color name="colorPink">#F71463</color>
+    <color name="colorBlue">#44B0D1</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="colorAlphaShadeBlue">#2844B0D1</color>
+    <color name="colorAlphaShadeBlack">#66000000</color>
+    <color name="colorSectionGrey">#e7eef1</color>
+    <color name="color_address_red">#EC6663</color>
 
+    <color name="bg_btn_facebook_normal">#3C5194</color>
+    <color name="bg_btn_facebook_pressed">#304076</color>
+    <color name="bg_btn_google_plus_normal">#DF4B33</color>
+    <color name="bg_btn_google_plus_pressed">#C03E2A</color>
     <!--    <color name="colorPrimary">#3B4652</color>
     <color name="colorPrimaryDark">#1C1D49</color>
     <color name="colorAccent">#E6E8DF</color>-->
+
+    <color name="bg_btn_red">#d44e43</color>
+    <color name="theme_primary_accent">#f44336</color>
+    <color name="gray_d3d3d3">#d3d3d3</color>
+    <color name="text_color_tertiary_999">#999999</color>
+
+
+
+    <color name="colorAirBlue">#008fb4</color>
+    <color name="colorAirGreen">#9fc104</color>
+    <color name="colorGrey4">#839094</color>
+    <color name="colorAirRed">#ec514b</color>
+    <color name="colorYellow">#fff4be36</color>
+    <color name="colorTeal">#0CD497</color>
+    <color name="colorTealDark">#004d40</color>
+    <color name="colorCyan">#7632A7</color>
+    <color name="colorTransparentCyan">#257632A7</color>
+    <color name="colorGreenDark">#388E3C</color>
+    <color name="colorTransparentGreenDark">#25388E3C</color>
+    <color name="colorBlueDark">#1565C0</color>
+    <color name="colorTransparentBlueDark">#351565C0</color>
+
 </resources>

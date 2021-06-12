@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <item name="match_parent" type="dimen">-1</item>
+    <item name="wrap_content" type="dimen" tools:ignore="UnusedResources">-2</item>
+    <dimen name="payload_item_card_corner_radius">@dimen/unit_half</dimen>
+    <dimen name="item_responsive_width">@dimen/match_parent</dimen>
+    <dimen name="unit_half">4dp</dimen>
+    <dimen name="unit_1">8dp</dimen>
+    <dimen name="unit_2">16dp</dimen>
+    <dimen name="unit_3">24dp</dimen>
+    <dimen name="unit_4">32dp</dimen>
+    <dimen name="unit_10">10dp</dimen>
+    <dimen name="unit_12">12dp</dimen>
+</resources>

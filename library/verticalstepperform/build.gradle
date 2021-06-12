@@ -25,6 +25,10 @@ dependencies {
 
 //    implementation "com.google.android.material:material:$materialVersion"
 //    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:design:$supportLibraryVersion"
+
+//    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+//    implementation "com.android.support:design:$supportLibraryVersion"
+
+    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
 }

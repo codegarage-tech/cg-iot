@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "size_id": "1",
+      "size_name": "Small"
+    },
+    {
+      "size_id": "2",
+      "size_name": "Medium"
+    },
+    {
+      "size_id": "3",
+      "size_name": "Large"
+    }
+  ],
+  "message": "Response successful",
+  "status": 1
+}

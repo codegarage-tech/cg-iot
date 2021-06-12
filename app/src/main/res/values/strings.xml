@@ -1,5 +1,35 @@
 <resources>
-    <!--<string name="app_name">Meembu</string>-->
+    <!-- Facebook credentials -->
+    <string name="facebook_app_id">2480755805336301</string>
+    <string name="fb_login_protocol_scheme">fb2480755805336301</string>
+
+    <!-- Google credentials -->
+    <!--<string name="default_web_client_id" translatable="false">753248093269-g34lbd2jcr2fr2uslkhka5fsghgvm3kl.apps.googleusercontent.com</string>-->
+
+    <!-- About App -->
+    <!--<string name="app_name">TideTwist</string>-->
+    <string name="app_name_capital">SMART HOME</string>
+    <string name="app_version_text">Version:</string>
+    <string name="app_author">MeembuSoft Team</string>
+    <string name="app_author_email">codegarage.tech.us@gmail.com</string>
+    <string name="app_contact_subject">"Contact Support"</string>
+    <string name="app_contact_body">""</string>
+    <string name="app_publisher_id">8721116055633300205</string>
+    <string name="app_publisher_facebook_id">CodeGarage-563906867283858</string>
+    <string name="app_publisher_twitter_id">codegarage_tech</string>
+    <string name="app_publisher_profile_website">http://www.codegarage.tech/</string>
+    <string name="app_publisher_company_html_path">http://www.codegarage.tech/</string>
+    <string name="app_publisher_privacy_html_path">http://codegarage.tech/privacy_and_policy.html</string>
+    <string name="app_publisher_acknowledgment_html_path">http://codegarage.tech/terms_and_conditions.html</string>
+    <string name="app_play_store_url">https://play.google.com/store/apps/details?id=%1$s</string>
+
+    <string name="app_name_navigation">Smart Home</string>
+    <string name="txt_version">version</string>
+    <string name="txt_smart">Smart</string>
+    <string name="txt_home">Home</string>
+
+    <!--Common Title-->
+    <string name="txt_save">Save</string>
 
     <!-- Screen Title -->
     <string name="title_fragment_add_device">ADD DEVICE</string>
@@ -10,6 +40,26 @@
     <string name="title_fragment_connect_device">CONNECT DEVICE</string>
     <string name="title_fragment_preview">PREVIEW</string>
     <string name="title_activity_add_device">ADD DEVICE</string>
+    <string name="title_activity_bluetooth_configuration">BLUETOOTH CONFIGURATION</string>
+    <string name="title_activity_login">LOGIN</string>
+    <string name="title_activity_login_via_qr_code">LOGIN VIA QR CODE</string>
+    <string name="title_activity_signup">SIGNUP</string>
+    <string name="title_activity_device_detail">DEVICE DETAIL</string>
+    <string name="title_activity_device_detail_settings">DEVICE SETTINGS</string>
+    <string name="title_activity_edit_device">EDIT DEVICE</string>
+    <string name="title_activity_product_detail">PRODUCT DETAIL</string>
+    <string name="title_activity_download_app">Download App</string>
+    <string name="title_activity_about_profile">ABOUT PROFILE</string>
+    <string name="title_activity_set_timer">SET TIMER</string>
+    <string name="title_activity_orders">ORDER</string>
+    <string name="title_activity_order_detail">ORDER DETAIL</string>
+    <string name="title_activity_order_confirmation">ORDER CONFIRMATION</string>
+    <string name="title_activity_announcement_detail">ANNOUNCEMENT DETAIL</string>
+    <string name="title_activity_favorite_product">FAVORITE PRODUCT</string>
+    <string name="title_activity_cart">CART</string>
+    <string name="title_activity_online_support">ONLINE SUPPORT</string>
+    <string name="title_activity_forgot_password">FORGOT PASSWORD</string>
+    <string name="title_activity_add_new_address">Add New Address</string>
 
     <!-- Progress Dialog -->
     <string name="progress_dialog_loading">Loading...</string>
@@ -19,25 +69,48 @@
     <string name="toast_please_input_your_ssid">Please input your SSID</string>
     <string name="toast_please_input_your_password">Please input your password</string>
     <string name="toast_network_error">You have no internet connection!\nPlease connect to internet.</string>
+    <string name="toast_could_not_retrieve_info">Could not retrieve info</string>
+    <string name="toast_no_info_found">No info found</string>
 
     <!-- Dialog -->
-    <string name="dialog_message">Message</string>
+    <string name="dialog_close_app_title">Message</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">CANCEL</string>
-    <string name="dialog_do_you_wanna_close_the_app">Do you wanna close the app?</string>
+    <string name="dialog_do_you_want_to_close_the_app">Do you want to close the app?</string>
+
+    <!--Log In Screen-->
+    <string name="title_activity_log_in">Log In</string>
+    <string name="title_activity_login_mobile_no">Mobile No</string>
+    <string name="title_activity_back">Back</string>
+    <string name="title_activity_connect">or connect with</string>
+    <string name="title_activity_sign_up">Don\'t have account? Sign up now</string>
+    <string name="title_facebook">Facebook</string>
+    <string name="title_gmail">Gmail</string>
+    <string name="title_forgot_password">Forgot password? Reset now</string>
+    <!--Sign Up Screen-->
+    <string name="title_activity_signup_username">Username</string>
+    <string name="title_activity_signup_email">Email</string>
+    <string name="title_activity_signup_acct">Already have account? Sign in now</string>
+
+    <!--Dashboard-->
+    <string name="txt_favourite_device">Favourite Device</string>
+    <string name="txt_select_room">Select Room</string>
+    <string name="txt_my_room">My Room</string>
 
     <!-- Add device -->
     <string name="txt_choose_device">Choose Device</string>
     <string name="txt_choose_manually">Choose Manually</string>
     <string name="txt_connect_device">Connect Device</string>
+    <string name="txt_connect_wifi">Connect Wifi</string>
     <string name="txt_wifi">Wifi</string>
     <string name="txt_bluetooth">Bluetooth</string>
+    <string name="txt_mobile_data">Mobile Data</string>
     <string name="txt_scan_qr_code">Scan QR Code</string>
-    <string name="txt_please_select_one_device">Please select one device</string>
+    <string name="txt_please_select_one_device">Please select one product</string>
     <string name="txt_please_select_one_wifi">Please select one wifi</string>
-    <string name="txt_select_at_least_one_device">Select at least one device</string>
+    <string name="txt_select_at_least_one_device">Select at least one product</string>
     <string name="txt_scan_your_qr_code_or_bar_code">Scan your QR Code or Bar Code</string>
-    <string name="txt_sorry_we_could_not_detect_your_device">Sorry, we could not detect your device!</string>
+    <string name="txt_sorry_we_could_not_detect_your_device">Sorry, we could not detect your product!</string>
     <string name="txt_or">Or</string>
     <string name="txt_more">MORE</string>
     <string name="top_rated_movies_topic">Top Rated Movies</string>
@@ -50,7 +123,7 @@
     </string-array>
     <string name="txt_enjoy_controlling">Enjoy Controlling</string>
     <string name="txt_form_hint_title">Alarm name (required)</string>
-    <string name="txt_choose_device_by_any_way">Choose device by any way</string>
+    <string name="txt_choose_device_by_any_way">Choose product by any way</string>
     <string name="txt_empty">(Empty)</string>
     <string name="txt_attached">Attached</string>
     <string name="txt_detached">Detached</string>
@@ -64,38 +137,144 @@
     <string name="form_info_will_be_lost">All the information about this new alarm will be lost</string>
     <string name="txt_input_password">Input Password</string>
     <string name="txt_device_is_not_connected">Device is not connected</string>
-    <string name="txt_connected_with_the_device">Connected with the device</string>
+    <string name="txt_connected_with_the_device">Connected with the product</string>
     <string name="txt_input_ssid">Input SSID or choose SSID</string>
     <string name="txt_wifi_disconnected_or_changed">Wifi disconnected or changed</string>
     <string name="txt_wifi_5g_message">Device don\'t support 5G Wifi, please make sure the currently connected Wifi is 2.4G</string>
     <string name="txt_location_disable_message">Location(GPS) is disable</string>
     <string name="txt_create_esptouch_task_failed">Create Esptouch task failed, the esptouch port could be used by other thread</string>
     <string name="txt_esptouch_fail">Esptouch fail</string>
-    <string name="txt_attach_your_iot_device_with_home_appliance">Attach your IoT device with home appliance</string>
+    <string name="txt_attach_your_iot_device_with_home_appliance">Attach your IoT product with home appliance</string>
     <string name="txt_ensure_your_active_wifi_connection">Ensure your active wifi connection</string>
     <string name="txt_submit">Submit</string>
 
     <!-- Select Room -->
-    <string name="txt_select_room_from_suggested_rooms_below">Select room from suggested rooms below where you want use your IoT device. Or you can also select room adding more rooms.</string>
+    <string name="txt_select_room_from_suggested_rooms_below">Select room from suggested rooms below where you want use your IoT product. Or you can also select room adding more rooms.</string>
     <string name="txt_please_input_desired_room_name">Please input desired room name</string>
     <string name="txt_room_name">Room name</string>
     <string name="txt_select_your_room">SELECT YOUR ROOM</string>
     <string name="txt_add_room">Add Room</string>
     <string name="txt_please_select_one_room">Please select one room</string>
 
-    <!-- Choose Device -->
-    <string name="txt_choose_your_iot_device">CHOOSE YOUR IOT DEVICE.</string>
-    <string name="txt_select_device_using_qr_code_or_manually">Select device using QR code or manually.</string>
+    <!-- Choose Product -->
+    <string name="txt_choose_your_iot_device">CHOOSE YOUR IOT DEVICE</string>
+    <string name="txt_select_device_using_qr_code_or_manually">Select product using QR code or manually.</string>
     <string name="txt_qr_code">QR Code</string>
     <string name="txt_manually">Manually</string>
-    <string name="txt_select_your_device">Select your device</string>
-    <string name="txt_please_choose_one_device">Please choose one device</string>
+    <string name="txt_select_your_device">Select your product</string>
+    <string name="txt_please_choose_one_device">Please choose one product</string>
 
-    <!-- Connect Device -->
-    <string name="txt_connect_to_internet">CONNECT TO INTERNET.</string>
-    <string name="txt_connect_your_iot_device_to_wifi">Connect your IoT device to wifi. The wif strength should not be more than 2.4G HZ. You can also choose your desired wifi.</string>
+    <!-- Ensure connectivity -->
+    <string name="txt_ensure_your_connection_type">ENSURE YOUR CONNECTION TYPE</string>
+    <string name="txt_please_select_your_connection_type">Please select your connection type</string>
+    <string name="txt_select_connection_type_to_control_device">Select connection type to control product</string>
+
+    <!-- Connect Product -->
+    <string name="txt_connect_to_internet">CONNECT TO INTERNET</string>
+    <string name="txt_connect_your_iot_device_to_wifi">Connect your IoT product to wifi. Device don\'t support 5G Wifi, please make sure the currently connected Wifi is 2.4G.</string>
     <string name="txt_choose_wifi">Choose Wifi</string>
     <string name="txt_searching">Searching...</string>
     <string name="txt_password">Password</string>
+    <string name="txt_please_choose_your_wifi">Plesae choose your wifi</string>
+    <string name="txt_please_choose_your_wifi_password">Plesae choose your wifi password</string>
+    <string name="txt_select_your_wifi">Select your wifi</string>
+
+    <!-- Settings -->
+    <string name="txt_account">Account</string>
+    <string name="txt_more_settings">More</string>
+    <string name="txt_about_profile">About Profile</string>
+    <string name="txt_logn_or_create_account">Login/Create Account</string>
+    <string name="txt_logn_via_qr_code">Login via QR Code</string>
+    <string name="txt_orders">Orders</string>
+    <string name="txt_favorite_product">Favorite Product</string>
+    <string name="txt_cart">Cart</string>
+    <string name="txt_logout">Logout</string>
+    <string name="txt_notification">Notification</string>
+    <string name="txt_stop_notification">Stop Notification</string>
+    <string name="txt_app_notifications">App Notifications</string>
+    <string name="txt_app_language">App Language</string>
+    <string name="txt_about_app">About App</string>
+    <string name="txt_download_app">Download App</string>
+    <string name="txt_online_support">Online Support</string>
+    <string name="txt_scan_qr_code_to_download_the_app">Scan QR code to download the app!</string>
+    <string name="txt_settings_or">or</string>
+    <string name="txt_share_with">Share with</string>
+
+    <!-- Settings>> Language -->
+    <string name="txt_language_english">App Language(English)</string>
+    <string name="txt_language_bengali">App Language(Bengali)</string>
+
+    <!-- Forgot Password -->
+    <string name="txt_forgot_password">Forgot Password?</string>
+    <string name="txt_just_submit_the_email_address">Just submit the email address you\'ve used to register with us and we will send you a password reset link!</string>
+    <string name="txt_input_registered_email_address">Input Registered Email Address</string>
+    <string name="txt_submit_email_address">SUBMIT EMAIL ADDRESS</string>
+
+    <!--Product detail-->
+    <string name="txt_add_to_cart">Add to Cart</string>
+    <string name="txt_taka_symbol">/=</string>
+    <string name="txt_percentage_discount_is_ongoing">% discount is ongoing</string>
+    <string name="txt_one_time">(One Time)</string>
+    <string name="txt_first_bracket_left">(</string>
+    <string name="txt_first_bracket_right">)</string>
+
+    <!-- Device detail -->
+    <string name="txt_connection">Connection</string>
+    <string name="txt_configuration">Configuration</string>
+    <string name="txt_connection_lost">Connection Lost</string>
+    <string name="txt_connection_between_device_and_mobile_is_lost">Connection between device and mobile is lost. Ensure your internet connectivity. Do you want to reconnect?</string>
+
+    <!-- Bluetooth Configure -->
+    <string name="txt_you_need_enable_location_for_bluetooth_searching">You need to enable location for bluetooth searching</string>
+    <string name="txt_you_need_enable_bluetooth_for_serial_communication">You need to enable bluetooth for serial communication</string>
+    <string name="txt_bluetooth_is_enabled">Bluetooth is enabled</string>
+    <string name="txt_bluetooth_is_disabled">Bluetooth is disabled</string>
+    <string name="txt_bluetooth_scanning_is_started">Bluetooth scanning is started</string>
+    <string name="txt_bluetooth_scanning_is_finished">Bluetooth scanning is finished</string>
+    <string name="txt_bluetooth_scanning_is_stopped">Bluetooth scanning is stopped</string>
+    <string name="txt_unknown_device">Unknown Device</string>
+    <string name="txt_paired">Paired</string>
+    <string name="txt_unpaired">Unpaired</string>
+    <string name="txt_available">Available</string>
+    <string name="txt_you_dont_have_any_configuration">You don\'t have any configuration for %1$s, wanna configure it?</string>
+    <string name="txt_need_configuration">Need Configuration</string>
+
+    <!-- Shipping Address -->
+    <string name="txt_shipping_address_title">Shipping Address</string>
+    <string name="txt_shipping_address_contact_name_hint">Contact Name</string>
+    <string name="txt_shipping_address_street_address_hint">Street address,P.O. box,etc.</string>
+    <string name="txt_shipping_address_city_hint">City</string>
+    <string name="txt_shipping_address_area_hint">Area</string>
+    <string name="txt_shipping_address_city_zip_hint">Zip/Postal Code</string>
+    <string name="txt_shipping_address_set_default_address_title">Set as default shipping address</string>
+
+    <!--Order Confirmation-->
+    <string name="txt_select_payment_method_title">SELECT A PAYMENT METHOD</string>
+    <string name="txt_select_cash_payment_method_title">CASH PAYMENT</string>
+    <string name="txt_select_digital_payment_method_title">DIGITAL PAYMENT</string>
+
+    <string name="txt_order_summary_promo_code">Enter code here</string>
+    <string name="txt_order_summary_promo_code_title">Promo Code:</string>
+    <string name="txt_order_summary_subtotal_title">Subtotal:</string>
+    <string name="txt_order_summary_title">Order Summary (%d items)</string>
+    <string name="txt_order_summary_total">Total:</string>
+    <string name="txt_order_apply_promo_code_title">Apply Promo Code</string>
+    <string name="txt_order_apply_title">Apply</string>
+
+    <!--Set Timer-->
+    <string name="txt_set_timer_task_title">Create \nNew Timer</string>
+    <string name="txt_set_timer_start_date">Start Date</string>
+    <string name="txt_set_timer_start_time">Start Time</string>
+    <string name="txt_set_timer_end_time">End Time</string>
+    <string name="txt_set_timer_end_date">End Date</string>
+    <string name="txt_set_timer_remind_me">Remind me</string>
+    <string name="txt_set_timer_switch_yes">Yes</string>
+    <string name= "txt_set_timer_switch_no">No</string>
+    <!-- Stepper indicator -->
+    <string-array name="stepLabels">
+        <item>Room</item>
+        <item>Product</item>
+        <item>Connectivity</item>
+    </string-array>
 
 </resources>

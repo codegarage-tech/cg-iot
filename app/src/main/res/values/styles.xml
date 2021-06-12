@@ -23,8 +23,7 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
 
-    <style name="AppTheme" parent="AppBaseTheme">
-    </style>
+    <style name="AppTheme" parent="AppBaseTheme"></style>
 
     <!-- Segmented RadioButton -->
     <style name="SegmentedRadioButton">
@@ -37,5 +36,53 @@
         <item name="android:paddingRight">5dp</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="toolbar_base">
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+    </style>
+
+    <style name="TextSwitcherTitle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSwitcherDescription">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="SectionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:background">@color/colorShadeBlueDark</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+       <!-- Address Error Appearance-->
+    <style name="AddressErrorAppearance">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <!-- Button Accent-->
+    <style name="MainButtonAccent">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@drawable/comm_text_for_accent_button</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/comm_btn_bg_accent</item>
+        <item name="android:layout_height">@dimen/comm_button_height</item>
+        <item name="android:maxWidth">192dp</item>
+        <item name="android:minWidth">104dp</item>
+    </style>
+
 
 </resources>

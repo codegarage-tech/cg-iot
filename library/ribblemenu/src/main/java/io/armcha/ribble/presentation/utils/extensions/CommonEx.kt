@@ -7,11 +7,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Parcelable
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.text.Html
 import android.text.Spanned
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 //import com.reversecoder.ribblemenu.application.App
 import io.armcha.ribble.presentation.utils.Experimental
 import java.io.Serializable

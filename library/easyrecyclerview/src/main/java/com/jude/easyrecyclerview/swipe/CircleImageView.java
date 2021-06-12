@@ -24,10 +24,11 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 /**
  * Private class created to work around issues with AnimationListeners being
@@ -66,7 +67,7 @@ class CircleImageView extends ImageView {
             circle.getPaint().setShadowLayer(mShadowRadius, shadowXOffset, shadowYOffset,
                     KEY_SHADOW_COLOR);
             final int padding = mShadowRadius;
-            // set padding so the inner image sits correctly within the shadow.
+            // set padding so the inner image sits correctly within the bg_test.
             setPadding(padding, padding, padding, padding);
         }
         circle.getPaint().setColor(color);

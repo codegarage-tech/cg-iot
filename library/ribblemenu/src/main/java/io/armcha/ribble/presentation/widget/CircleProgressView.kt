@@ -7,11 +7,11 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.drawable.Animatable
-import android.support.annotation.DimenRes
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import androidx.annotation.DimenRes
 import io.armcha.ribble.R
 import io.armcha.ribble.presentation.utils.AnimationUtils
 import io.armcha.ribble.presentation.utils.extensions.hide

@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tech.codegarage.iot">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- esptouch -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
-    <uses-feature android:name="android.hardware.location.gps" />
-    <uses-feature android:name="android.hardware.location.network" />
+    package="com.meembusoft.iot">
 
     <application
-        android:name="tech.codegarage.iot.application.IotApp"
+        android:name="com.meembusoft.iot.application.IotApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="tech.codegarage.iot.activity.SplashActivity"
+            android:name="com.meembusoft.iot.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,19 +21,137 @@
         </activity>
 
         <activity
-            android:name="tech.codegarage.iot.activity.HomeActivity"
+            android:name="com.meembusoft.iot.activity.AboutProfileActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="tech.codegarage.iot.activity.AddDeviceActivity"
+            android:name="com.meembusoft.iot.activity.OrdersActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="tech.codegarage.iot.activity.BarCodeScannerActivity"
+            android:name="com.meembusoft.iot.activity.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.FavoriteProductActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.CartActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.EditDeviceActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.LoginViaQRCodeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.SignUpActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.AddDeviceActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.DeviceDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.ProductDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.BluetoothConfigurationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.DownloadAppActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.OnlineSupportActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.AnnouncementDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.SetTimerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.AddDeviceActivityTest"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.SelectProductActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.WifiActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.CartsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.OrderConfirmationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.ShippingAddressListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.meembusoft.iot.activity.AddShippingAddressActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.meembusoft.iot.activity.BarCodeScannerActivity"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- esptouch -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
 </manifest>

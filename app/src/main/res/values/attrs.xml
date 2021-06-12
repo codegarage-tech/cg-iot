@@ -5,11 +5,19 @@
         <attr name="typeface" format="string" />
     </declare-styleable>
 
-    <style name="toolbar_base">
-        <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:minHeight">?attr/actionBarSize</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@drawable/toolbar_bg</item>
-    </style>
+    <declare-styleable name="HangerLayout">
+        <attr name="bottomDragVisibleHeight" format="dimension" />
+        <attr name="bototmExtraIndicatorHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="PopUpSeekBar">
+        <attr name="fsb_color_line" format="reference|color" />
+        <attr name="fsb_color_ball" format="reference|color" />
+        <attr name="fsb_color_ball_stroke" format="reference|color" />
+        <attr name="fsb_color_value_selected" format="reference|color" />
+        <attr name="fsb_value_min" format="float" />
+        <attr name="fsb_value_max" format="float" />
+        <attr name="fsb_value_selected" format="float" />
+        <attr name="fsb_unit" format="reference|string" />
+    </declare-styleable>
 </resources>

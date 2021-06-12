@@ -12,17 +12,6 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.support.annotation.ColorInt
-import android.support.annotation.DrawableRes
-import android.support.annotation.LayoutRes
-import android.support.annotation.StringRes
-import android.support.v4.util.Pools
-import android.support.v4.view.*
-import android.support.v4.view.ViewPager.*
-import android.support.v4.widget.TextViewCompat
-import android.support.v7.app.ActionBar
-import android.support.v7.content.res.AppCompatResources
-import android.support.v7.widget.TooltipCompat
 import android.text.Layout
 import android.text.TextUtils
 import android.util.AttributeSet
@@ -31,6 +20,22 @@ import android.view.*
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.*
+import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.TooltipCompat
+import androidx.core.util.Pools
+import androidx.core.view.GravityCompat
+import androidx.core.view.PointerIconCompat
+import androidx.core.view.ViewCompat
+import androidx.core.widget.TextViewCompat
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager.widget.ViewPager.*
+import io.armcha.ribble.R
 import io.armcha.ribble.presentation.utils.AnimationUtils
 import java.lang.ref.WeakReference
 import java.util.*
@@ -131,69 +136,69 @@ class CustomTabLayout constructor(context: Context,
         super.addView(mTabStrip, 0, LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.MATCH_PARENT))
 
-        val a = context.obtainStyledAttributes(attrs, android.support.design.R.styleable.TabLayout,
-                0, android.support.design.R.style.Widget_Design_TabLayout)
+        val a = context.obtainStyledAttributes(attrs, R.styleable.TabLayout,
+                0, R.style.Widget_Design_TabLayout)
 
         mTabStrip.setSelectedIndicatorHeight(
-                a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabIndicatorHeight, 0))
-        mTabStrip.setSelectedIndicatorColor(a.getColor(android.support.design.R.styleable.TabLayout_tabIndicatorColor, 0))
+                a.getDimensionPixelSize(R.styleable.TabLayout_tabIndicatorHeight, 0))
+        mTabStrip.setSelectedIndicatorColor(a.getColor(R.styleable.TabLayout_tabIndicatorColor, 0))
 
         mTabPaddingBottom = a
-                .getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabPadding, 0)
+                .getDimensionPixelSize(R.styleable.TabLayout_tabPadding, 0)
         mTabPaddingEnd = mTabPaddingBottom
         mTabPaddingTop = mTabPaddingEnd
         mTabPaddingStart = mTabPaddingTop
-        mTabPaddingStart = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabPaddingStart,
+        mTabPaddingStart = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingStart,
                 mTabPaddingStart)
-        mTabPaddingTop = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabPaddingTop,
+        mTabPaddingTop = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingTop,
                 mTabPaddingTop)
-        mTabPaddingEnd = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabPaddingEnd,
+        mTabPaddingEnd = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingEnd,
                 mTabPaddingEnd)
-        mTabPaddingBottom = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabPaddingBottom,
+        mTabPaddingBottom = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingBottom,
                 mTabPaddingBottom)
 
-        mTabTextAppearance = a.getResourceId(android.support.design.R.styleable.TabLayout_tabTextAppearance,
-                android.support.design.R.style.TextAppearance_Design_Tab)
+        mTabTextAppearance = a.getResourceId(R.styleable.TabLayout_tabTextAppearance,
+                R.style.TextAppearance_Design_Tab)
 
         // Text colors/sizes come from the text appearance first
         val ta = context.obtainStyledAttributes(mTabTextAppearance,
-                android.support.v7.appcompat.R.styleable.TextAppearance)
+                R.styleable.TextAppearance)
         try {
             mTabTextSize = ta.getDimensionPixelSize(
-                    android.support.v7.appcompat.R.styleable.TextAppearance_android_textSize, 0).toFloat()
+                    R.styleable.TextAppearance_android_textSize, 0).toFloat()
             mTabTextColors = ta.getColorStateList(
-                    android.support.v7.appcompat.R.styleable.TextAppearance_android_textColor)
+                    R.styleable.TextAppearance_android_textColor)
         } finally {
             ta.recycle()
         }
 
-        if (a.hasValue(android.support.design.R.styleable.TabLayout_tabTextColor)) {
+        if (a.hasValue(R.styleable.TabLayout_tabTextColor)) {
             // If we have an explicit text color set, use it instead
-            mTabTextColors = a.getColorStateList(android.support.design.R.styleable.TabLayout_tabTextColor)
+            mTabTextColors = a.getColorStateList(R.styleable.TabLayout_tabTextColor)
         }
 
-        if (a.hasValue(android.support.design.R.styleable.TabLayout_tabSelectedTextColor)) {
+        if (a.hasValue(R.styleable.TabLayout_tabSelectedTextColor)) {
             // We have an explicit selected text color set, so we need to make merge it withLog the
             // current colors. This is exposed so that developers can use theme attributes to set
             // this (theme attrs in ColorStateLists are Lollipop+)
-            val selected = a.getColor(android.support.design.R.styleable.TabLayout_tabSelectedTextColor, 0)
+            val selected = a.getColor(R.styleable.TabLayout_tabSelectedTextColor, 0)
             mTabTextColors = createColorStateList(mTabTextColors!!.defaultColor, selected)
         }
 
-        mRequestedTabMinWidth = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabMinWidth,
+        mRequestedTabMinWidth = a.getDimensionPixelSize(R.styleable.TabLayout_tabMinWidth,
                 INVALID_WIDTH)
-        mRequestedTabMaxWidth = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabMaxWidth,
+        mRequestedTabMaxWidth = a.getDimensionPixelSize(R.styleable.TabLayout_tabMaxWidth,
                 INVALID_WIDTH)
-        mTabBackgroundResId = a.getResourceId(android.support.design.R.styleable.TabLayout_tabBackground, 0)
-        mContentInsetStart = a.getDimensionPixelSize(android.support.design.R.styleable.TabLayout_tabContentStart, 0)
-        mMode = a.getInt(android.support.design.R.styleable.TabLayout_tabMode, MODE_FIXED)
-        mTabGravity = a.getInt(android.support.design.R.styleable.TabLayout_tabGravity, GRAVITY_FILL)
+        mTabBackgroundResId = a.getResourceId(R.styleable.TabLayout_tabBackground, 0)
+        mContentInsetStart = a.getDimensionPixelSize(R.styleable.TabLayout_tabContentStart, 0)
+        mMode = a.getInt(R.styleable.TabLayout_tabMode, MODE_FIXED)
+        mTabGravity = a.getInt(R.styleable.TabLayout_tabGravity, GRAVITY_FILL)
         a.recycle()
 
         // TODO add attr for these
         val res = resources
-        mTabTextMultiLineSize = res.getDimensionPixelSize(android.support.design.R.dimen.design_tab_text_size_2line).toFloat()
-        mScrollableTabMinWidth = res.getDimensionPixelSize(android.support.design.R.dimen.design_tab_scrollable_min_width)
+        mTabTextMultiLineSize = res.getDimensionPixelSize(R.dimen.design_tab_text_size_2line).toFloat()
+        mScrollableTabMinWidth = res.getDimensionPixelSize(R.dimen.design_tab_scrollable_min_width)
 
         // Now apply the tab mode and gravity
         applyModeAndGravity()
@@ -203,7 +208,7 @@ class CustomTabLayout constructor(context: Context,
      * Sets the tab indicator's color for the currently selected tab.
      *
      * @param color color to use for the indicator
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabIndicatorColor
+     * @attr ref R.styleable#CustomTabLayout_tabIndicatorColor
      */
     fun setSelectedTabIndicatorColor(@ColorInt color: Int) {
         mTabStrip.setSelectedIndicatorColor(color)
@@ -213,7 +218,7 @@ class CustomTabLayout constructor(context: Context,
      * Sets the tab indicator's height for the currently selected tab.
      *
      * @param height height to use for the indicator in pixels
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabIndicatorHeight
+     * @attr ref R.styleable#CustomTabLayout_tabIndicatorHeight
      */
     fun setSelectedTabIndicatorHeight(height: Int) {
         mTabStrip.setSelectedIndicatorHeight(height)
@@ -456,7 +461,7 @@ class CustomTabLayout constructor(context: Context,
      *
      *
      * @param mode one of [.MODE_FIXED] or [.MODE_SCROLLABLE].
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabMode
+     * @attr ref R.styleable#CustomTabLayout_tabMode
      */
     var tabMode: Int
         @CustomTabLayout.Mode
@@ -477,7 +482,7 @@ class CustomTabLayout constructor(context: Context,
      * Set the gravity to use when laying out the tabs.
      *
      * @param gravity one of [.GRAVITY_CENTER] or [.GRAVITY_FILL].
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabGravity
+     * @attr ref R.styleable#CustomTabLayout_tabGravity
      */
     var tabGravity: Int
         @CustomTabLayout.TabGravity
@@ -509,8 +514,8 @@ class CustomTabLayout constructor(context: Context,
     /**
      * Sets the text colors for the different states (normal, selected) used for the tabs.
      *
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabTextColor
-     * @attr ref android.support.design.R.styleable#CustomTabLayout_tabSelectedTextColor
+     * @attr ref R.styleable#CustomTabLayout_tabTextColor
+     * @attr ref R.styleable#CustomTabLayout_tabSelectedTextColor
      */
     fun setTabTextColors(normalColor: Int, selectedColor: Int) {
         tabTextColors = createColorStateList(normalColor, selectedColor)
@@ -1390,14 +1395,14 @@ class CustomTabLayout constructor(context: Context,
                 // If there isn't a custom view, we'll us our own in-built layouts
                 if (mIconView == null) {
                     val iconView = LayoutInflater.from(context)
-                            .inflate(android.support.design.R.layout.design_layout_tab_icon,
+                            .inflate(R.layout.design_layout_tab_icon,
                                     this, false) as ImageView
                     addView(iconView, 0)
                     mIconView = iconView
                 }
                 if (mTextView == null) {
                     val textView = LayoutInflater.from(context)
-                            .inflate(android.support.design.R.layout.design_layout_tab_text,
+                            .inflate(R.layout.design_layout_tab_text,
                                     this, false) as TextView
                     addView(textView)
                     mTextView = textView

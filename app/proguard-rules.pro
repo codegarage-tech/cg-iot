@@ -93,7 +93,7 @@
  public static *** i(...);
  public static *** v(...);
 }
--keep class tech.codegarage.iot.util.Logger {*;}
+-keep class com.meembusoft.iot.util.Logger {*;}
 
 ########## Android Test ##########
 # Proguard rules that are applied to your test apk/code.
@@ -222,8 +222,8 @@
 #-keep class tech.codegarage.tidetwist.model.FcmLink {*;}
 #-keep class tech.codegarage.tidetwist.model.FcmPing {*;}
 #-keep class tech.codegarage.tidetwist.model.FcmText {*;}
--keep class tech.codegarage.iot.model.** {*;}
--keep class tech.codegarage.iot.retrofit.** {*;}
+-keep class com.meembusoft.iot.model.** {*;}
+-keep class com.meembusoft.iot.retrofit.** {*;}
 -keep class com.reversecoder.library.event.** {*;}
 -keep class com.reversecoder.library.event.** {*;}
 #-keep class me.jerryhanks.countrypicker.Country {*;}

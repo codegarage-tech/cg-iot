@@ -1,13 +1,8 @@
 <resources>
-
     <!-- Navigation drawer -->
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="navigation_drawer_icon">Navigation drawer icon</string>
-
-    <string name="user_avatar">User avatar</string>
-
-    <!--Arc view-->
-    <string name="arc_view_image">Arc view image</string>
-
+    <string name="menu_dashboard">DASHBOARD</string>
+    <string name="menu_products">PRODUCTS</string>
+    <string name="menu_add_device">ADD DEVICE</string>
+    <string name="menu_settings">SETTINGS</string>
+    <string name="menu_logout">LOGOUT</string>
 </resources>

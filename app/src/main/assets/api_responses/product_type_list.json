@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "product_type_id": "1",
+      "product_type_name": "wifi_motor_one"
+    },
+    {
+      "product_type_id": "2",
+      "product_type_name": "wifi_motor_two"
+    },
+    {
+      "product_type_id": "3",
+      "product_type_name": "wifi_gang_board_five"
+    },
+    {
+      "product_type_id": "4",
+      "product_type_name": "wifi_2_pin_socket_one"
+    },
+    {
+      "product_type_id": "5",
+      "product_type_name": "wifi_holder_pin"
+    },
+    {
+      "product_type_id": "6",
+      "product_type_name": "wifi_holder_patch"
+    }
+  ],
+  "message": "Response successful",
+  "status": 1
+}

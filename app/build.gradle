@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'realm-android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion appCompileSdkVersion
@@ -10,20 +13,20 @@ android {
             try {
                 keyAlias 'keydata.keystore'
                 keyPassword KEY_PASSWORD
-                storeFile file('../misc/keydata.keystore')
+                storeFile file('../misc/keydata.keystore.jks')
                 storePassword STORE_PASSWORD
-            } catch (ex) {
-                throw new InvalidUserDataException("You should define KEY_PASSWORD and STORE_PASSWORD in gradle.properties.")
+            } catch (Exception ex) {
+                throw new InvalidUserDataException(ex.getMessage())
             }
         }
     }
 
     defaultConfig {
-        applicationId "tech.codegarage.iot"
+        applicationId "com.meembusoft.iot"
         minSdkVersion appMinSdkVersion
         targetSdkVersion appTargetSdkVersion
-//        versionCode appUserVersionCode
-//        versionName appUserVersionName
+//        versionCode appSmartHomeVersionCode
+//        versionName appSmartHomeVersionName
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -58,12 +61,12 @@ android {
     //Flavor definition
     flavorDimensions "appType", "marketType"
     productFlavors {
-        user {
+        smarthome {
             dimension "appType"
 
-            applicationIdSuffix ".user"
-            versionCode appUserVersionCode
-            versionName appUserVersionName
+            applicationIdSuffix ".smarthome"
+            versionCode appSmartHomeVersionCode
+            versionName appSmartHomeVersionName
         }
 
         bd {
@@ -85,7 +88,7 @@ android {
 
     //Remove unwanted vairant
     android.variantFilter { variant ->
-        if (variant.getFlavors().get(0).name.equals('user')
+        if (variant.getFlavors().get(0).name.equals('smarthome')
                 && (variant.getFlavors().get(1).name.equals('us')
                 || variant.getFlavors().get(1).name.equals('uk'))) {
             variant.setIgnore(true)
@@ -104,12 +107,12 @@ android {
             def flavor = variant.baseName.split("-")[0]
             def version = variant.versionName
             def buildType = variant.buildType.name
-            def releaseApkName = appName + underScore + convertToCamelCase(flavor) + underScore + version + underScore + convertToCamelCase(buildType) + ".apk"
+            def releaseApkName = appName + underScore + flavor + underScore + version + underScore + convertToCamelCase(buildType) + ".apk"
             outputFileName = releaseApkName
 
             // set new resVale
             def finalAppName = ""
-            if (flavor.equals('user')) {
+            if (flavor.equals('smarthome')) {
                 finalAppName = appName
             }
             variant.resValue 'string', 'app_name', finalAppName
@@ -121,6 +124,11 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -154,14 +162,21 @@ def static String convertToCamelCase(String str) {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //Androidx support libraries
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.core:core:$androidXCoreVersion"
+    implementation "androidx.core:core-ktx:$androidXCoreKotlinLibraryVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayoutVersion"
+    implementation "androidx.multidex:multidex:$androidXMultiDexVersion"
+
     // Android support libraries
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:support-v4:$supportLibraryVersion"
-    implementation "com.android.support:design:$supportLibraryVersion"
-    implementation "com.android.support:cardview-v7:$supportLibraryVersion"
-    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
-    implementation "com.android.support:multidex:$multiDexVersion"
-    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+//    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+//    implementation "com.android.support:support-v4:$supportLibraryVersion"
+//    implementation "com.android.support:design:$supportLibraryVersion"
+//    implementation "com.android.support:cardview-v7:$supportLibraryVersion"
+//    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
+//    implementation "com.android.support:multidex:$multiDexVersion"
+//    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
     // Image loading
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -170,12 +185,6 @@ dependencies {
     // Parceler
     implementation "org.parceler:parceler-api:$parcelerVersion"
     annotationProcessor "org.parceler:parceler:$parcelerVersion"
-
-    // Retrofit for server communication
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation "com.google.code.gson:gson:$gsonVersion"
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
     // Barcode
     implementation "com.journeyapps:zxing-android-embedded:$zxingVersion"
@@ -188,6 +197,9 @@ dependencies {
 
     // Views
     implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0'
+
+    // Rule view
+    implementation 'com.zjun:rule-view:0.0.1'
 
     // Test strategy
 //    implementation "junit:junit:$junitVersion"
@@ -207,6 +219,23 @@ dependencies {
     // Blur view
     implementation 'jp.wasabeef:blurry:3.0.0'
 
+    // MQTT
+    implementation 'com.github.ministryofprogramming:RxMQTTClient:1.0.2'
+
+    // Youtube player
+    implementation "com.pierfrancescosoffritti.androidyoutubeplayer:core:$youtubePlayerVersion"
+
+    // Rating bar
+    implementation "me.zhanghai.android.materialratingbar:library:$materialRatingBarVersion"
+
+    // Menu
+    implementation "com.github.skydoves:flourish:1.0.0"
+
+    // Switch
+    implementation 'com.bitvale:switcher:1.0.5'
+    //awesome text
+    implementation 'ss.anoop:awesome-textinput-layout:1.0.0'
+
     // Library projects
     implementation project(":library:ribblemenu")
     implementation project(":library:statusbarutil")
@@ -216,4 +245,31 @@ dependencies {
     implementation project(":library:esptouch")
     implementation project(":library:easyrecyclerview")
     implementation project(":library:flowlayout")
+    implementation project(":library:multiwaveheader")
+    implementation project(":library:pdialog")
+    implementation project(":library:glazyviewpager")
+//    implementation project(":library:mqtt")
+    implementation project(":library:toggleimagebutton")
+    implementation project(":library:croller")
+    implementation project(":library:attributionpresenter")
+    implementation project(":library:aboutbox")
+    implementation project(":library:localemanager")
+    implementation project(":library:realmmanager")
+    implementation project(":library:addtocart")
+    implementation project(":library:animationmanager")
+    implementation project(":library:retrofitmanager")
+    implementation project(":library:fcmmanager")
+    implementation project(":library:shopping")
+    implementation project(":library:autoimageslider")
+    implementation project(":library:fliptabs")
+    implementation project(":library:stepperindicator")
+    implementation project(":library:androidsweetsheet")
+    implementation project(":library:ticketview")
+    implementation project(":library:tvg")
+    implementation project(":library:expansionpanel")
+    implementation(project(path: ':library:sociallogin')) {
+        exclude group: 'com.vk' //without VK
+//        exclude group: 'com.facebook.android' //without Facebook
+//        exclude group: 'com.google.android.gms'
+    }
 }

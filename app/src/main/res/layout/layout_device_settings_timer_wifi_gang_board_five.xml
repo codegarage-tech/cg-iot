@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_device_settings_wgb5_timer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_wgb5_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rectangle_border_transparent_bg_transparent"
+        android:minHeight="50dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_toLeftOf="@+id/switch_wgb5_timer"
+            android:text="Set timer(you can start/stop your device at the specific time)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+        <com.github.zagum.switchicon.SwitchIconView
+            android:id="@+id/switch_wgb5_timer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_20"
+            android:scaleType="fitXY"
+            app:si_tint_color="@color/colorPrimaryDark"
+            app:srcCompat="@drawable/vector_timer" />
+
+    </RelativeLayout>
+
+</LinearLayout>

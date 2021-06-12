@@ -1,0 +1,30 @@
+{
+  "status": 1,
+  "message": "Response successful",
+  "data": [
+    {
+      "category_id": "3",
+      "category_name": "Gang Board",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": []
+    },
+    {
+      "category_id": "2",
+      "category_name": "Motor",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": []
+    },
+    {
+      "category_id": "1",
+      "category_name": "Socket",
+      "category_thumbnail": "https://d2hpkjovixmy47.cloudfront.net/697-large_default/porcelain-single-2-pin-socket-white.jpg",
+      "products": []
+    },
+    {
+      "category_id": "5",
+      "category_name": "Holder",
+      "category_thumbnail": "https://media.screwfix.com/is/image//ae235?src=ae235/93835_P&$prodImageMedium$",
+      "products": []
+    }
+  ]
+}

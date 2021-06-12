@@ -13,7 +13,7 @@
         android:background="@color/colorShadeBlue"
         android:orientation="vertical">
 
-        <tech.codegarage.iot.view.LockableViewPager
+        <com.meembusoft.iot.view.LockableViewPager
             android:id="@+id/vp_add_device"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

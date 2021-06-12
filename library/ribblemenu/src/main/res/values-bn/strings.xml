@@ -1,0 +1,8 @@
+<resources>
+    <!-- Navigation drawer -->
+    <string name="menu_dashboard">ড্যাসবোর্ড</string>
+    <string name="menu_products">পণ্য</string>
+    <string name="menu_add_device">ডিভাইস যোগ করুন</string>
+    <string name="menu_settings">সেটিংস</string>
+    <string name="menu_logout">লগ আউট</string>
+</resources>

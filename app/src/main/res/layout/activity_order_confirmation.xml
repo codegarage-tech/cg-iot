@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_base" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorShadeBlue"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_60"
+            android:layout_weight="1.0"
+            android:background="@color/colorShadeBlue">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:cardElevation="@dimen/dp_5">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rel_shipping_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_10">
+
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="top|center"
+                            android:padding="@dimen/dp_5"
+                            app:srcCompat="@drawable/vector_ic_address_location" />
+
+                        <TextView
+                            android:id="@+id/tv_add_new_address_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:layout_toEndOf="@+id/iv_location"
+                            android:layout_toRightOf="@+id/iv_location"
+                            android:paddingLeft="@dimen/dp_2"
+                            android:paddingRight="@dimen/dp_2"
+                            android:text="Add a new address"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_add_new_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:layout_toEndOf="@+id/iv_location"
+                            android:layout_toRightOf="@+id/iv_location"
+                            android:paddingLeft="@dimen/dp_2"
+                            android:paddingRight="@dimen/dp_2"
+                            android:text="Add a new address"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_18"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:cardElevation="@dimen/dp_5">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_payment_method"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_20">
+
+                        <ImageView
+                            android:id="@+id/iv_payment_method"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="top|center"
+                            android:padding="@dimen/dp_5"
+                            app:srcCompat="@drawable/vector_ic_payment_method" />
+
+                        <TextView
+                            android:id="@+id/tv_payment_method_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:layout_toEndOf="@+id/iv_payment_method"
+                            android:layout_toRightOf="@+id/iv_payment_method"
+                            android:paddingLeft="@dimen/dp_2"
+                            android:paddingRight="@dimen/dp_2"
+                            android:text="Select payment method"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16" />
+
+                        <TextView
+                            android:id="@+id/tv_payment_method"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:layout_toEndOf="@+id/iv_payment_method"
+                            android:layout_toRightOf="@+id/iv_payment_method"
+                            android:paddingLeft="@dimen/dp_2"
+                            android:paddingRight="@dimen/dp_2"
+                            android:text="Add a new address"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_18"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:cardElevation="@dimen/dp_5">
+
+                   <LinearLayout
+                    android:id="@+id/ll_total_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_15"
+                    android:paddingBottom="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/tv_order_summary_titles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:paddingLeft="@dimen/dp_2"
+                        android:paddingRight="@dimen/dp_2"
+                        android:text="Order Summary(1 item)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <View
+                        android:id="@+id/view_one"
+                        android:layout_width="match_parent"
+                        android:layout_height=".8px"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@color/gray_d3d3d3" />
+
+                    <RelativeLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv_order_summary_subtotal"
+                            android:singleLine="true"
+                            android:textColor="@color/text_color_tertiary_999"
+                            android:textSize="@dimen/dp_12"
+                            android:text="@string/txt_order_summary_subtotal_title"/>
+                        <TextView
+                            android:id="@+id/tv_order_summary_subtotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:maxWidth="200dp"
+                            android:singleLine="true"
+                            android:textColor="@color/text_color_tertiary_999"
+                            android:textSize="@dimen/dp_12"
+                            android:text="Tk 10.50"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_7">
+
+                        <TextView
+                            android:id="@+id/tv_order_summary_promo_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv_order_summary_promo"
+                            android:singleLine="true"
+                            android:textColor="@color/text_color_tertiary_999"
+                            android:textSize="@dimen/dp_12"
+                            android:text="@string/txt_order_summary_promo_code_title"/>
+                        <TextView
+                            android:id="@+id/tv_order_summary_promo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:maxWidth="200dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/dp_12"
+                            android:text="@string/txt_order_summary_promo_code"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_7">
+
+                        <TextView
+                            android:id="@+id/tv_order_summary_totals_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv_order_summary_totals"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_12"
+                            android:text="@string/txt_order_summary_total"/>
+                        <TextView
+                            android:id="@+id/tv_order_summary_totals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:maxWidth="200dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_12"
+                            android:text="TK 100"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorShadeBlue"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@drawable/shape_line_vertical_fading_edge_primary" />
+
+        <TextView
+            android:id="@+id/tv_totals_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dip"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_2"
+            android:paddingRight="@dimen/dp_5"
+            android:text="TK 1000 /-"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btn_place_order"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_7"
+            android:background="@drawable/curv_shape_button_shape_bg_red"
+            android:paddingLeft="@dimen/dp_7"
+            android:paddingRight="@dimen/dp_7"
+            android:text="PLACE ORDER"
+            android:textColor="@color/whiteColor" />
+    </RelativeLayout>
+
+</RelativeLayout>

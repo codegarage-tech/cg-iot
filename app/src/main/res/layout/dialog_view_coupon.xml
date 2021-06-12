@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_20"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="16dip"
+    android:paddingLeft="16dip"
+    android:paddingRight="16dip"
+    android:paddingBottom="16dip">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_order_apply_promo_code_title"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dip"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        app:borderColor="@color/colorPrimaryDark"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/et_coupon_dialog_enter_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_order_summary_promo_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_error_mgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:textColor="@color/color_grey_800"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:layout_gravity="right"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_coupon_dialog_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="14dip"
+        android:text="@string/dialog_cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/dp_12"
+        android:textStyle="bold"
+        android:layout_marginRight="@dimen/dp_20"/>
+
+    <TextView
+        android:id="@+id/tv_coupon_dialog_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="14dip"
+        android:text="@string/txt_order_apply_title"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/dp_12"
+        android:textStyle="bold"/>
+</LinearLayout>
+
+</LinearLayout>

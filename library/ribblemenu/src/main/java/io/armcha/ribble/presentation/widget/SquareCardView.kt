@@ -1,8 +1,8 @@
 package io.armcha.ribble.presentation.widget
 
 import android.content.Context
-import android.support.v7.widget.CardView
 import android.util.AttributeSet
+import androidx.cardview.widget.CardView
 
 /**
  * Created by Chatikyan on 08.08.2017.

@@ -1,0 +1,102 @@
+{
+  "data": {
+    "product_id": "50",
+    "product_qr_code": "5430",
+    "product_name": "5 Gang Board",
+    "product_type": {
+      "product_type_id": "3",
+      "product_type_name": "wifi_gang_board_five"
+    },
+    "product_images": [
+      {
+        "id": "1",
+        "url": "https://i.ebayimg.com/images/g/IPEAAOSwIsdcJfeq/s-l300.jpg",
+        "title": "Dummy Image title",
+        "description": "Flame Retardant & pure Poly Carbonate(PC) Plastic. Modern Design with Glossy Finish. Unique button design for easy operation."
+      }
+    ],
+    "product_price": 500,
+    "product_description": "Its a 5 Gang Board",
+    "product_discount_percentage": 10,
+    "product_colors": [
+      {
+        "color_id": "1",
+        "color_name": "White"
+      },
+      {
+        "color_id": "2",
+        "color_name": "Blue"
+      },
+      {
+        "color_id": "3",
+        "color_name": "Pink"
+      }
+    ],
+    "product_sizes": [
+      {
+        "size_id": "1",
+        "size_name": "Small"
+      },
+      {
+        "size_id": "2",
+        "size_name": "Medium"
+      },
+      {
+        "size_id": "3",
+        "size_name": "Large"
+      }
+    ],
+    "product_connections": [
+      {
+        "connection_id": "1",
+        "connection_name": "Wifi",
+        "connection_thumbnail": ""
+      },
+      {
+        "connection_id": "2",
+        "connection_name": "Bluetooth",
+        "connection_thumbnail": ""
+      },
+      {
+        "connection_id": "3",
+        "connection_name": "Mobile Data",
+        "connection_thumbnail": ""
+      }
+    ],
+    "product_subscriptions": [
+      {
+        "subscription_id": "1",
+        "subscription_name": "Basic",
+        "subscription_price": 0,
+        "subscription_description": "Free"
+      },
+      {
+        "subscription_id": "2",
+        "subscription_name": "Normal",
+        "subscription_price": 20,
+        "subscription_description": "Per Week"
+      },
+      {
+        "subscription_id": "3",
+        "subscription_name": "Silver",
+        "subscription_price": 100,
+        "subscription_description": "Per Month"
+      },
+      {
+        "subscription_id": "4",
+        "subscription_name": "Gold",
+        "subscription_price": 500,
+        "subscription_description": "Half Yearly"
+      },
+      {
+        "subscription_id": "5",
+        "subscription_name": "Diamond",
+        "subscription_price": 1000,
+        "subscription_description": "Yearly"
+      }
+    ],
+    "is_favorite": 0
+  },
+  "message": "Response successful",
+  "status": 1
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "753248093269",
+    "firebase_url": "https://smarthome-1567695336480.firebaseio.com",
+    "project_id": "smarthome-1567695336480",
+    "storage_bucket": "smarthome-1567695336480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753248093269:android:55b936aafb625d638e80dc",
+        "android_client_info": {
+          "package_name": "com.meembusoft.iot.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753248093269-k3im48aep4rtum9s3f5ka44s7t611e86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_msTZ849yIKP2eWUVbG9FuA2EnLoCYwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753248093269-k3im48aep4rtum9s3f5ka44s7t611e86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

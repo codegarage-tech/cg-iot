@@ -5,10 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.res.ColorStateList;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.view.ViewCompat;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_wifi_motor_two"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="200dip"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight=".5"
+            android:background="@drawable/shape_round_right_toptbotttom_border_radius"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".65"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--<LinearLayout
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/circle_shadow_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_20">
+
+                    <net.colindodd.toggleimagebutton.ToggleImageButton
+                        android:id="@+id/btn_light1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:tib_drawable_off="@drawable/vector_ic_water_pump"
+                        app:tib_drawable_on="@drawable/vector_ic_water_pump_green" />
+
+                </LinearLayout>-->
+
+                <com.bitvale.switcher.SwitcherC
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    app:elevation="5dp"
+                    app:switcher_icon_color="@color/switcher_icon_color"
+                    app:switcher_off_color="@color/switcher_off_color"
+                    app:switcher_on_color="@color/switcher_on_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft = "2dp"
+                android:layout_marginRight = "2dp"
+                android:layout_weight=".35"
+                android:background="@drawable/custom_shape_up_view"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Wifi Motor One"
+                    android:textSize="@dimen/dp_15"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="200dip"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight=".5"
+            android:background="@drawable/shape_round_right_toptbotttom_border_radius"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".65"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--<LinearLayout
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/circle_shadow_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_20">
+
+                    <net.colindodd.toggleimagebutton.ToggleImageButton
+                        android:id="@+id/btn_light2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:tib_drawable_off="@drawable/vector_ic_water_pump"
+                        app:tib_drawable_on="@drawable/vector_ic_water_pump_green" />
+
+                </LinearLayout>-->
+
+                <com.bitvale.switcher.SwitcherX
+                    android:layout_width="130dp"
+                    android:layout_height="61dp"
+                    app:elevation="5dp"
+                    app:switcher_icon_color="@color/switcher_icon_color"
+                    app:switcher_off_color="@color/switcher_off_color"
+                    app:switcher_on_color="@color/switcher_on_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft = "2dp"
+                android:layout_marginRight = "2dp"
+                android:layout_weight=".35"
+                android:background="@drawable/custom_shape_up_view"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Wifi Motor Two"
+                    android:textSize="@dimen/dp_15"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_round_right_toptbotttom_border_radius"
+            android:orientation="vertical">
+
+            <com.meembusoft.iot.view.HangerLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#17FF4081"
+                app:bottomDragVisibleHeight="100dp">
+
+                <!--1. This is the bottom view-->
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:alpha="1"
+                    android:background="@drawable/white_back">
+
+                    <!--<com.meembusoft.iot.view.PopUpSeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="10dp"
+                        app:fsb_color_ball="@color/colorAccent"
+                        app:fsb_color_ball_stroke="#BC3F3E3E"
+                        app:fsb_color_line="@color/colorAccent"
+                        app:fsb_color_value_selected="@android:color/white"
+                        app:fsb_unit=""
+                        app:fsb_value_max="5.0"
+                        app:fsb_value_min="0.0"
+                        app:fsb_value_selected="1.0" />
+-->
+                </FrameLayout>
+
+                <!--2. Top Sliding View -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/white_back">
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="#fff" />
+
+                </FrameLayout>
+
+            </com.meembusoft.iot.view.HangerLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:background="@drawable/shape_round_right_toptbotttom_border_radius"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
