@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.meembusoft.iot.activity.SplashActivity"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,111 +23,138 @@
 
         <activity
             android:name="com.meembusoft.iot.activity.AboutProfileActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.OrdersActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.OrderDetailActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.FavoriteProductActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.CartActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.EditDeviceActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.LoginActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.LoginViaQRCodeActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.SignUpActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.HomeActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.AddDeviceActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.DeviceDetailActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.ProductDetailActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.BluetoothConfigurationActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.DownloadAppActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.OnlineSupportActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.AnnouncementDetailActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.ForgotPasswordActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.SetTimerActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.AddDeviceActivityTest"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.SelectProductActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.WifiActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.CartsActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.OrderConfirmationActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.ShippingAddressListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.meembusoft.iot.activity.AddShippingAddressActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
 
         <activity
             android:name="com.meembusoft.iot.activity.BarCodeScannerActivity"
+            android:exported="false"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
@@ -135,6 +163,9 @@
 
     <uses-feature android:name="android.hardware.location.gps" />
     <uses-feature android:name="android.hardware.location.network" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -142,10 +173,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!-- esptouch -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 

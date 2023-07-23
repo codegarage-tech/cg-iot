@@ -1,12 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'net.colindodd.toggleimagebutton'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 3
         versionName "1.2"
     }

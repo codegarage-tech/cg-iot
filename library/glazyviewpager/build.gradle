@@ -1,13 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
+    compileSdk "$libraryVersions.compileSdk".toInteger()
 
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    namespace 'com.kannan.glazy'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 1
         versionName "1.0"
 
@@ -25,7 +27,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
-    implementation "androidx.cardview:cardview:$androidXCardViewVersion"
-    implementation "androidx.palette:palette:$androidXCardViewVersion"
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXCardView
+    implementation libraries.palette
 }

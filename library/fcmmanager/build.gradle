@@ -1,23 +1,15 @@
-apply plugin: 'com.android.library'
-//apply plugin: 'com.google.gms.google-services'
-//
-//buildscript {
-//    repositories {
-//        google()
-//        jcenter()
-//    }
-//    dependencies {
-//        classpath "com.google.gms:google-services:$googleServicesPluginVersion"
-//    }
-//}
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.meembusoft.fcmmanager'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 100
         versionName "1.0.0"
     }
@@ -39,21 +31,21 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // AndroidX
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
-    implementation "androidx.annotation:annotation:$androidXAnnotationVersion"
-    implementation "com.google.android.material:material:$materialVersion"
+    implementation libraries.androidXAppCompat
+    implementation libraries.annotation
+    implementation libraries.material
 
     // Firebase
-    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
-    implementation "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+    implementation libraries.firebaseCore
+    implementation libraries.firebaseMessaging
 
     // JSON helper
-    implementation "com.google.code.gson:gson:$gsonVersion"
-    implementation "com.squareup.moshi:moshi:$moshiVersion"
-    implementation "com.squareup.moshi:moshi-adapters:$moshiAdaptersVersion"
+    implementation libraries.gson
+    implementation libraries.moshi
+    implementation libraries.moshiAdapters
 
     // Preference
-    implementation "androidx.preference:preference-ktx:$preferenceKtxVersion"
+    implementation libraries.preferenceKtx
 
     implementation project(":library:statusbarutil")
 }

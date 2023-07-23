@@ -1,18 +1,17 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion 28
+    compileSdk "$libraryVersions.compileSdk".toInteger()
 
-
+    namespace 'com.sweet.yukun.androidsweetsheet'
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {

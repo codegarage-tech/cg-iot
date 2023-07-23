@@ -749,7 +749,7 @@ public class DeviceDetailActivity extends BaseActivity {
                 .setFlourishLayout(R.layout.layout_device_detail_settings)
                 .setFlourishAnimation(FlourishAnimation.BOUNCE)
                 .setFlourishOrientation(FlourishOrientation.TOP_RIGHT)
-                .setIsShowedOnStart(false)
+                .setShowOnStart(false)
                 .setDuration(800L)
                 .build();
         // Initialize view

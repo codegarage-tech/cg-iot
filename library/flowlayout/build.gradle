@@ -1,13 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
+    compileSdk "$libraryVersions.compileSdk".toInteger()
 
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    namespace 'com.nex3z.flowlayout'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 1
         versionName "1.0"
     }
@@ -20,5 +22,5 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation libraries.androidXAppCompat
 }

@@ -1,19 +1,21 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
+    compileSdk "$libraryVersions.compileSdk".toInteger()
 
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    namespace 'com.github.florent37.expansionpanel'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 1
         versionName "1.0"
     }
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayoutVersion"
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXConstraintLayout
 }

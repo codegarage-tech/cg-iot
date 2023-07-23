@@ -1,14 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'me.wangyuwei.shoppoing'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
-        versionCode 3
-        versionName "1.0.5"
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
     }
 
     buildTypes {
@@ -20,7 +19,5 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation libraries.androidXAppCompat
 }

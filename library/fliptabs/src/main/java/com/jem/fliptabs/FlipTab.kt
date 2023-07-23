@@ -10,10 +10,10 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.graphics.drawable.DrawableCompat
-import kotlinx.android.synthetic.main.fliptab.view.*
-
 
 class FlipTab : FrameLayout {
     constructor(context: Context) : super(context)
@@ -42,8 +42,8 @@ class FlipTab : FrameLayout {
     open var isLeftSelected: Boolean = true
     private var animationMiddleViewFlippedFlag: Boolean = false
 
-    private val leftTabText get() = tab_left.text.toString()
-    private val rightTabText get() = tab_right.text.toString()
+    private val leftTabText get() = findViewById<TextView>(R.id.tab_left).text.toString()
+    private val rightTabText get() = findViewById<TextView>(R.id.tab_right).text.toString()
 
     private var tabSelectedListener: TabSelectedListener? = null
 
@@ -75,14 +75,14 @@ class FlipTab : FrameLayout {
 
     init {
         inflate(context, R.layout.fliptab, this)
-        tab_left.setOnClickListener {
+        findViewById<TextView>(R.id.tab_left).setOnClickListener {
             if (isLeftSelected) {
                 tabSelectedListener?.onTabReselected(isLeftSelected, leftTabText)
             } else {
                 flipTabs()
             }
         }
-        tab_right.setOnClickListener {
+        findViewById<TextView>(R.id.tab_right).setOnClickListener {
             if (isLeftSelected) {
                 flipTabs()
             } else {
@@ -112,9 +112,9 @@ class FlipTab : FrameLayout {
                 }
                 if (typedArray.getInt(R.styleable.FlipTab_startingTab, 0) == 1) {
                     isLeftSelected = false
-                    tab_selected_container.rotationY = 180f
-                    tab_selected.background = rightSelectedDrawable
-                    tab_selected.scaleX = -1f
+                    findViewById<LinearLayout>(R.id.tab_selected_container).rotationY = 180f
+                    findViewById<TextView>(R.id.tab_selected).background = rightSelectedDrawable
+                    findViewById<TextView>(R.id.tab_selected).scaleX = -1f
                 }
                 setLeftTabText(getString(R.styleable.FlipTab_leftTabText) ?: "Left tab")
                 setRightTabText(getString(R.styleable.FlipTab_rightTabText) ?: "Right tab")
@@ -126,7 +126,7 @@ class FlipTab : FrameLayout {
     public fun flipTabs() {
         animationMiddleViewFlippedFlag = false
         isLeftSelected = !isLeftSelected
-        tab_selected_container.animate()
+        findViewById<LinearLayout>(R.id.tab_selected_container).animate()
                 .rotationY(if (isLeftSelected) 0f else 180f)
                 .setDuration(flipAnimationDuration.toLong())
                 .withStartAction {
@@ -141,16 +141,16 @@ class FlipTab : FrameLayout {
                     if (animationMiddleViewFlippedFlag) return@setUpdateListener
 
                     //TODO: Find out a better alternative to changing Background in the middle of animation (might result in dropped frame/stutter)
-                    if (isLeftSelected && tab_selected_container.rotationY <= 90f) {
+                    if (isLeftSelected && findViewById<LinearLayout>(R.id.tab_selected_container).rotationY <= 90f) {
                         animationMiddleViewFlippedFlag = true
-                        tab_selected.text = leftTabText
-                        tab_selected.background = leftSelectedDrawable
-                        tab_selected.scaleX = 1f
-                    } else if (!isLeftSelected && tab_selected_container.rotationY >= 90f) {
+                        findViewById<TextView>(R.id.tab_selected).text = leftTabText
+                        findViewById<TextView>(R.id.tab_selected).background = leftSelectedDrawable
+                        findViewById<TextView>(R.id.tab_selected).scaleX = 1f
+                    } else if (!isLeftSelected && findViewById<LinearLayout>(R.id.tab_selected_container).rotationY >= 90f) {
                         animationMiddleViewFlippedFlag = true
-                        tab_selected.text = rightTabText
-                        tab_selected.background = rightSelectedDrawable
-                        tab_selected.scaleX = -1f
+                        findViewById<TextView>(R.id.tab_selected).text = rightTabText
+                        findViewById<TextView>(R.id.tab_selected).background = rightSelectedDrawable
+                        findViewById<TextView>(R.id.tab_selected).scaleX = -1f
                     }
                 }
                 .withEndAction {
@@ -160,10 +160,10 @@ class FlipTab : FrameLayout {
                 .start()
         val animSet = AnimatorSet()
         val animator1 = ObjectAnimator.ofFloat(
-                base_fliptab_container, "rotationY", if (isLeftSelected) -wobbleAngle else wobbleAngle
+                findViewById<FrameLayout>(R.id.base_fliptab_container), "rotationY", if (isLeftSelected) -wobbleAngle else wobbleAngle
         )
         animator1.duration = flipAnimationDuration.toLong()
-        val animator2 = ObjectAnimator.ofFloat(base_fliptab_container, "rotationY", 0f)
+        val animator2 = ObjectAnimator.ofFloat(findViewById<FrameLayout>(R.id.base_fliptab_container), "rotationY", 0f)
         animator2.duration = wobbleReturnAnimationDuration.toLong()
         animSet.playSequentially(animator1, animator2)
         animSet.start()
@@ -196,48 +196,48 @@ class FlipTab : FrameLayout {
     }
 
     public fun setTextColor(color: Int) {
-        tab_left.setTextColor(color)
-        tab_right.setTextColor(color)
+        findViewById<TextView>(R.id.tab_left).setTextColor(color)
+        findViewById<TextView>(R.id.tab_right).setTextColor(color)
     }
 
     public fun setHighlightColor(color: Int) {
-        (tab_left.background as GradientDrawable)?.setStroke(
+        (findViewById<TextView>(R.id.tab_left).background as GradientDrawable)?.setStroke(
                 TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP,
                         2f,
                         resources.displayMetrics
                 ).toInt(), color
         )
-        (tab_right.background as GradientDrawable)?.setStroke(
+        (findViewById<TextView>(R.id.tab_right).background as GradientDrawable)?.setStroke(
                 TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP,
                         2f,
                         resources.displayMetrics
                 ).toInt(), color
         )
-        (tab_selected.background as GradientDrawable)?.setStroke(
+        (findViewById<TextView>(R.id.tab_selected).background as GradientDrawable)?.setStroke(
                 TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP,
                         2f,
                         resources.displayMetrics
                 ).toInt(), color
         )
-        (tab_selected.background as GradientDrawable)?.setColor(color)
+        (findViewById<TextView>(R.id.tab_selected).background as GradientDrawable)?.setColor(color)
         DrawableCompat.setTint(leftSelectedDrawable, color)
         DrawableCompat.setTint(rightSelectedDrawable, color)
     }
 
     public fun setLeftTabText(text: String) {
-        tab_left.text = text
+        findViewById<TextView>(R.id.tab_left).text = text
         if (isLeftSelected) {
-            tab_selected.text = text
+            findViewById<TextView>(R.id.tab_selected).text = text
         }
     }
 
     public fun setRightTabText(text: String) {
-        tab_right.text = text
+        findViewById<TextView>(R.id.tab_right).text = text
         if (!isLeftSelected) {
-            tab_selected.text = text
+            findViewById<TextView>(R.id.tab_selected).text = text
         }
     }
 
@@ -247,10 +247,10 @@ class FlipTab : FrameLayout {
                 flipTabs()
             } else {
                 isLeftSelected = true
-                tab_selected_container.rotationY = 0f
-                tab_selected.text = leftTabText
-                tab_selected.background = leftSelectedDrawable
-                tab_selected.scaleX = 1f
+                findViewById<LinearLayout>(R.id.tab_selected_container).rotationY = 0f
+                findViewById<TextView>(R.id.tab_selected).text = leftTabText
+                findViewById<TextView>(R.id.tab_selected).background = leftSelectedDrawable
+                findViewById<TextView>(R.id.tab_selected).scaleX = 1f
                 tabSelectedListener?.onTabSelected(isLeftSelected, leftTabText)
             }
         } else {
@@ -264,10 +264,10 @@ class FlipTab : FrameLayout {
                 flipTabs()
             } else {
                 isLeftSelected = false
-                tab_selected_container.rotationY = 180f
-                tab_selected.text = rightTabText
-                tab_selected.background = rightSelectedDrawable
-                tab_selected.scaleX = -1f
+                findViewById<LinearLayout>(R.id.tab_selected_container).rotationY = 180f
+                findViewById<TextView>(R.id.tab_selected).text = rightTabText
+                findViewById<TextView>(R.id.tab_selected).background = rightSelectedDrawable
+                findViewById<TextView>(R.id.tab_selected).scaleX = -1f
                 tabSelectedListener?.onTabSelected(isLeftSelected, rightTabText)
             }
         } else {

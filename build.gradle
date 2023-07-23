@@ -1,40 +1,43 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "dependencies.gradle"
 
 buildscript {
-    ext.androidGradlePluginVersion = '3.6.2'
-    ext.kotlinVersion = '1.3.61'
-    ext.googleServicesPluginVersion = '4.3.2'
-//    ext.realmVersion = '6.0.0'
+    apply from: "dependencies.gradle"
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven {
+            url 'https://maven.google.com'
+        }
+        maven {
+            url 'https://raw.github.com/reversecoder/rc-librarydemo-androidstudio/snapshots'
+        }
     }
-    dependencies {
-        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
-//        classpath "io.realm:realm-gradle-plugin:$realmVersion"
-        classpath "com.google.gms:google-services:$googleServicesPluginVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+    dependencies {
+        classpath "com.android.tools.build:gradle:$libraryVersions.gradle"
+        classpath gradlePlugins.kotlinGradlePlugin
+        classpath gradlePlugins.googleServices
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
-
+        jcenter()
         maven {
-            url "https://jitpack.io"
+            url 'https://jitpack.io'
         }
         maven {
-            url "https://maven.google.com"
+            url 'https://maven.google.com'
         }
         maven {
-            url "https://raw.github.com/reversecoder/rc-librarydemo-androidstudio/snapshots"
+            url 'https://raw.github.com/reversecoder/rc-librarydemo-androidstudio/snapshots'
         }
     }
 
@@ -54,58 +57,6 @@ allprojects {
 //            }
 //        }
 //    }
-
-    ext.appSmartHomeVersionCode = 100
-    ext.appSmartHomeVersionName = '1.0.0'
-//    ext.appMinSdkVersion = 17 // here 17 is used only for youtube player
-    ext.appMinSdkVersion = 19 // here 17 is used only for switch
-    ext.appTargetSdkVersion = 29
-    ext.appCompileSdkVersion = 29
-    ext.appBuildToolsVersion = '29.0.2'
-//    ext.supportLibraryVersion = '28.0.0'
-//    ext.constraintLayoutVersion = '1.1.3'
-    ext.libraryVersion = '1.0.1-SNAPSHOT'
-//    ext.multiDexVersion = '1.0.3'
-    ext.glideVersion = '4.8.0'
-    ext.realmPluginVersion = '6.0.0'
-    ext.gsonVersion = '2.8.5'
-    ext.parcelerVersion = '1.1.12'
-    ext.googlePlayServiceLocationVersion = '17.0.0'
-    ext.zxingVersion = '3.6.0'
-    ext.androidTestRunnerVersion = '1.0.2'
-    ext.espressoCoreVersion = '3.0.2'
-    ext.junitVersion = '4.12'
-    ext.kotlinVersion = '1.3.61'
-    ext.androidGradlePluginVersion = '3.6.2'
-    ext.googleServicesPluginVersion = '4.3.2'
-    ext.firebaseCoreVersion = '17.2.1'
-    ext.firebaseMessagingVersion = '20.0.1'
-    ext.materialVersion = '1.0.0'
-    // Android X libraries
-    ext.androidXMultiDexVersion = '2.0.1'
-    ext.androidXRecyclerViewVersion = '1.0.0'
-    ext.androidXCoreVersion = '1.1.0'
-    ext.androidXCoreKotlinLibraryVersion = '1.1.0'
-    ext.androidXConstraintLayoutVersion = '1.1.3'
-    ext.androidXAnnotationVersion = '1.0.0'
-    ext.androidXAppCompatVersion = '1.1.0'
-    ext.androidXRunnerVersion = '1.1.0'
-    ext.androidXCardViewVersion = '1.0.0'
-    ext.eclipsePahoClientMQTTv3Version = '1.2.0'
-    ext.eclipsePahoAndroidServiceVersion = '1.1.1'
-    ext.eventBusVersion = '3.1.1'
-    ext.youtubePlayerVersion = '10.0.3'
-    ext.flexBoxVersion = '1.1.1'
-    ext.appcompatLibraryVersion = '1.1.0'
-    ext.retrofit2Version = '2.6.1'
-    ext.retrofit2ConverterGsonVersion = '2.6.2'
-    ext.okhttp3LoggingInterceptorVersion = '4.2.1'
-    ext.moshiVersion = '1.8.0'
-    ext.moshiAdaptersVersion = '1.8.0'
-    ext.preferenceKtxVersion = '1.1.0'
-    ext.materialRatingBarVersion = '1.3.3'
-    ext.picassoVersion = '2.71828'
-    ext.nineOldAndroidsVersion = '2.4.0'
 }
 
 task clean(type: Delete) {

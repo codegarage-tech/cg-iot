@@ -1,12 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.gitonway.lee.niftymodaldialogeffects.lib'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 1
         versionName '1.0.3'
 
@@ -27,5 +30,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation libraries.androidXAppCompat
 }

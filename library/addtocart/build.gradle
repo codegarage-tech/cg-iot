@@ -1,25 +1,30 @@
-apply plugin: 'com.android.library'
-apply plugin: 'realm-android'
-
 buildscript {
+    apply from: "${rootDir}/dependencies.gradle"
+
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath "io.realm:realm-gradle-plugin:$realmPluginVersion"
+        classpath gradlePlugins.realmGradlePlugin
     }
 }
 
+plugins {
+    id 'com.android.library'
+}
+
+apply plugin: "realm-android"
+
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.meembusoft.addtocart'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
-        versionCode 100
-        versionName "1.0.0"
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
     }
 
     buildTypes {
@@ -36,11 +41,11 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation libraries.androidXAppCompat
 
     // Parceler
-    implementation "org.parceler:parceler-api:$parcelerVersion"
-    annotationProcessor "org.parceler:parceler:$parcelerVersion"
+    implementation libraries.parcelerApi
+    annotationProcessor libraries.parceler
 
     implementation project(":library:realmmanager")
 }

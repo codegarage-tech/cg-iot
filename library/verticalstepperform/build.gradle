@@ -1,12 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'ernestoyaquello.com.verticalstepperform'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 13
         versionName '2.1.1'
 
@@ -23,12 +26,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-//    implementation "com.google.android.material:material:$materialVersion"
-//    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-
-//    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-//    implementation "com.android.support:design:$supportLibraryVersion"
-
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
-    implementation "com.google.android.material:material:$materialVersion"
+    implementation libraries.androidXAppCompat
+    implementation libraries.material
 }

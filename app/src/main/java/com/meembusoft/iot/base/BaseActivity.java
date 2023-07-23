@@ -101,10 +101,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             add(Manifest.permission.INTERNET);
             add(Manifest.permission.ACCESS_NETWORK_STATE);
             //For image caching
-            add(Manifest.permission.READ_EXTERNAL_STORAGE);
-            add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            add(Manifest.permission.READ_MEDIA_IMAGES);
 //            //For phone state
 //            add(Manifest.permission.READ_PHONE_STATE);
+            add(Manifest.permission.POST_NOTIFICATIONS);
         }};
     }
 

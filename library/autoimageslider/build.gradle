@@ -1,12 +1,15 @@
-apply plugin: 'com.android.library'
+plugins {
+    id "com.android.library"
+}
 
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.smarteist.autoimageslider'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 5
         versionName "1.3.2"
     }
@@ -20,5 +23,5 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation libraries.androidXAppCompat
 }

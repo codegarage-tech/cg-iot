@@ -75,13 +75,13 @@ public abstract class BaseLocationActivity extends BaseActivity {
             add(Manifest.permission.INTERNET);
             add(Manifest.permission.ACCESS_NETWORK_STATE);
             //For image caching
-            add(Manifest.permission.READ_EXTERNAL_STORAGE);
-            add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            add(Manifest.permission.READ_MEDIA_IMAGES);
 //            //For phone state
 //            add(Manifest.permission.READ_PHONE_STATE);
             //For location update
             add(Manifest.permission.ACCESS_FINE_LOCATION);
             add(Manifest.permission.ACCESS_COARSE_LOCATION);
+            add(Manifest.permission.POST_NOTIFICATIONS);
         }};
 
         //Need to set update frequency first, cause depending on this frequency location update will be

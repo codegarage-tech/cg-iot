@@ -20,7 +20,6 @@ import com.meembusoft.iot.util.SessionUtil;
 import com.meembusoft.retrofitmanager.APIResponse;
 import com.reversecoder.library.event.OnSingleClickListener;
 
-import bz.kakadu.sociallogin.SocialLogin;
 import io.armcha.ribble.presentation.widget.AnimatedImageView;
 import io.armcha.ribble.presentation.widget.AnimatedTextView;
 
@@ -126,14 +125,14 @@ public class LoginActivity extends BaseActivity {
         rlFacebookLogin.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
-                startActivityForResult(SocialLogin.Companion.loginIntent(getActivity(), SocialLogin.LoginType.FB), INTENT_KEY_REQUEST_CODE_LOGIN);
+//                startActivityForResult(SocialLogin.Companion.loginIntent(getActivity(), SocialLogin.LoginType.FB), INTENT_KEY_REQUEST_CODE_LOGIN);
             }
         });
 
         rlGoogleLogin.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
-                startActivityForResult(SocialLogin.Companion.loginIntent(getActivity(), SocialLogin.LoginType.GOOGLE), INTENT_KEY_REQUEST_CODE_LOGIN);
+//                startActivityForResult(SocialLogin.Companion.loginIntent(getActivity(), SocialLogin.LoginType.GOOGLE), INTENT_KEY_REQUEST_CODE_LOGIN);
             }
         });
     }

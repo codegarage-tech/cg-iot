@@ -18,7 +18,8 @@
             android:name="com.meembusoft.fcmmanager.activity.AppNotificationsActivity"
             android:screenOrientation="portrait" />
 
-        <service android:name="com.meembusoft.fcmmanager.service.FcmMessagingService">
+        <service android:name="com.meembusoft.fcmmanager.service.FcmMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

@@ -1,27 +1,33 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
 buildscript {
+
+    apply from: "${rootDir}/dependencies.gradle"
+
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:${kotlinVersion}"
+        classpath gradlePlugins.kotlinGradlePlugin
+        classpath gradlePlugins.kotlinAndroidExtensions
     }
 }
 
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
 android {
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.eggheadgames.aboutbox'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 7
         versionName "1.3.1"
 
@@ -42,11 +48,11 @@ android {
 
 dependencies {
 //    compile 'com.github.daniel-stoneuk:material-about-library:2.2.1'
-    implementation "androidx.appcompat:appcompat:$appcompatLibraryVersion"
-    implementation "androidx.cardview:cardview:$androidXCardViewVersion"
-    implementation "com.google.android.material:material:$materialVersion"
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXCardView
+    implementation libraries.material
 //    implementation group: 'com.android.support', name: 'support-v4', version: "$supportLibraryVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayoutVersion"
+    implementation libraries.androidXConstraintLayout
     //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation libraries.kotlinStdlib
 }

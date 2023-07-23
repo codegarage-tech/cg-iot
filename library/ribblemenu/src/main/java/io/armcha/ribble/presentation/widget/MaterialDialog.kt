@@ -7,13 +7,13 @@ import android.content.Context
 import android.view.View
 import android.view.ViewPropertyAnimator
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import io.armcha.ribble.R
 import io.armcha.ribble.presentation.utils.AnimationUtils
 import io.armcha.ribble.presentation.utils.extensions.nonSafeLazy
 import io.armcha.ribble.presentation.utils.extensions.onClick
 import io.armcha.ribble.presentation.utils.extensions.scale
-import kotlinx.android.synthetic.main.dialog_item.*
 
 /**
  * Created by Chatikyan on 10.09.2017.
@@ -34,7 +34,7 @@ class MaterialDialog(context: Context) : Dialog(context, R.style.MaterialDialogS
         setContentView(R.layout.dialog_item)
         setCancelable(true)
         setCanceledOnTouchOutside(true)
-        dialogContainer.onClick { hide() }
+        findViewById<FrameLayout>(R.id.dialogContainer).onClick { hide() }
     }
 
     override fun onDetachedFromWindow() {
@@ -86,7 +86,7 @@ class MaterialDialog(context: Context) : Dialog(context, R.style.MaterialDialogS
                     .setInterpolator(AnimationUtils.FAST_OUT_LINEAR_IN_INTERPOLATOR)
                     .withLayer()
                     .setListener(object : AnimatorListenerAdapter() {
-                        override fun onAnimationEnd(animation: Animator?) {
+                        override fun onAnimationEnd(animation: Animator) {
                             this@MaterialDialog.dismiss()
                         }
                     })

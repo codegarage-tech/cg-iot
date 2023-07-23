@@ -1,31 +1,30 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
 buildscript {
-    ext.kotlinVersion = '1.3.61'
-    ext.androidGradlePluginVersion = '3.6.2'
+    apply from: "${rootDir}/dependencies.gradle"
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:${androidGradlePluginVersion}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:${kotlinVersion}"
+        classpath gradlePlugins.kotlinGradlePlugin
     }
 }
 
-android {
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
 
-    compileSdkVersion appCompileSdkVersion
-    buildToolsVersion appBuildToolsVersion
+android {
+    compileSdk "$libraryVersions.compileSdk".toInteger()
+
+    namespace 'com.reversecoder.attributionpresenter'
 
     defaultConfig {
-        minSdkVersion appMinSdkVersion
-        targetSdkVersion appTargetSdkVersion
+        minSdk "$libraryVersions.minSdk".toInteger()
+        targetSdk "$libraryVersions.targetSdk".toInteger()
         versionCode 2
         versionName "1.0.1"
 
@@ -45,13 +44,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation "com.google.android:flexbox:$flexBoxVersion"
-    implementation "androidx.appcompat:appcompat:$appcompatLibraryVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayoutVersion"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation libraries.kotlinStdlib
+    implementation libraries.androidXAppCompat
+    implementation libraries.androidXCardView
+    implementation libraries.androidXConstraintLayout
+    implementation libraries.flexBox
 }
