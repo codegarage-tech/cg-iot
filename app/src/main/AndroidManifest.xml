@@ -151,7 +151,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
-
         <activity
             android:name="com.meembusoft.iot.activity.BarCodeScannerActivity"
             android:exported="false"
